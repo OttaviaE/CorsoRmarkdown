@@ -1,0 +1,20 @@
+---
+title: 'RMarkdown:'
+author: "Ottavia M. Epifania"
+date: ''
+output:
+  pdf_document: default
+  html_document: default
+subtitle: Analisi riproducibili, presentazioni, report e molto altro in un unico ed elegante file
+header-includes:
+  - \usepackage{leading}
+  - \leading{18pt}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Capita a tutte le ricercatrici di svolgere le analisi con un software e di esportare i risultati ottenuti manualmente in un secondo software per la preparazione di presentazioni, paper scientifici o report. Una procedura del genere, oltre che essere dispendiosa in termini di tempo, rischia anche di portare a commettere numerosi errori. Inoltre, non rende accessibile il codice usato per le analisi, compromettendone la replicabilità. 
+`RStudio` fornisce la possibilità di svolgere le analisi e trasformale automaticamente in eleganti (ma soprattutto riproducibili) report, presentazioni, paper e tesi di laurea grazie a `RMarkdown`. In questo modo, il codice utilizzato, le analisi e i loro risultati e i report basati su di essi vivono nello stesso file. In questo corso di 20 ore viene presentato l'uso di `RMarkdown` per la stesura di documenti con riferimenti bibliografici e per la preparazione di presentazioni, in versione statica (`pdf`) e dinamica (`html`). In quest'ultimo caso, viene anche presentata la possibilità di inserire all'interno dei documenti generati con `RMarkdown` delle app interattive, generate con il pacchetto `shiny`. 
+Per la partecipazione al corso è necessaria una conoscenza base nell'uso di `R`. Il materiale del corso è interamente disponibile nella repository GitHub \url{https://github.com/OttaviaE/CorsoRmarkdown}.
