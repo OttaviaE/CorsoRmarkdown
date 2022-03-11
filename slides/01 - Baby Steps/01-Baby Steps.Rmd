@@ -1,0 +1,63 @@
+---
+title: "01 - Baby steps"
+author: "Ottavia M. Epifania"
+date: ''
+output:
+  ioslides_presentation: 
+    logo: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/arca_logo.svg
+    widescreen: yes
+    smaller: yes
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, 
+                      fig.align = "center", 
+                      fig.path = "C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/")
+library("icons")
+library("emoji")
+```
+
+## Default file `RMarkdown`
+
+Come prima cosa, appare questo: 
+
+```{r echo = TRUE, eval=FALSE}
+---
+title: "Esempio di File di testo"
+author: "Ottavia M. Epifania"
+date: "5/3/2022"
+output: html_document
+---
+```
+
+Questo è l'header YAML ed è dove andiamo a definire il tipo di file che voglimao, il titolo, l'autore, la data. 
+
+Per compilare il file si può premer sul tasto **knit** oppure si può usare la combo di tasti `shift + ctrl + k` (per chi ha il Mac `shift + cmd + k`)
+
+Siccome nel nostro header abbiamo `output: html_document` (il default), il file compilato sarà un file `html` 
+
+## Dettagli sulla compilazione 
+
+- Si può scegliere il tipo di file da compilare cambiando da `output: html_document` a `output: pdf_document` (Questa operazione si può svolgere anche cliccando sulla freccina accanto a **knit** e selezionando "Knit to PDF")
+
+Nel caso abbiate seguito la seconda strada, viene modificato lo YAML del file: 
+
+```{r echo = TRUE, eval=FALSE}
+---
+title: "Esempio di File di testo"
+author: "Ottavia M. Epifania"
+date: "5/3/2022"
+output: 
+  hmtl_document: default
+  html_document: default
+```
+
+Ma non preoccupatevi, è la stessa cosa! 
+
+In questo corso, noi useremo principalmente il formato PDF per quello che riguarda i file di testo.
+
+## YAML per dire chi siamo, cosa facciamo e dove lo facciamo
+
+Al default che abbiamo visto prima, possiamo aggiungere sottoti
