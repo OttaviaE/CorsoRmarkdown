@@ -1,0 +1,180 @@
+---
+title: 'Giornata #1 - Introduzione'
+author: "Ottavia M. Epifania"
+date: ''
+output:
+  ioslides_presentation:
+    css: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/arca.css
+    logo: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/arca_logo.svg
+    theme: united
+    widescreen: yes
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, 
+                      fig.align = "center", 
+                      fig.path = "C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/")
+library("icons")
+library("emoji")
+```
+
+# `RMarkdown`
+
+## Di cosa stiamo parlando? {.build}
+
+<div>
+Tutto nasce da `markdown` (data di nascita 2004). 
+
+`markdown` è un markup languange, ossia un linguaggio per scrivere note su un documento di codice. 
+
+L'estensione dei `markdown` è un file `.md`
+
+
+</div>
+
+<div align= "center">
+<img width="50%" height="50%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/md.png">
+</div>
+
+## {.build}
+
+<div>
+`RStudio` non poteva stare a guardare: così nasce `RMarkdown`, che non è altro che un modo per creare documenti `markdown` usando `RStudio`
+
+Inoltre, `RStudio` permette di inserire dati, codici, grafici, analisi all'interno dello stesso file di testo (viva la replicabilità!)
+
+L'estensione dei `RMarkdown` è un file `.Rmd`
+</div>
+
+<div align="center">
+<img width="50%" height="50%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/rmarkdown.png">
+</div>
+
+## Cosa può fare `RMarkdown`?{.build}
+
+- Produrre testi in HTML e PDF <font size="3">(volendo anche in `.docx` ma è **molto** sconsigliato)</font>
+
+- Produrre presentazioni in HTML e PDF <font size="3">(volendo anche in `.pptx` ma è **molto** sconsigliato)</font>
+
+- Produrre file PDF usando il motore di \LaTeX
+
+- Le slides di questo corso
+
+<div align="center">
+**MA SOPRATTUTTO**
+</div>
+
+Permette la riproducibilità dei dati e delle analisi svolte sugli stessi tenendo in unico file report, dati, codici e risultati
+
+
+# Cosa faremo in questo corso
+
+## Baby steps: comandi basici di `RMarkdown` 
+
+**Grassetto**, *Corsivo*, _**Grassetto Corsivo**_, $3+2 =5$ 
+
+$$3 + 2 = 5$$
+```{r eval = TRUE, echo = TRUE}
+a = 3
+b = 2
+c = a + b
+```
+
+Usare il risultato del chunck nel testo `r c`
+
+immagini (settare la directory delle immagini)
+
+- Creazione di un documento PDF con bibliografia 
+
+- Creazione di una presentazione in HTML 
+
+- Piccola esercitazione finale
+
+# Installare `RMarkdown`
+
+##
+
+`RMarkdown` è un pacchetto di `R`. 
+
+In quanto tale, ha bisogno che sia `R` sia `RStudio` siano installati sul vostro computer: 
+
+[Download <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/R.png">](https://cran.r-project.org/bin/windows/base/) 
+
+[Download <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/Rstudio.png">](https://www.rstudio.com/products/rstudio/download/)
+- Seguite le istruzioni di installazione
+
+<img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/Rstudio.png"> è solo un'interfaccia! è necessario scaricare prima <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/R.png">!
+
+## Non è ancora finita
+
+<img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/R.png"> e <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/Rstudio.png"> è la base, <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/Rstudio.png"> è l'interfaccia, ma c'è bisogno del motore per produrre PDF: `LaTeX` (scaricabile https://miktex.org/download).
+
+A questo punto si può finalmente installare `RMarkdown` aprendo `RStudio` e digatndo nella consolle:
+
+    install.packages("RMarkdown")
+
+e infine premendo invio.
+
+
+
+## Ordine ordine ordine ordine (e ancora ordine)
+
+<div align="center">
+`Rstudio` Project
+</div>
+
+Consente di creare una directory all'interno di cui vengono messi tutti i file (immagini, dati, bibliografia) necessari per la creazione della tesi/report/presentazione che si sta facendo
+
+Mantiene tutto in ordine e facilmente controllabile
+
+File $\rightarrow$ New project: 
+
+<div align="center">
+<img width="40%" height="40%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/project1.png">
+</div>
+
+## 
+
+Dire cosa si vuole fare
+
+<div align="center">
+<img width="30%" height="30%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/project2.png">
+</div>
+
+Dove lo si vuole fare e come lo si vuole chiamare
+
+<div align="center">
+<img width="30%" height="30%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/project3.png">
+</div>
+
+# Con cosa lavoriamo?
+
+## I dataset di `R`
+Useremo dei datasets interni ad `R` per fare qualche analisi e qualche grafico (tranquilli, vi darò io i codici `r emoji("beaming face with smiling eyes")`)
+
+A [questa pagina](https://docs.google.com/document/d/1xBr-zNRTvUrKABrU7CQDM_8rZVg2gmij_aaP-0laljM/edit) trovate un doc con la lista dei vari datasets con una piccola descrizione delle variabili
+
+Ad ognuno viene assegnato un dataset e dovrà lavorare su quello per tutto il corso
+
+# Your turn!
+
+## 
+
+- Creare un progetto sul vostro desktop (è il progetto su cui lavorerete per questo corso, scegliete un bel nome `r emoji("winking face")`)
+- Aprire un file di `R`  
+- "Giocate" con il dataset (`head()`, `str()`)
+
+<div align="center;">
+ADAVANCED
+</div>
+
+Salvare il dataset in un oggetto chiamato `data` (tip: `<-`)
+
+
+
+
+
+
+
