@@ -2,22 +2,54 @@
 title: "01 - Baby steps"
 author: "Ottavia M. Epifania"
 date: ''
-output:
+output: 
   ioslides_presentation: 
+    css: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/arca.css
     logo: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/arca_logo.svg
+    theme: united
     widescreen: yes
-    smaller: yes
-editor_options:
-  chunk_output_type: console
+    highlight: haddock
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, 
-                      fig.align = "center", 
-                      fig.path = "C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/")
+                      fig.align = "center")
 library("icons")
 library("emoji")
 ```
+
+
+```{r functions, include=FALSE}
+put_image <- function(name){
+ img <- file.path("img", name)
+ knitr::include_graphics(img)
+}
+```
+
+
+## Creare un nuovo file `RMarkdown` {.build}
+
+<div align="center">
+Easy peasy `r emoji("lemon")` squeezy:  
+</div>
+
+<div style="float: left; width: 50%;">
+
+```{r, out.width="80%"}
+knitr::include_graphics(path = "img/new00.png")
+```
+
+</div>
+
+<div style="float: right; width: 50%;">
+
+```{r, out.width="80%"}
+knitr::include_graphics(path = "img/new01.png")
+```
+</div>
+
+
 
 ## Default file `RMarkdown`
 
@@ -32,15 +64,30 @@ output: html_document
 ---
 ```
 
-Questo è l'header YAML ed è dove andiamo a definire il tipo di file che voglimao, il titolo, l'autore, la data. 
+Questo è l'header YAML ed è dove andiamo a definire il tipo di file che vogliamo, il titolo, l'autore, la data. 
 
-Per compilare il file si può premer sul tasto **knit** oppure si può usare la combo di tasti `shift + ctrl + k` (per chi ha il Mac `shift + cmd + k`)
+Per compilare il file si può premere sul tasto **knit** oppure si può usare la combo di tasti `shift + ctrl + k` (per chi ha il Mac `shift + cmd + k`)
 
 Siccome nel nostro header abbiamo `output: html_document` (il default), il file compilato sarà un file `html` 
 
+## Your turn!
+
+- Create un nuovo file 
+
+- Date un titolo a scelta
+
+- Cliccate "knit"!
+
+<div align="center">
+ADAVANCED
+</div>
+
+- Mettere un sottotitolo
+- Togliere la data
+
 ## Dettagli sulla compilazione 
 
-- Si può scegliere il tipo di file da compilare cambiando da `output: html_document` a `output: pdf_document` (Questa operazione si può svolgere anche cliccando sulla freccina accanto a **knit** e selezionando "Knit to PDF")
+Si può scegliere il tipo di file da compilare cambiando da `output: html_document` a `output: pdf_document` (Questa operazione si può svolgere anche cliccando sulla freccina accanto a **knit** e selezionando "Knit to PDF")
 
 Nel caso abbiate seguito la seconda strada, viene modificato lo YAML del file: 
 
@@ -50,14 +97,120 @@ title: "Esempio di File di testo"
 author: "Ottavia M. Epifania"
 date: "5/3/2022"
 output: 
-  hmtl_document: default
+  pdf_document: default
   html_document: default
+---
 ```
 
 Ma non preoccupatevi, è la stessa cosa! 
 
-In questo corso, noi useremo principalmente il formato PDF per quello che riguarda i file di testo.
 
-## YAML per dire chi siamo, cosa facciamo e dove lo facciamo
+## Tutti per lo YAML, uno YAML per tutto
 
-Al default che abbiamo visto prima, possiamo aggiungere sottoti
+Nello YAML andiamo ad indicare varie specifiche del nostro file (che vedremo in seguito). 
+
+
+Per ora, aggiungiamo un sottotitolo: 
+
+```{r,echo = TRUE, eval=FALSE}
+---
+title: "Esempio di File di testo"
+subititle: "Ecco il sottotitolo"
+author: "Ottavia M. Epifania"
+date: "5/3/2022"
+output: 
+  pdf_document: default
+  html_document: default
+---
+```
+
+
+## Si possono pure togliere pezzi {.build}
+
+<div>
+La data non sta molto bene: Provate a toglierla!
+</div>
+
+<div>
+```{r,echo = TRUE, eval=FALSE}
+---
+title: "Esempio di File di testo"
+subititle: "Ecco il sottotitolo"
+author: "Ottavia M. Epifania"
+date: ""
+output: 
+  pdf_document: default
+  html_document: default
+---
+```
+</div>
+
+# Gli headers
+
+## Cosa sono
+
+Sono i titoli delle sezioni, sottosezioni e dei pargrafi
+
+<div style="float: left; width: 50%;">
+    # Header 1
+    
+    ## Header 2
+    
+    ### Header 3
+    
+    #### Header 4
+</div>
+
+<div style="float:right; width: 50%;">
+Titolo di una sezione
+
+Titolo di una sottosezione
+
+Titolo della sotto-sottosezione <font size="2">(seriously)</font>
+
+Titolo del paragrafo
+
+</div>
+
+## Come si usano {.build}
+
+<div>
+    # Header 1
+    
+    Brividi brividi brividiiiiiii
+
+
+
+```{r, out.width="30%"}
+knitr::include_graphics(path = "img/header1.png")
+```
+</div>
+
+<div>
+
+<font size="3">Anche tutti gli altri header funzionano così, ad eccezione di `#### Header 4` </font>
+
+    #### Titolo di un paragrafo
+    
+    Testo del paragrafo molto importante
+    
+
+```{r, out.width="50%"}
+knitr::include_graphics(path = "img/header4.png")
+```
+
+</div>
+
+
+
+
+## Opzioni carattere
+
+- Standard font
+- <span style="color:red">Change the font colour</span>
+- <font size="1">This is some text size 1!</font>
+- <font size="1">This is some text size 1!</font>
+- <font size="2">This is some text size 2!</font>
+- <font size="3">This is some text size 3!</font>
+- <font size="4">This is some text size 4!</font>
+- <font size="5">This is some text size 5!</font>
