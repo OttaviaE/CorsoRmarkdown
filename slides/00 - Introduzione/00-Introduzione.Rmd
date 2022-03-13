@@ -1,5 +1,5 @@
 ---
-title: 'Giornata #1 - Introduzione'
+title: '00-Introduzione'
 author: "Ottavia M. Epifania"
 date: ''
 output:
@@ -166,8 +166,8 @@ Ad ognuno viene assegnato un dataset e dovrà lavorare su quello per tutto il co
 - Aprire un file di `R`  
 - "Giocate" con il dataset (`head()`, `str()`)
 
-<div align="center;">
-ADAVANCED
+<div align="center">
+ADVANCED
 </div>
 
 Salvare il dataset in un oggetto chiamato `data` (tip: `<-`)
