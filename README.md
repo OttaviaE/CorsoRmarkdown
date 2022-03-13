@@ -14,8 +14,14 @@ software [`R`](https://cran.r-project.org/bin/windows/base/). *Dopo*
 aver scaricato `R`, si può scaricare la Integrated Development
 Environment (IDE) di `R`, ossia
 [`RStudio`](https://www.rstudio.com/products/rstudio/download/).
+Infine,è necesario scaricare e installare anche
+[`Latex`](https://miktex.org/download)
 
 A questa pagina è disponibile una prima introduzione a
 [`RMarkdown`](https://rmarkdown.rstudio.com/lesson-1.html). Per
 partecipare al corso, è necessario sapere usare `R`, almeno i suoi
 pacchetti base.
+
+Questo corso fa parte dei corsi ARCA (Applied Research Courses Academy).
+A [questa pagina](https://www.dpss.unipd.it/arca/home) è possibile
+ottenere infromazioni circa gli altri corsi disponibili.
