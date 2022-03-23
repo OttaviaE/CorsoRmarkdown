@@ -201,10 +201,117 @@ knitr::include_graphics(path = "img/header4.png")
 
 </div>
 
+## I numeri di sezione
+
+Per aggiungere i numeri delle sezioni, basta aggiungere allo YAML
+
+<div style="float: left; width: 50%;">
+
+    title: "Esempio di File"
+    subtitle: Sottotitolo
+    date: "5/3/2022"
+    author: Ottavia M. Epifania
+    output:
+    pdf_document: 
+     number_sections: true
+</div>
 
 
+<div style="float: right; width: 50%;">
 
-## Opzioni carattere
+```{r out.width="50%"}
+knitr::include_graphics(path = "img/numeHeader.png")
+```
+
+</div>
+
+
+## Table of contents
+
+Per aggiungere l'indice, bisogna modificare lo YAML: 
+
+    output:
+       pdf_document: 
+       number_sections: true
+       toc: true
+
+con l'argomento `toc_depth` si può specificare il livello di profondità dell'indice. 
+
+Con `toc_depth: 1` vengono riportati solo i  titoli delle sezioni (Heder 1), con `toc_depth: 2` i titoli delle sezioni e sottosezioni (Header 1 e 2, default) e via discorrendo.
+
+## Your turn
+
+- Creare un documento 
+- Usare il nome del vostro dataset come titolo
+- sottotitolo a scelta
+- Al posto della data $\rightarrow$ Università di Padova
+
+<div align="center">
+<span style="color:#FF0000">ADAVANCED</span>
+</div>
+
+- Aggiungere almeno 3 headings (e.g., "Titolo 1", "Titolo 2", "Titolo 3")
+- Table of contents
+
+# Formattazione del testo
+
+## Interlinea & Margini
+
+YAML: 
+
+    output:
+      pdf_document: 
+      keep_tex: yes
+       number_sections: true
+       toc: true
+       toc_depth: 1
+    linestretch: 1.5
+    geometry: margin=1in 
+
+## Corsivo, grassetto, corsetto, colori
+
+<div style="float: left; width: 50%;">
+    *Corsivo*
+    
+    **Grassetto**
+    
+    ***Corsetto***
+</div>
+
+<div style="float: right; width: 50%;">
+*Corsivo*
+    
+**Grassetto**
+    
+***Corsetto***
+</div>
+
+<div style="float:left; width=90%;">
+Per aggiungere una parola colorata: 
+
+    \textcolor{red}{Parola molto colorata}
+
+</div>
+
+## Your turn!
+
+- Modifcare i margini del documento a 0.5in
+- Impostare l'interlinea di un punto e mezzo
+- Mettere delle parole in corsivo, grassetto e corsetto
+- Aggiungere delle parole colorate
+
+<div align="center">
+<span style="color:#FF0000">ADAVANCED</span>
+</div>
+
+- Aggiungere una parola colorata in **grassetto**
+- Aggiungere una parola colorata in *corsivo*
+- Aggiungere una parola colorata in *corsetto*
+
+## Block quote
+
+
+## Font style
 
 - Standard font
 - <span style="color:red">Change the font colour</span>
