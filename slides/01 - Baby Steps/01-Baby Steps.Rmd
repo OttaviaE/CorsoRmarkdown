@@ -4,13 +4,16 @@ author: "Ottavia M. Epifania"
 date: ''
 output: 
   ioslides_presentation: 
-    css: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/arca.css
+    css: "C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/arca.css"
     logo: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/arca_logo.svg
     theme: united
     widescreen: yes
     highlight: haddock
 ---
 
+<style>
+.forceBreak { -webkit-column-break-after: always; break-after: column; }
+</style>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, 
@@ -286,7 +289,7 @@ YAML:
 ***Corsetto***
 </div>
 
-<div style="float:left; width=90%;">
+<div style="float:left; width=100%;">
 Per aggiungere una parola colorata: 
 
     \textcolor{red}{Parola molto colorata}
@@ -306,10 +309,206 @@ Per aggiungere una parola colorata:
 
 - Aggiungere una parola colorata in **grassetto**
 - Aggiungere una parola colorata in *corsivo*
-- Aggiungere una parola colorata in *corsetto*
+- Aggiungere una parola colorata in ***corsetto***
 
-## Block quote
+## Block quote {.build}
 
+<div>
+Molto semplicemente, si fa precedere il testo da `>`: 
+
+    Una canzone de "La rappresentante di lista", presentata a Sanremo 2022
+    > Come stai bambina?
+     Dove vai stasera?
+     Che paura intorno
+     È la fine del mondo
+     Sopra la rovina sono una regina
+     Ma-ma-ma
+     Ma non so cosa salvare
+</div>
+
+<div>
+```{r, out.width="70%"}
+knitr::include_graphics(path = "img/block.png")
+```
+
+</div>
+
+## Elenchi {.build}
+
+<div style="float: left; width: 50%;">
+
+    - Chimica
+    - Ciao Ciao
+    - Brividi
+    - Domenica
+
+- Chimica
+- Ciao Ciao
+- Brividi
+- Domenica
+   
+</div>
+
+
+<div style="float: right; width: 50%;">
+
+    1. Brividi
+    2. La canzone di Elisa
+    3. Gianni Morandi
+    4. Non mi ricordo
+
+1. Brividi
+2. La canzone di Elisa
+3. Gianni Morandi
+4. Non mi ricordo
+
+</div>
+
+
+
+## Elenchi annidati {.build}
+
+Basta mettere tre spazi sull'elenco che si vuole annidare: 
+
+<div style="float: left; width: 50%;">
+
+    - Un elenco
+        - Voce del secondo elenco
+        - altra voce del secondo elenco
+    - Seconda voce del primo elenco
+
+</div>
+
+
+<div  style="float: right; width: 50%;">
+
+- Un elenco
+    - Voce del secondo elenco
+    - altra voce del secondo elenco
+- Seconda voce del primo elenco
+
+</div>
+
+## Your turn
+
+- Creare una unordered list
+- Creare una ordered list
+- Annidare una unordered list in una ordered list
+
+<div align="center">
+<span style="color:#FF0000">ADAVANCED</span>
+</div>
+
+- Inserire una list a scelta (ordered o unordered) in un block quote
+- Inserire una lista a scelta (ordered o unordered) dentro un'altra lista a scelta dentro un block quote (Inception style `r emoji("smiling face with sunglasses")`)
+
+# Inserire immagini
+
+## `Markdown` style vs. `RMarkdown` {.columns-2 .smaller}
+
+
+
+`![Caption](percorso-alla-figura)`
+
+![Prima del corso `RMarkdown`](C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/slides/01 - Baby Steps/img/oldManHappy.jpg)
+
+
+<p class="forceBreak"></p>
+
+
+````
+```{r, fig.cap = "Caption"}`r ''`
+knitr::include_graphics("percorso-alla-figura")
+```
+````
+```{r, fig.cap="Dopo il corso `RMarkdown`"}
+knitr::include_graphics("img/oldManSad.jpg")
+```
+
+# Bibliografia
+
+## Torniamo allo YAML
+
+    output:
+      pdf_document: 
+      keep_tex: yes
+       number_sections: true
+       toc: true
+       toc_depth: 1
+    linestretch: 1.5
+    geometry: margin=1in 
+    bibliography: biblio.bib
+
+Ecco fatto, messa ma la bibliografia!
+
+Ovviamente, il file `biblio.bib` va creato ex-novo
+
+## Creare `.bib`
+
+`.bib` è l'estensione del file. Sia `R` sia `LaTeX` riconoscono i file `.bib` come file di bibliografia.
+
+Crearli è molto semplice: 
+
+0. Si decide qual è la letteratura rilevante per quello che stiamo facendo
+1. si va su Google scholar e si copia la citazione in formato `BibText`: 
+
+```{r}
+knitr::include_graphics(path = "img/bibScholar.png")
+```
+
+##
+
+<ol start="3">
+  <li> La citazione risulta essere:</li>
+</ol>
+
+
+
+    ```
+    @article{epifania2021implicit,
+    title={Implicit social cognition through the years: The Implicit Association Test at age     21.},
+    author={Epifania, Ottavia M and Anselmi, Pasquale and Robusto, Egidio},
+    journal={Psychology of Consciousness: Theory, Research, and Practice},
+    year={2021},
+    doi={https://doi.org/10.1037/cns0000305},
+    publisher={Educational Publishing Foundation}
+    }
+    ```
+   
+<ol start="4">
+  <li> La copiaincolliamo in un documento vuoto </li>
+  <li> Salviamo il documento con un nome a scelta (e.g., `biblio`) **ma soprattutto** ricordando l'estensione `.bib` </li> 
+</ol>
+
+`r emoji("red exclamation mark")` `epifania2021implicit` è la "chiave che ci permette di citare l'articolo nel testo 
+
+## Come citare nel testo
+
+Autori e anno tra parentesti: 
+
+    Lo IAT è lo strumento implicito più usato [@epifania2021implicit]
+
+Autori nel testo e anno tra parentesi: 
+
+    @epifania2021implicit dicono che lo IAT sia molto usato
+
+Autori e anno tra parentesi con dettagli dopo l'anno: 
+
+    Lo IAT è lo strumento implicito più usato [@epifania2021implicit, pag. 34]
+
+Autori e anno tra parentesi con dettagli prima degli autori:
+
+    Per la misurazione implicita si usa lo IAT [lo strumento più usato, @epifania2021implicit]
+    
+## Your turn
+
+1. Creare un file `.bib` che contenga questi due articoli:
+
+    > DscoreApp: a shiny web application for the computation of the implicit association test d-score
+    >
+    > Implicit measures with reproducible results: The implicitMeasures package
+
+2. 
 
 ## Font style
 
