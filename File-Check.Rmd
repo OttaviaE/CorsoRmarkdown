@@ -1,0 +1,20 @@
+---
+title: "File check"
+author: "Ottavia M. Epifania"
+date: ""
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Questo è un file di prova per assicurarsi che l'installazione dei programmi necessari per il corso siano andati a buon fine. 
+
+Per ottenere il PDF di questo file, cliccare sul pulsante `knit` in alto o premere la combinazione di tasti `ctrl + shift + k` (`cmd + shift + k` su Mac). 
+
+Se non riusciste a compilare il file, mettetevi in contatto con la docente all'indirizzo ottavia.epifania@unipd.it **ASAP**. 
+
+Enjoy =)
