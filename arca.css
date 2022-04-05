@@ -5,10 +5,20 @@
     color: #9B0A14;
 }
 
+h2 {
+    color: #9B0A14;
+}
+
+h3 {
+    color: #9B0A14;
+}
+
 .remark-slide-content {
     font-size: 20px;
     line-height: 1.6;
 }
+
+
 
 /* bullet list */
 
@@ -145,6 +155,12 @@ th, td { padding: 5px; }
 .section .remark-slide-number {
   display: none;
 }
+
+/* force break between columns */
+
+<style>
+.forceBreak { -webkit-column-break-after: always; break-after: column; }
+</style>
 
 /* chpater pages */
 
