@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## `RMarkdown`: cos'è
 
-`RMarkdown` è il markup language di `R`. Cosa vuol dire questa frase? Partiamo con il dire che "markup language" identifica un linguaffio di programmazione dove vengono usati brevi pezzi di codice, detti **tags**, per campiare l'aspetto del testo. In poche parole, la formattazione del testo è controllata dal codice con cui è scritto. Ancora poco chiaro? Non preoccupatevi, è normale. Un esempio classico di markup language è il codice HTML usato per i siti e le pagine online: 
+`RMarkdown` è il markup language di `R`. Cosa vuol dire questa frase? Partiamo con il dire che "markup language" identifica un linguaggio di programmazione dove vengono usati brevi pezzi di codice, detti **tags**, per cambiare l'aspetto del testo. In poche parole, la formattazione del testo è controllata dal codice con cui è scritto. Ancora poco chiaro? Non preoccupatevi, è normale. Un esempio classico di markup language è il codice HTML usato per i siti e le pagine online: 
 
 ```{r fig.align="center", out.width="50%", fig.cap="Testo in HTML"}
 knitr::include_graphics("man/html-example.png")
@@ -40,9 +40,9 @@ Per installare `RMarkdown`:
 
 - [Download <img width="10%" height="10%" src="man/R.png">](https://cran.r-project.org/bin/windows/base/) [Installare R seguendo il prompt di installazione]
 
-- [Download <img width="10%" height="10%" src="man/Rstudio.png">](https://www.rstudio.com/products/rstudio/download/) [Installare R seguendo il prompt di installazione]
+- [Download <img width="10%" height="10%" src="man/Rstudio.png">](https://www.rstudio.com/products/rstudio/download/) [Installare RStudio seguendo il prompt di installazione]
 
-- [Download <img width="10%" height="10%" src="man/latex_logo.png">](https://miktex.org/download) [Installare R seguendo il prompt di installazione]
+- [Download <img width="10%" height="10%" src="man/latex_logo.png">](https://miktex.org/download) [Installare MikTex seguendo il prompt di installazione]
 
 Dopo aver installato tutti i programmi, aprire `RStudio`. Nel pannello `Console` di `RStudio` digitare: 
 
@@ -52,7 +52,7 @@ e premere `Invio`.
 
 ## Check
 
-Per controllare se si è svolta tutta la procedura correttamente, scaricare il file con estensione `.Rmd` da , aprirlo in `RStudio` e cliccare su `knit`. Se la procedura di installazione è andata a buon fine, dovreste riuscire ad ottenere un PDF del file. Nel caso non riusciste a compilare il file, mettetevi in contatto con me al più presto (ottavia.epifania@unipd.it)
+Per controllare se si è svolta tutta la procedura correttamente, scaricare il file con estensione `.Rmd` da https://drive.google.com/drive/folders/1OW61q2oRXi_HgPj0woayPJusoAYUXmsE, aprirlo in `RStudio` e cliccare su `knit`. Se la procedura di installazione è andata a buon fine, dovreste riuscire ad ottenere un PDF del file. Nel caso non riusciste a compilare il file, mettetevi in contatto con me al più presto (ottavia.epifania@unipd.it)
 
 # Piccolo questionario
 
@@ -63,3 +63,5 @@ Grazie e a prestissimo!
 ## Resources
 
 Se volete vedere cosa vi aspetta, a [questa pagina](https://bookdown.org/yihui/rmarkdown/) è disponibile una guida completa a `RMarkdown`
+
+A [questa pagina](https://rmarkdown.rstudio.com/gallery.html) trovate la galleria delle cose che  si possono ottenere con `RMarkdown`
