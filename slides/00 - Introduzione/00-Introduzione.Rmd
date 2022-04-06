@@ -6,7 +6,6 @@ output:
   ioslides_presentation:
     css: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/arca.css
     logo: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/arca_logo.svg
-    theme: united
     widescreen: yes
 editor_options:
   chunk_output_type: console
@@ -15,42 +14,130 @@ editor_options:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, 
                       fig.align = "center", 
-                      fig.path = "C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/")
+                      fig.path = "C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/", 
+                      message = FALSE, 
+                      warning = FALSE)
 library("icons")
 library("emoji")
 ```
+
+<style>
+.forceBreak { -webkit-column-break-after: always; break-after: column; }
+</style>
 
 # `RMarkdown`
 
 ## Di cosa stiamo parlando? {.build}
 
 <div>
-Tutto nasce da `markdown` (data di nascita 2004). 
 
-`markdown` è un markup languange, ossia un linguaggio per scrivere note su un documento di codice. 
+`markdown` è un markup languange, ossia un linguaggio di programmazione dove la formattazione è gestita da pezzi di codice ("tags"). 
 
 L'estensione dei `markdown` è un file `.md`
 
-
 </div>
-
-<div align= "center">
-<img width="50%" height="50%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/md.png">
-</div>
-
-## {.build}
 
 <div>
-`RStudio` non poteva stare a guardare: così nasce `RMarkdown`, che non è altro che un modo per creare documenti `markdown` usando `RStudio`
-
-Inoltre, `RStudio` permette di inserire dati, codici, grafici, analisi all'interno dello stesso file di testo (viva la replicabilità!)
-
-L'estensione dei `RMarkdown` è un file `.Rmd`
+Sono disponibili diversi software per redigere documenti in `.md`:
 </div>
 
-<div align="center">
-<img width="50%" height="50%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/rmarkdown.png">
+
+```{r fig.align='center', out.width="60%", fig.cap="https://dillinger.io/"}
+knitr::include_graphics("C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/dillinger.png")
+```
+
+
+
+## Markup languages {.build .columns-2}
+
+HTML è un classico esempio di markup language: 
+
+```{r}
+knitr::include_graphics("C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/html-example.png")
+```
+
+<p class="forceBreak"></p>
+
+Anche LaTeX è un markup language <font size="2"> the best</font>
+
+```{r}
+knitr::include_graphics("C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/latex.png")
+```
+
+## WYSIWYG system
+
+Word <font size ="2">(o Google docs o Libre Office o Pages)</font> è un sistema **W**hat **Y**ou **S**ee **I**s **W**hat **Y**ou **G**et $\rightarrow$ il prodotto finale è uguale a quello che si vede sullo schermo
+
+Il testo viene direttamente modificato attraverso dei comandi built-in, con combinazioni di tasti o attraverso il menu di formattazione.
+
+```{r fig.align="center", out.width="50%"}
+knitr::include_graphics("C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/word.png")
+```
+
+## Ma allora perché...? {.build}
+
+</br>
+
+```{r fig.align='center', out.width="50%", out.height="50%"}
+knitr::include_graphics("C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/memeWord.png")
+```
+
+## Non solo
+
+- `RMarkdown` permette di inserire **direttamente nel file di testo** i risultati delle analisi svolte, inclusi i grafici!
+
+- Il codice usato per le analisi è dentro il file di report o la presentazione stessa: non si rischia di perdere qualche pezzo per strada
+
+- `r emoji("musical notes")` All you need is `knit` `r emoji("musical note")` 
+
+## Un esempio
+
+Questo grafico:
+
+```{r, out.width="80%"}
+library(ggplot2)
+ggplot(iris, 
+       aes(x=Sepal.Length, y = Petal.Length)) + geom_point() + 
+  geom_smooth(method="lm") + theme_minimal()
+
+```
+
+Ma vi viene chiesto di cambiare colore alla retta di regressione!
+
+## Cosa dovreste fare {.built .columns-2}
+
+<div>
+In Word: 
+
+- Ripredere il codice che avete usato
+- Fare le modifiche al codice
+- Creare il grafico
+- Salvare il grafico
+- Metterlo dentro al file Word, al posto di quello vecchio
 </div>
+
+
+<p class="forceBreak"></p>
+
+<div>
+
+In `RMarkwown` All you need is `knit` `r emoji("musical note")` :
+
+- Prendere il codice usato per generare il grafico:
+
+```{r eval = FALSE, echo = TRUE}
+library(ggplot2)
+ggplot(iris, 
+       aes(x=Sepal.Length, y = Petal.Length)) + 
+  geom_point() + theme_minimal()
+  geom_smooth(method="lm")
+
+```
+
+- Aggiungere il colore che volete (`geom_smooth(method="lm", color="red")`)
+- Cliccare `knit`
+</div>
+
 
 ## Cosa può fare `RMarkdown`?{.build}
 
@@ -58,7 +145,7 @@ L'estensione dei `RMarkdown` è un file `.Rmd`
 
 - Produrre presentazioni in HTML e PDF <font size="3">(volendo anche in `.pptx` ma è **molto** sconsigliato)</font>
 
-- Produrre file PDF usando il motore di \LaTeX
+- Produrre file PDF usando il motore di LaTeX
 
 - Le slides di questo corso
 
@@ -69,22 +156,11 @@ L'estensione dei `RMarkdown` è un file `.Rmd`
 Permette la riproducibilità dei dati e delle analisi svolte sugli stessi tenendo in unico file report, dati, codici e risultati
 
 
-# Cosa faremo in questo corso
+## Cosa faremo in questo corso
 
-## Baby steps: comandi basici di `RMarkdown` 
+- Baby steps: Comandi basici di `RMarkdown` 
 
-**Grassetto**, *Corsivo*, _**Grassetto Corsivo**_, $3+2 =5$ 
-
-$$3 + 2 = 5$$
-```{r eval = TRUE, echo = TRUE}
-a = 3
-b = 2
-c = a + b
-```
-
-Usare il risultato del chunck nel testo `r c`
-
-immagini (settare la directory delle immagini)
+- Chunck di codice: Dalle immagini ai grafici passando per i codici
 
 - Creazione di un documento PDF con bibliografia 
 
@@ -92,32 +168,45 @@ immagini (settare la directory delle immagini)
 
 - Piccola esercitazione finale
 
-# Installare `RMarkdown`
 
-##
-
-`RMarkdown` è un pacchetto di `R`. 
-
-In quanto tale, ha bisogno che sia `R` sia `RStudio` siano installati sul vostro computer: 
-
-[Download <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/R.png">](https://cran.r-project.org/bin/windows/base/) 
-
-[Download <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/Rstudio.png">](https://www.rstudio.com/products/rstudio/download/)
-- Seguite le istruzioni di installazione
-
-<img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/Rstudio.png"> è solo un'interfaccia! è necessario scaricare prima <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/R.png">!
-
-## Non è ancora finita
-
-<img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/R.png"> e <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/Rstudio.png"> è la base, <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/Rstudio.png"> è l'interfaccia, ma c'è bisogno del motore per produrre PDF: `LaTeX` (scaricabile https://miktex.org/download).
-
-A questo punto si può finalmente installare `RMarkdown` aprendo `RStudio` e digatndo nella consolle:
-
-    install.packages("RMarkdown")
-
-e infine premendo invio.
+## Cosa non faremo in questo corso
 
 
+[<img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/pagedown.png">](https://pagedown.rbind.io/): Rende  più facile il rendering in PDF
+
+[<img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/bookdown.png">](https://bookdown.org/): Come sopra
+
+[xaringam](https://slides.yihui.org/xaringan/#1): Per produrre presentazioni più belle 
+
+Integrazione con <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/latex_logo.png"> <font size="2"> ne vedremo solo qualche pezzettino </font>
+
+
+<!-- # Installare `RMarkdown` -->
+
+<!-- ##  -->
+
+<!-- `RMarkdown` è un pacchetto di `R`.  -->
+
+<!-- In quanto tale, ha bisogno che sia `R` sia `RStudio` siano installati sul vostro computer:  -->
+
+<!-- [Download <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/R.png">](https://cran.r-project.org/bin/windows/base/)  -->
+
+<!-- [Download <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/Rstudio.png">](https://www.rstudio.com/products/rstudio/download/) -->
+<!-- - Seguite le istruzioni di installazione -->
+
+<!-- <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/Rstudio.png"> è solo un'interfaccia! è necessario scaricare prima <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/R.png">! -->
+
+<!-- ## Non è ancora finita -->
+
+<!-- <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/R.png"> e <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/Rstudio.png"> è la base, <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/Rstudio.png"> è l'interfaccia, ma c'è bisogno del motore per produrre PDF: `LaTeX` (scaricabile https://miktex.org/download). -->
+
+<!-- A questo punto si può finalmente installare `RMarkdown` aprendo `RStudio` e digtando nella consolle: -->
+
+<!--     install.packages("RMarkdown") -->
+
+<!-- e infine premendo invio. -->
+
+# Let's get started `r emoji("partying face")`
 
 ## Ordine ordine ordine ordine (e ancora ordine)
 
@@ -125,7 +214,7 @@ e infine premendo invio.
 `Rstudio` Project
 </div>
 
-Consente di creare una directory all'interno di cui vengono messi tutti i file (immagini, dati, bibliografia) necessari per la creazione della tesi/report/presentazione che si sta facendo
+Consente di creare una directory e di organizzarla in subdirectory all'interno di cui vengono messi tutti i file (immagini, dati, bibliografia) necessari per la creazione della tesi/report/presentazione che si sta facendo
 
 Mantiene tutto in ordine e facilmente controllabile
 
