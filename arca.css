@@ -156,6 +156,20 @@ th, td { padding: 5px; }
   display: none;
 }
 
+/* logo size */
+
+/* specify logo size at title page */
+.gdbar img {
+  width: 160px !important;
+  height: 122px !important;
+  margin: 8px 8px;
+}
+
+.gdbar {
+  height: 140px !important;
+}
+
+
 /* force break between columns */
 
 <style>
