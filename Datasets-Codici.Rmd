@@ -1,0 +1,330 @@
+---
+title: "Datasets e codici"
+author: "Corso RMarkdown"
+date: ""
+output: 
+  html_document:
+    logo: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/arca_logo.svg
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval=FALSE)
+```
+
+# Intro
+
+In questo file, trovate i codici per svolgere le analisi (regressione lineare e un grafico) su ognuno dei [dataset](https://docs.google.com/document/d/1xBr-zNRTvUrKABrU7CQDM_8rZVg2gmij_aaP-0laljM/edit). Per fare in modo che tutti voi lavoriate con le stesse variabili, la variabile dipedente verrà chiamata `y` e quella independente `x`. Inoltre, tutti i dataset verranno ribattezzati `data`. Questo per fare sì che durante le lezioni si possa usare tutti lo stesso codice. Per la mini presentazione di fine corso, fate riferimento ai nomi "originali" delle variabili.
+
+Per avere maggiori info sul dataset e sulle variabili che contiene, digitare nella console `?nome.dataset` (e.g., `?mtcars`)
+
+
+```{r, echo=FALSE, out.width="30%"}
+htmltools::img(src = "C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/arca_logo.svg", 
+               style = 'position:absolute; top:0; right:0; padding:40px; width:10%')
+```
+
+---
+## `ChickWeight`
+
+Effetto della dieta sulla crescita dei polli: 
+
+La variabile dipedente è ``r colnames(ChickWeight)[1]``, il predittore è la variabile ``r colnames(ChickWeight)[ncol(ChickWeight)]``
+
+```{r}
+# assegnare il dataset all'oggetto data
+data = ChickWeight
+# rinominare la variabaile dipendente in y
+data$y = ChickWeight$weight
+# rinominare la variabile indipedente in x
+data$x = ChickWeight$Diet
+# maggiori dettagli sulla x
+table(data$x)
+
+# grafico 
+plot(data$y ~ data$x)
+
+# regressione
+m = lm(y ~ x, data = data)
+# summary del modello
+summary(m)
+```
+
+## `InsectSprays`
+
+Effetto degli insetticidi sugli insetti.
+
+La variabile dipedente è ``r colnames(InsectSprays)[1]``, il predittore è la variabile ``r colnames(InsectSprays)[ncol(InsectSprays)]``
+
+```{r}
+# assegnare il dataset all'oggetto data
+data = InsectSprays
+# rinominare la variabaile dipendente in y
+data$y = InsectSprays$count
+# rinominare la variabile indipedente in x
+data$x = InsectSprays$spray
+# maggiori dettagli sulla x
+table(data$x)
+
+# grafico 
+plot(data$y ~ data$x)
+
+# regressione
+m = lm(y ~ x, data = data)
+# summary del modello
+summary(m)
+```
+## `iris`
+
+Misure di petali di diversi tipi di fiori
+
+La variabile dipedente è ``r colnames(iris)[1]``, il predittore è la variabile ``r colnames(iris)[ncol(iris)]``
+
+```{r}
+# assegnare il dataset all'oggetto data
+data = iris
+# rinominare la variabaile dipendente in y
+data$y = iris$Sepal.Length
+# rinominare la variabile indipedente in x
+data$x = iris$Species
+# maggiori dettagli sulla x
+table(data$x)
+
+# grafico 
+plot(data$y ~ data$x)
+
+# regressione
+m = lm(y ~ x, data = data)
+# summary del modello
+summary(m)
+```
+## `ToothGrowth`
+
+Crescita dei denti nelle cavie in base a diversi livelli di vitamina C
+
+La variabile dipedente è ``r colnames(ToothGrowth)[1]``, il predittore è la variabile ``r colnames(ToothGrowth)[ncol(ToothGrowth)]``
+
+```{r}
+# assegnare il dataset all'oggetto data
+data = ToothGrowth
+# rinominare la variabaile dipendente in y
+data$y = ToothGrowth$len
+# rinominare la variabile indipedente in x
+data$x = ToothGrowth$supp
+# maggiori dettagli sulla x
+table(data$x)
+
+# grafico 
+plot(data$y ~ data$x)
+
+# regressione
+m = lm(y ~ x, data = data)
+# summary del modello
+summary(m)
+```
+## `PlantGrowth` 
+
+Crescita delle piante in base a tre condizioni sperimentali (una di controllo, due sperimentali)
+
+La variabile dipedente è ``r colnames(PlantGrowth)[1]``, il predittore è la variabile ``r colnames(PlantGrowth)[ncol(PlantGrowth)]``
+
+```{r}
+# assegnare il dataset all'oggetto data
+data = PlantGrowth
+# rinominare la variabaile dipendente in y
+data$y = PlantGrowth$weight
+# rinominare la variabile indipedente in x
+data$x = PlantGrowth$group
+# maggiori dettagli sulla x
+table(data$x)
+
+# grafico 
+plot(data$y ~ data$x)
+
+# regressione
+m = lm(y ~ x, data = data)
+# summary del modello
+summary(m)
+```
+
+## `mtcars`
+
+Consumo di carbuarnte di diverse automobili
+
+La variabile dipedente è ``r colnames(mtcars)[1]``, il predittore è la variabile ``r colnames(mtcars)[2]``
+
+```{r}
+# assegnare il dataset all'oggetto data
+data = mtcars
+# rinominare la variabaile dipendente in y
+data$y = mtcars$mpg
+# rinominare la variabile indipedente in x
+data$x = mtcars$cyl
+# maggiori dettagli sulla x
+table(data$x)
+
+# grafico 
+plot(data$y ~ data$x)
+
+# regressione
+m = lm(y ~ x, data = data)
+# summary del modello
+summary(m)
+```
+
+## `Orange`
+
+Crescita degli alberi di arance
+
+La variabile dipedente è ``r colnames(Orange)[ncol(Orange)]``, il predittore è la variabile ``r colnames(Orange)[1]``
+
+```{r}
+# assegnare il dataset all'oggetto data
+data = Orange
+# rinominare la variabaile dipendente in y
+data$y = Orange$circumference
+# rinominare la variabile indipedente in x
+data$x = Orange$Tree
+# maggiori dettagli sulla x
+table(data$x)
+
+# grafico 
+plot(data$y ~ data$x)
+
+# regressione
+m = lm(y ~ x, data = data)
+# summary del modello
+summary(m)
+```
+
+## `OrchardSprays`
+
+Efficacia di un insetticida per repellere gli insetti
+
+La variabile dipedente è ``r colnames(OrchardSprays)[1]``, il predittore è la variabile ``r colnames(OrchardSprays)[ncol(OrchardSprays)]``
+
+```{r}
+# assegnare il dataset all'oggetto data
+data = OrchardSprays
+# rinominare la variabaile dipendente in y
+data$y = OrchardSprays$decrease
+# rinominare la variabile indipedente in x
+data$x = OrchardSprays$treatment
+# maggiori dettagli sulla x
+table(data$x)
+
+# grafico 
+plot(data$y ~ data$x)
+
+# regressione
+m = lm(y ~ x, data = data)
+# summary del modello
+summary(m)
+```
+
+## `airquality`
+
+Qualità dell'aria a New York nel 1973
+
+La variabile dipedente è ``r colnames(airquality)[1]``, il predittore è la variabile ``r colnames(airquality)[ncol(airquality)-1]``
+
+```{r}
+# assegnare il dataset all'oggetto data
+data = airquality
+# rinominare la variabaile dipendente in y
+data$y = airquality$Wind
+# rinominare la variabile indipedente in x
+data$x = as.factor(airquality$Month)
+# maggiori dettagli sulla x
+table(data$x)
+
+# grafico 
+plot(data$y ~ data$x)
+
+# regressione
+m = lm(y ~ x, data = data)
+# summary del modello
+summary(m)
+```
+## `pressure`
+
+Relazione tra temperatura e pressione del mercurio.
+
+`r emoji::emoji("warning")` La variabile `x` è numerica (ma niente panico)
+
+La variabile dipedente è ``r colnames(pressure)[1]``, il predittore è la variabile ``r colnames(pressure)[ncol(pressure)]``
+
+
+```{r}
+# assegnare il dataset all'oggetto data
+data = pressure
+# rinominare la variabaile dipendente in y
+data$y = pressure$temperature
+# rinominare la variabile indipedente in x
+data$x = pressure$pressure
+# maggiori dettagli sulla x
+summary(data$x)
+
+# grafico 
+plot(data$y ~ data$x)
+
+# regressione
+m = lm(y ~ x, data = data)
+# summary del modello
+summary(m)
+```
+## `quakes`
+
+Terremoti vicino alle isole Fijii
+
+`r emoji::emoji("warning")` La variabile `x` è numerica (ma niente panico)
+
+La variabile dipedente è ``r colnames(quakes)[ncol(quakes)-1]``, il predittore è la variabile ``r colnames(quakes)[ncol(quakes)-2]``
+
+
+```{r}
+# assegnare il dataset all'oggetto data
+data = quakes
+# rinominare la variabaile dipendente in y
+data$y = quakes$mag
+# rinominare la variabile indipedente in x
+data$x = quakes$depth
+# maggiori dettagli sulla x
+summary(data$x)
+
+# grafico 
+plot(data$y ~ data$x)
+
+# regressione
+m = lm(y ~ x, data = data)
+# summary del modello
+summary(m)
+```
+
+## `rock`
+
+Misure di diverse rocce
+
+`r emoji::emoji("warning")` La variabile `x` è numerica (ma niente panico)
+
+La variabile dipedente è ``r colnames(quakes)[ncol(quakes)]``, il predittore è la variabile ``r colnames(quakes)[1]``
+
+
+```{r}
+# assegnare il dataset all'oggetto data
+data = rock
+# rinominare la variabaile dipendente in y
+data$y = rock$perm
+# rinominare la variabile indipedente in x
+data$x = rock$area
+# maggiori dettagli sulla x
+summary(data$x)
+
+# grafico 
+plot(data$y ~ data$x)
+
+# regressione
+m = lm(y ~ x, data = data)
+# summary del modello
+summary(m)
+```
