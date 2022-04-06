@@ -1,4 +1,4 @@
 # Quic'è lìindex
 
 
-[parola](Dataset-Codici.html)
+[parola](Datasets-Codici.html)
