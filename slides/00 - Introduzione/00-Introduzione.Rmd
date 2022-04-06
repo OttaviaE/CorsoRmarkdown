@@ -76,15 +76,15 @@ knitr::include_graphics("C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdow
 
 ## Ma allora perché...? {.build}
 
-</br>
 
-```{r fig.align='center', out.width="50%", out.height="50%"}
+```{r fig.align='center',out.width="35%"}
 knitr::include_graphics("C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/memeWord.png")
 ```
 
 ## Non solo
 
 - `RMarkdown` permette di inserire **direttamente nel file di testo** i risultati delle analisi svolte, inclusi i grafici!
+
 
 - Il codice usato per le analisi è dentro il file di report o la presentazione stessa: non si rischia di perdere qualche pezzo per strada
 
@@ -94,7 +94,7 @@ knitr::include_graphics("C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdow
 
 Questo grafico:
 
-```{r, out.width="80%"}
+```{r, out.width="60%"}
 library(ggplot2)
 ggplot(iris, 
        aes(x=Sepal.Length, y = Petal.Length)) + geom_point() + 
@@ -102,7 +102,7 @@ ggplot(iris,
 
 ```
 
-Ma vi viene chiesto di cambiare colore alla retta di regressione!
+Ma vi viene chiesto di cambiare colore alla retta di regressione <font size="2"> (Le cose importanti) </font>!
 
 ## Cosa dovreste fare {.built .columns-2}
 
@@ -121,7 +121,7 @@ In Word:
 
 <div>
 
-In `RMarkwown` All you need is `knit` `r emoji("musical note")` :
+In `RMarkwown` all you need is `knit` `r emoji("musical note")` :
 
 - Prendere il codice usato per generare il grafico:
 
@@ -240,14 +240,24 @@ Dove lo si vuole fare e come lo si vuole chiamare
 
 # Con cosa lavoriamo?
 
-## I dataset di `R`
+## I dataset di `R` {.build}
+
+<div>
 Useremo dei datasets interni ad `R` per fare qualche analisi e qualche grafico (tranquilli, vi darò io i codici `r emoji("beaming face with smiling eyes")`)
 
 A [questa pagina](https://docs.google.com/document/d/1xBr-zNRTvUrKABrU7CQDM_8rZVg2gmij_aaP-0laljM/edit) trovate un doc con la lista dei vari datasets con una piccola descrizione delle variabili
 
 Ad ognuno viene assegnato un dataset e dovrà lavorare su quello per tutto il corso
+</div>
+
+<div align="center">
+`r emoji("hourglass")`
+
+Assegnazione dataset in corso
+</div>
 
 # Your turn!
+
 
 ## 
 
@@ -259,7 +269,8 @@ Ad ognuno viene assegnato un dataset e dovrà lavorare su quello per tutto il co
 ADVANCED
 </div>
 
-Salvare il dataset in un oggetto chiamato `data` (tip: `<-`)
+- Salvare il dataset in un oggetto chiamato `data` (tip: `<-`)
+
 
 
 
