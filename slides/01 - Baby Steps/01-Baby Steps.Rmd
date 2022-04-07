@@ -6,9 +6,9 @@ output:
   ioslides_presentation: 
     css: "C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/arca.css"
     logo: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/arca_logo.svg
-    theme: united
     widescreen: yes
     highlight: haddock
+    biblio: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/biblio/biblio.bib
 ---
 
 <style>
@@ -210,13 +210,18 @@ Per aggiungere i numeri delle sezioni, basta aggiungere allo YAML
 
 <div style="float: left; width: 50%;">
 
-    title: "Esempio di File"
-    subtitle: Sottotitolo
-    date: "5/3/2022"
-    author: Ottavia M. Epifania
-    output:
+```{r echo =TRUE, eval = FALSE}
+---
+title: "Esempio di File"
+subtitle: Sottotitolo
+date: "5/3/2022"
+author: Ottavia M. Epifania
+  output:
     pdf_document: 
-     number_sections: true
+    number_sections: true
+---
+```
+
 </div>
 
 
@@ -231,22 +236,27 @@ knitr::include_graphics(path = "img/numeHeader.png")
 
 ## Table of contents
 
-Per aggiungere l'indice, bisogna modificare lo YAML: 
+Per aggiungere l'indice, bisogna modificare lo YAML, aggiungendo l'element `toc`(**T**able **O**f **C**ontents)
 
-    output:
-       pdf_document: 
-       number_sections: true
-       toc: true
+```{r echo= TRUE, eval = FALSE}
+---
+output:
+  pdf_document: 
+  number_sections: true
+  toc: true
+---  
+```
+
 
 con l'argomento `toc_depth` si può specificare il livello di profondità dell'indice. 
 
-Con `toc_depth: 1` vengono riportati solo i  titoli delle sezioni (Heder 1), con `toc_depth: 2` i titoli delle sezioni e sottosezioni (Header 1 e 2, default) e via discorrendo.
+Con `toc_depth: 1` vengono riportati solo i  titoli delle sezioni (Header 1), con `toc_depth: 2` i titoli delle sezioni e sottosezioni (Header 1 e 2, default) e via discorrendo.
 
 ## Your turn
 
 - Creare un documento 
 - Usare il nome del vostro dataset come titolo
-- sottotitolo a scelta
+- Sottotitolo a scelta
 - Al posto della data $\rightarrow$ Università di Padova
 
 <div align="center">
@@ -262,14 +272,20 @@ Con `toc_depth: 1` vengono riportati solo i  titoli delle sezioni (Heder 1), con
 
 YAML: 
 
-    output:
-      pdf_document: 
-      keep_tex: yes
-       number_sections: true
-       toc: true
-       toc_depth: 1
-    linestretch: 1.5
-    geometry: margin=1in 
+```{r echo= TRUE, eval = FALSE}
+---
+output:
+  pdf_document: 
+   number_sections: true
+      toc: true
+      toc_depth: 1
+  linestretch: 1.5
+  geometry: margin=1in
+---  
+```
+
+
+     
 
 ## Corsivo, grassetto, corsetto, colori
 
@@ -279,7 +295,7 @@ YAML:
     **Grassetto**
     
     ***Corsetto***
-</div>
+</div> 
 
 <div style="float: right; width: 50%;">
 *Corsivo*
@@ -289,16 +305,21 @@ YAML:
 ***Corsetto***
 </div>
 
-<div style="float:left; width=100%;">
-Per aggiungere una parola colorata: 
+</br>
 
-    \textcolor{red}{Parola molto colorata}
+<div align="left">
+
+
+
+    \textcolor{red}{Parola molto colorata in \LaTeX/PDF}
+    
+    <span style="color:red">Parola molt colorata in HTML</span>
 
 </div>
 
 ## Your turn!
 
-- Modifcare i margini del documento a 0.5in
+- Modificare i margini del documento a 0.5in
 - Impostare l'interlinea di un punto e mezzo
 - Mettere delle parole in corsivo, grassetto e corsetto
 - Aggiungere delle parole colorate
@@ -307,9 +328,9 @@ Per aggiungere una parola colorata:
 <span style="color:#FF0000">ADAVANCED</span>
 </div>
 
-- Aggiungere una parola colorata in **grassetto**
-- Aggiungere una parola colorata in *corsivo*
-- Aggiungere una parola colorata in ***corsetto***
+- Aggiungere una **<span style="color:#FF0000">parola colorata</span>** in **grassetto**
+- Aggiungere una *<span style="color:green">parola colorata</span>* in *corsivo*
+- Aggiungere una ***<span style="color:blue">parola colorata</span>*** in ***corsetto***
 
 ## Block quote {.build}
 
@@ -337,6 +358,8 @@ knitr::include_graphics(path = "img/block.png")
 
 <div style="float: left; width: 50%;">
 
+<h3> Unordered list </h3>
+
     - Chimica
     - Ciao Ciao
     - Brividi
@@ -351,6 +374,8 @@ knitr::include_graphics(path = "img/block.png")
 
 
 <div style="float: right; width: 50%;">
+
+<h3> Ordered list </h3>
 
     1. Brividi
     2. La canzone di Elisa
@@ -402,28 +427,115 @@ Basta mettere tre spazi sull'elenco che si vuole annidare:
 - Inserire una list a scelta (ordered o unordered) in un block quote
 - Inserire una lista a scelta (ordered o unordered) dentro un'altra lista a scelta dentro un block quote (Inception style `r emoji("smiling face with sunglasses")`)
 
-# Inserire immagini
+# Inserire immagini 
 
-## `Markdown` style vs. `RMarkdown` {.columns-2 .smaller}
+## `Markdown` style vs. `RMarkdown` PT. I {.columns-2 .smaller .build}
 
 
+<h4> `Markdown` </h4>
+
+<div>
+</br>
 
 `![Caption](percorso-alla-figura)`
 
 ![Prima del corso `RMarkdown`](C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/slides/01 - Baby Steps/img/oldManHappy.jpg)
-
+</div>
 
 <p class="forceBreak"></p>
 
+<h4> `RMarkdown` </h4>
+
+</br>
+
+<div>
 
 ````
-```{r, fig.cap = "Caption"}`r ''`
-knitr::include_graphics("percorso-alla-figura")
+```{r, fig.cap = "Caption", fig.align="center", out.width="50%"}`r ''`
+knitr::include_graphics(path = "percorso-alla-figura")
 ```
 ````
 ```{r, fig.cap="Dopo il corso `RMarkdown`"}
 knitr::include_graphics("img/oldManSad.jpg")
 ```
+
+<font size="3">`fig.align` (cambia l'allineamento della figura), `out.width` (cambia la dimensione dell'immagine modificandone la larghezza, l'altezza si adatta automaticamente)</font> 
+</div>
+
+## `Markdown` style vs. `RMarkdown` PT. II {.build}
+
+<div align="center">
+<h4> `Makdown` </h4>
+</br>
+</div>
+
+`r emoji("smile")` Più immmediato
+
+`r emoji("smile")` Si "autoaggiusta" al file <font size="2">(non sempre  in modo ottimale)</font>
+
+`r emoji("sad")` Per cambiare qualcosa bisogna ricorrere a HTML
+
+
+<div align="center">
+<h4> `RMakdown` </h4>
+</br>
+</div>
+
+`r emoji("smile")` Permette di cambiare comodamente posizionamento e dimensioni dell'immagine
+
+`r emoji("sad")` Richiede un po' di scrittura in più
+
+
+# Le sottocartelle 
+
+## Perché
+
+</br>
+
+In Word o simili siammo abituati a mettere "a mano" le  figure, magari anche la bibliografia $\rightarrow$ si mette tutto nel file di testo 
+
+In `RMarkdown`, le immagini, la bibliografia, gli eventuali dati e i risultati delle analisi devono essere importati all'interno del file
+
+L'importazione è basata sui "percorsi" (le directory) dei file. 
+
+## Come 
+
+Fondalmentalmente in due modi: 
+
+1. Il file che ci interessa è nella stessa cartella del file su cui stiamo lavorando:
+   - Questa opzione va bene se abbiamo pochi file da importare
+   - Ad ogni modo questa non è una soluzione ottimale $\rightarrow$ troppo disordine
+
+2. Si creano delle sottocartelle divise per tema (e.g., immagini, bibliografia, dati) $\rightarrow$ è la soluzione ottimale che permette di avere tutti i fiile  a disposizione e organizzati in modo lineare
+
+## Un esempio 
+
+```{r out.width="25%"}
+knitr::include_graphics(path = "img/sottocartelle.png")
+```
+
+Se volessi importare un'immagine nel mio documento chiamata "immagine.png" contenuta nella  cartella "vignettes"  dovrei scrivere: 
+
+````
+```{r, fig.cap = "Caption", fig.align="center", out.width="50%"}`r ''`
+knitr::include_graphics(path = "vignettes/immagine.png")
+```
+````
+<font size="3"> (Funziona anche usando il codice  `![Caption](vignettes/immagine.png)`)</font>
+
+## Your turn!
+
+- Nel vostro progetto, create la  cartella `img` e la cartella `bibliografia`
+- Scegliete due immagini da Google immagini <font size="2">(magari inerenti il vostro dataset `r emoji("chicken")`, `r emoji("flower")`, `r emoji("car")`)</font> e salvatele nelle cartella `img`
+- Importare le immagini, una con il codice `Markdown`, una con il codice `RMarkdown`
+
+<div align="center">
+ADVANCED
+</div>
+
+- Importare di nuovo una delle due immagini e allinearla a destra
+- Importare di nuovo l'altra immagine e ridurre la dimensione al  10%
+
 
 # Bibliografia
 
@@ -441,7 +553,9 @@ knitr::include_graphics("img/oldManSad.jpg")
 
 Ecco fatto, messa ma la bibliografia!
 
-Ovviamente, il file `biblio.bib` va creato ex-novo
+Ovviamente, il file `biblio.bib` va creato ex-novo.  
+
+Se si usa questo  codice, la bibliografia deve essere nella stessa cartella del file che stiamo creando. Se  invece è in una sottocarella `bibliography: biblio/biblio.bib`
 
 ## Creare `.bib`
 
@@ -450,7 +564,7 @@ Ovviamente, il file `biblio.bib` va creato ex-novo
 Crearli è molto semplice: 
 
 0. Si decide qual è la letteratura rilevante per quello che stiamo facendo
-1. si va su Google scholar e si copia la citazione in formato `BibText`: 
+1. si va su Google scholar e si copia la citazione in formato `BibTex`: 
 
 ```{r}
 knitr::include_graphics(path = "img/bibScholar.png")
@@ -480,35 +594,61 @@ knitr::include_graphics(path = "img/bibScholar.png")
   <li> Salviamo il documento con un nome a scelta (e.g., `biblio`) **ma soprattutto** ricordando l'estensione `.bib` </li> 
 </ol>
 
-`r emoji("red exclamation mark")` `epifania2021implicit` è la "chiave che ci permette di citare l'articolo nel testo 
+`r emoji("red exclamation mark")` `epifania2021implicit` è la "chiave" che ci permette di citare l'articolo nel testo 
 
 ## Come citare nel testo
 
-Autori e anno tra parentesti: 
 
-    Lo IAT è lo strumento implicito più usato [@epifania2021implicit]
+```{r out.width="80%"}
+knitr::include_graphics("img/bibExample.png")
+```
 
-Autori nel testo e anno tra parentesi: 
 
-    @epifania2021implicit dicono che lo IAT sia molto usato
-
-Autori e anno tra parentesi con dettagli dopo l'anno: 
-
-    Lo IAT è lo strumento implicito più usato [@epifania2021implicit, pag. 34]
-
-Autori e anno tra parentesi con dettagli prima degli autori:
-
-    Per la misurazione implicita si usa lo IAT [lo strumento più usato, @epifania2021implicit]
-    
 ## Your turn
 
-1. Creare un file `.bib` che contenga questi due articoli:
+1. Creare un file `.bib` che contenga questi due articoli su Google Scholar:
 
     > DscoreApp: a shiny web application for the computation of the implicit association test d-score
     >
     > Implicit measures with reproducible results: The implicitMeasures package
 
-2. 
+2. Salvare il file nella cartella `bibliografia` creata in precedenza
+
+3. Usare entrambe le citazioni con Autori e anno tra parentesi
+
+<div align="center">
+ADVANCED
+</div>
+
+Sbizzarritevi con le citazioni 
+
+# La matematica  
+
+## Equazioni
+
+Le equazioni vengono risconosciute dal simbolo `$`. 
+
+<h3> Inline equation</h3>
+
+`$3 +2 =5$` risulta in  $3+2=5$, sulla stessa riga del testo che si sta scrivendo
+
+<h3> Equation </h3>
+
+Per scrivere le equazioni come  blocchi di testo a parte,  si usa il doppio dollaro. `$$3 +2 =5$$` diventa $$3+2=5$$  (anche se lo scrivo sulla stessa riga!) 
+
+## Lettere greche, frazioni e simili
+
+Per inserire lelettere greche, basta scrivere la lettera greca che si desidera in caratteri latini all'interno dei dollari, preceduta da `\`. 
+
+Più semplicente, se vogliamo $\delta$, non dobbiamo far altro che scrivere `$\delta$`
+
+Se si vogliono le lettere greche maiuscolo, si mette in maiuscolo la prima lettera latina, per cui `$\Delta$` risulta in $\Delta$  
+
+`$\frac{num}{den}$` permette di scrivere le frazioni (`$\frac{2}{3}$` $\rightarrow$ $\frac{2}{3}$)
+
+`$\sqrt{numero}$` è la radice quadrata (`$\sqrt{4}$` $\rightarrow$ $\sqrt{4}$)
+
+A [questa pagina](https://artofproblemsolving.com/wiki/index.php/LaTeX:Symbols) trovate una luista esaustiva di tutti i simboli matematici
 
 ## Font style
 
