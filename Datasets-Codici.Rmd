@@ -1,11 +1,13 @@
 ---
 title: "Datasets e codici"
 author: "Corso RMarkdown"
-date: ""
-output: 
+date: ''
+output:
   html_document:
     logo: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/arca_logo.svg
-    toc: true
+    toc: yes
+  pdf_document:
+    toc: yes
 ---
 
 ```{r setup, include=FALSE}
