@@ -23,14 +23,6 @@ library("emoji")
 ```
 
 
-```{r functions, include=FALSE}
-put_image <- function(name){
- img <- file.path("img", name)
- knitr::include_graphics(img)
-}
-```
-
-
 ## Creare un nuovo file `RMarkdown` {.build}
 
 <div align="center">

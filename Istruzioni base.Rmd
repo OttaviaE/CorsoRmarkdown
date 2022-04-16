@@ -25,7 +25,7 @@ knitr::include_graphics("man/html-example.png")
 ```
 
 
-Probabilmente siete abituati a Word (o software affini), dove la formattazione del testo èa ffidati a specifici pulsanti o, alla meglio, alla combinazione di tasti. Ad esempio, se volete mettere in grassetto un pezzo di testo, basta che lo evidenziate e che selezioniate l'opzione "**G**" oppure che premiate la combinazione di tasti `ctrl + G`. Word è definito un linguaggio WYSIWYG, ossia **W**hat **Y**ou **S**ee **I**s **W**hat **Y**ou **G**et: 
+Probabilmente siete abituati a Word (o software affini), dove la formattazione del testo è a ffidata a specifici pulsanti o, alla meglio, alla combinazione di tasti. Ad esempio, se volete mettere in grassetto un pezzo di testo, basta che lo evidenziate e che selezioniate l'opzione "**G**" oppure che premiate la combinazione di tasti `ctrl + G`. Word è definito un linguaggio WYSIWYG, ossia **W**hat **Y**ou **S**ee **I**s **W**hat **Y**ou **G**et: 
 
 ```{r fig.align="center", out.width="50%", fig.cap="Testo in Word"}
 knitr::include_graphics("man/word.png")
