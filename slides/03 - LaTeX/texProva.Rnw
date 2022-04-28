@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{listings}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+
+\author{Ottavia}
+\title{esempio}
+
+\maketitle
+
+\section{Prova}
+
+<<>>=
+x=mean(cars$speed)
+@
+
+\Sexpr{x}
+
+\verb*|\Sexpr{}|
+
+$\sum x_i / n = \Sexpr{x}$
+
+
+\begin{figure}
+<<fig=TRUE>>=
+(plot(cars$speed, cars$dist))
+@
+\end{figure}
+
+
+
+
+\end{document}
