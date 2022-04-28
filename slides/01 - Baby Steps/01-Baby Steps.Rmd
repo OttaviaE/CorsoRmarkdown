@@ -543,7 +543,7 @@ ADVANCED
     geometry: margin=1in 
     bibliography: biblio.bib
 
-Ecco fatto, messa ma la bibliografia!
+Ecco fatto, messa la bibliografia!
 
 Ovviamente, il file `biblio.bib` va creato ex-novo.  
 
