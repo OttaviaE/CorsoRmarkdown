@@ -99,6 +99,7 @@ output:
 
 Ma non preoccupatevi, è la stessa cosa! 
 
+<font size="3"> Se non viene modificato troppo il default, si può saltellare da html e pdf più volte!</font>
 
 ## Tutti per lo YAML, uno YAML per tutto
 
@@ -176,7 +177,7 @@ Titolo del paragrafo
 
 
 
-```{r, out.width="30%"}
+```{r, out.width="50%"}
 knitr::include_graphics(path = "img/header1.png")
 ```
 </div>
@@ -219,7 +220,7 @@ author: Ottavia M. Epifania
 
 <div style="float: right; width: 50%;">
 
-```{r out.width="50%"}
+```{r out.width="90%"}
 knitr::include_graphics(path = "img/numeHeader.png")
 ```
 
@@ -228,7 +229,7 @@ knitr::include_graphics(path = "img/numeHeader.png")
 
 ## Table of contents
 
-Per aggiungere l'indice, bisogna modificare lo YAML, aggiungendo l'element `toc`(**T**able **O**f **C**ontents)
+Per aggiungere l'indice, bisogna modificare lo YAML, aggiungendo l'elemento `toc`(**T**able **O**f **C**ontents)
 
 ```{r echo= TRUE, eval = FALSE}
 ---
@@ -252,7 +253,7 @@ Con `toc_depth: 1` vengono riportati solo i  titoli delle sezioni (Header 1), co
 - Al posto della data $\rightarrow$ Università di Padova
 
 <div align="center">
-<span style="color:#FF0000">ADAVANCED</span>
+ADAVANCED
 </div>
 
 - Aggiungere almeno 3 headings (e.g., "Titolo 1", "Titolo 2", "Titolo 3")
@@ -287,27 +288,28 @@ output:
     **Grassetto**
     
     ***Corsetto***
+    
+    \textcolor{red}{Parola colorata (PDF)}
+    
+    <span style="color:red">Parola colorata (HTML)</span>
+    
 </div> 
 
-<div style="float: right; width: 50%;">
+<div style="float: right; width: 50%; text-align: right;">
 *Corsivo*
     
 **Grassetto**
     
 ***Corsetto***
+
+<span style="color:red">Parola colorata (PDF)</span>
+
+<span style="color:red">Parola colorata (HTML)</span>
 </div>
 
 </br>
 
-<div align="left">
 
-
-
-    \textcolor{red}{Parola molto colorata in \LaTeX/PDF}
-    
-    <span style="color:red">Parola molt colorata in HTML</span>
-
-</div>
 
 ## Your turn!
 
@@ -457,7 +459,7 @@ knitr::include_graphics("img/oldManSad.jpg")
 ## `Markdown` style vs. `RMarkdown` PT. II {.build}
 
 <div align="center">
-<h4> `Makdown` </h4>
+<h4> `Markdown` </h4>
 </br>
 </div>
 
@@ -469,7 +471,7 @@ knitr::include_graphics("img/oldManSad.jpg")
 
 
 <div align="center">
-<h4> `RMakdown` </h4>
+<h4> `RMarkdown` </h4>
 </br>
 </div>
 
@@ -484,7 +486,7 @@ knitr::include_graphics("img/oldManSad.jpg")
 
 </br>
 
-In Word o simili siammo abituati a mettere "a mano" le  figure, magari anche la bibliografia $\rightarrow$ si mette tutto nel file di testo 
+In Word o simili siamo abituati a mettere "a mano" le  figure, magari anche la bibliografia $\rightarrow$ si mette tutto nel file di testo 
 
 In `RMarkdown`, le immagini, la bibliografia, gli eventuali dati e i risultati delle analisi devono essere importati all'interno del file
 
@@ -588,6 +590,8 @@ knitr::include_graphics(path = "img/bibScholar.png")
 
 `r emoji("red exclamation mark")` `epifania2021implicit` è la "chiave" che ci permette di citare l'articolo nel testo 
 
+<font size="3">In fondo al file `# Bibiografia`</font>
+
 ## Come citare nel testo
 
 
@@ -598,21 +602,21 @@ knitr::include_graphics("img/bibExample.png")
 
 ## Your turn
 
-1. Creare un file `.bib` che contenga questi due articoli su Google Scholar:
+- Creare un file `.bib` che contenga questi due articoli su Google Scholar:
 
     > DscoreApp: a shiny web application for the computation of the implicit association test d-score
     >
     > Implicit measures with reproducible results: The implicitMeasures package
 
-2. Salvare il file nella cartella `bibliografia` creata in precedenza
+- Salvare il file nella cartella `bibliografia` creata in precedenza
 
-3. Usare entrambe le citazioni con Autori e anno tra parentesi
+- Usare entrambe le citazioni con Autori e anno tra parentesi
 
 <div align="center">
 ADVANCED
 </div>
 
-Sbizzarritevi con le citazioni 
+- Sbizzarritevi con le citazioni 
 
 # La matematica  
 
@@ -630,7 +634,7 @@ Per scrivere le equazioni come  blocchi di testo a parte,  si usa il doppio doll
 
 ## Lettere greche, frazioni e simili
 
-Per inserire lelettere greche, basta scrivere la lettera greca che si desidera in caratteri latini all'interno dei dollari, preceduta da `\`. 
+Per inserire le lettere greche, basta scrivere la lettera greca che si desidera in caratteri latini all'interno dei dollari, preceduta da `\`. 
 
 Più semplicente, se vogliamo $\delta$, non dobbiamo far altro che scrivere `$\delta$`
 
@@ -640,15 +644,6 @@ Se si vogliono le lettere greche maiuscolo, si mette in maiuscolo la prima lette
 
 `$\sqrt{numero}$` è la radice quadrata (`$\sqrt{4}$` $\rightarrow$ $\sqrt{4}$)
 
-A [questa pagina](https://artofproblemsolving.com/wiki/index.php/LaTeX:Symbols) trovate una luista esaustiva di tutti i simboli matematici
+A [questa pagina](https://artofproblemsolving.com/wiki/index.php/LaTeX:Symbols) trovate una lista esaustiva dei simboli matematici
 
-## Font style
 
-- Standard font
-- <span style="color:red">Change the font colour</span>
-- <font size="1">This is some text size 1!</font>
-- <font size="1">This is some text size 1!</font>
-- <font size="2">This is some text size 2!</font>
-- <font size="3">This is some text size 3!</font>
-- <font size="4">This is some text size 4!</font>
-- <font size="5">This is some text size 5!</font>
