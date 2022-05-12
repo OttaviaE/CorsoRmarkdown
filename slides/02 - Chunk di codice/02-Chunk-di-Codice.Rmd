@@ -15,13 +15,24 @@ output:
 
 .myClass {font-size: 14px;}
 
-<!-- code.r{ -->
-<!--   font-size: 12px; -->
-<!-- } -->
-<!-- pre { -->
-<!--   font-size: 12.5px -->
-<!-- } -->
 </style>
+
+```{css, echo=FALSE}
+pre {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+pre[class] {
+  max-height: 300px;
+}
+
+.scroll-100 {
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: inherit;
+}
+```
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, 
@@ -71,7 +82,7 @@ include_graphics("img/chunk-vuoto.png")
 
 ## Il file di default
 
-```{r, out.width="60%"}
+```{r, out.width="80%"}
 include_graphics("img/chunk.png")
 ```
 
@@ -107,8 +118,6 @@ A meno che non venga specificato altrimenti, ogni chunk del documento seguirà l
 
 ## Your turn!
 
-- Create un nuovo documento di testo `RMmarkdown`
-- Scegliete un titolo e sottotitolo inerente il vostro dataset
 - Importate il vostro dataset nel setup chunk e assegnatelo a un oggetto:
 
 ```{r eval = FALSE, echo = TRUE}
@@ -123,6 +132,7 @@ ADVANCED
 </div>
 
 - Fate sparire il codice di `R` dall'output
+- Salvate l'environment di `R` e richiamatelo nel setup chunk (hint: `load()`)
 
 
 # Codice e risultati
@@ -229,7 +239,7 @@ cars[1:3,]
 </div>
 
 - Il codice **non** viene eseguito
-- Se ci sono degli errori, non ve ne accrogete
+- Se ci sono degli errori, non ve ne accorgete
 - Particolarmente utile quando si vuole spiegare un codice molto complesso (ma dovete essere sicuri che funzioni)
 
 <p class="forceBreak"></p>
@@ -340,48 +350,47 @@ FONDAMENTALE:
 ```{r, results='asis'}`r ''`
 library(stargazer)
 stargazer(mtcars, type="latex", summary = TRUE, 
-           title= "Tabella di summary", digits = 2, header=TRUE)
+           title= "Tabella di summary", digits = 2, header=FALSE)
 ```
 ````
 
 
-```{r out.lines = 11}
+```{r class.output="scroll-100"}
 library(stargazer)
 stargazer(mtcars, type="latex", summary = TRUE, 
-           title= "Tabella di summary", digits = 2, header=TRUE)
+           title= "Tabella di summary", digits = 2, header=FALSE)
 ```
 
 ## `stargazer` model 
 
-```{r, results='asis', echo = TRUE, class.source='myClass'}
+```{r, results='asis', echo = TRUE, tidy=TRUE, class.source='myClass', class.output="scroll-100"}
 m1 = lm(mpg ~ cyl, data = mtcars)
 stargazer(m1, type="html", summary = TRUE, 
-           title= "Risultati del modello", digits = 2, header=TRUE)
+           title= "Risultati del modello", digits = 2, header=FALSE)
 ```
 
 ## `stargazer` model comparison
 
-```{r, echo = TRUE, results='asis', echo = TRUE, class.source='myClass'}
+```{r, echo = TRUE, results='asis', echo = TRUE, tidy=TRUE, class.source='myClass', class.output="scroll-100"}
 m0 = lm(mpg ~ 1, data = mtcars)
 m1 = lm(mpg ~ cyl, data = mtcars)
-
 stargazer(m0, m1, 
           type = "html",
-          title="Model comparison", digits=2, intercept.top = TRUE, 
-          intercept.bottom = FALSE, header = TRUE)
+          title="Model comparison", digits=2, intercept.top = TRUE, intercept.bottom = FALSE, header = FALSE)
 ```
 
 ## Your turn!
 
 - Tabella di summary del vostro dataset con 3 decimali
 - Tabella di summary del vostro modello di regressione 
+- Caption per ognuna delle tabelle
 
 <div align="center">
 ADVANCED
 </div>
 
 
-- Tabella di model coparison con modello nullo `m0` (`m0 = lm(y ~ 1, data = dati)`)
+- Tabella di model comparison con modello nullo `m0` (`m0 = lm(y ~ 1, data = dati)`)
 
 ## Codice (e risultati) nel testo
 
@@ -391,7 +400,7 @@ Ottenerli è molto semplice:  `` `R` `` mi restituisce `R`
 
 Ma molto di più: `` `r "\u0060r mean(mtcars$mpg)\u0060"` `` mi restituisce `r mean(mtcars$mpg)` (Provateci!)
 
-Se in un chunk precedente avessimo assegnato `x = mean(mtcars$mpg)`, avrremmo potuto semmplicemente scrivere `` `r "\u0060r mean(x)\u0060"` ``
+Se in un chunk precedente avessimo assegnato `x = mean(mtcars$mpg)`, avrremmo potuto semmplicemente scrivere `` `r "\u0060r x\u0060"` ``
 
 ## Codice, equazioni e codice nelle equazioni
 
@@ -402,4 +411,6 @@ Per `mpg`:
 $$\bar{X} = \frac{\displaystyle\sum_{i=1}^{n}x_i}{n} = \frac{`r round(sum(mtcars$mpg),2)`}{`r nrow(mtcars)`} = `r round(round(sum(mtcars$mpg),2)/nrow(mtcars), 2)`$$
 
 `` `r "$\\frac{\u0060r round(sum(mtcars$mpg),2)\u0060}{\u0060r nrow(mtcars)\u0060} = \u0060r round(round(sum(mtcars$mpg),2)/nrow(mtcars), 2)\u0060$"` ``
+
+
 
