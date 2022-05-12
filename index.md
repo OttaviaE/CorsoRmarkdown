@@ -13,10 +13,35 @@ Benvenuti! In questa pagina sono presenti tutti i link a materiale necessario pe
 
 ## Il corso
 
-Il corso si svolgerà a Padova, dal 14 al 17 giugno. Alla fine del corso chiederò a ogni studente di produrre una piccola presentazione in `RMarkdown` e un file di report sul dataset usato durante i giorni di lezione. Ma partiamo dall'inizio: 
+Il corso si svolgerà a Padova, dal 14 al 17 giugno:
 
-- Introduzione: Cos'è `RMarkdown`, perché lo usiamo, `R` project. [HTML](slides/00 - Introduzione/00-Introduzione.html)
-- Baby steps: Prendiamo confidenza con `RMarkdown` 
-- Chunk di codice: L'essenza di `RMarkdown` va conosciuta nel dettaglio
-- `knitr` e Latex: Un rapporto che va conosciuto
-- Presentazioni in `RMarkdown`
+- 14 giugno: 13:00-18:00
+- 15 giugno: 09:00-14:00
+- 16 giugno: 09:00-14:00
+- 17 giugno: 09:00-14:00 
+
+
+Alla fine del corso chiederò a ogni studente di produrre una piccola presentazione in `RMarkdown` e un file di report sul dataset usato durante i giorni di lezione. Questi file li preparemo insieme durante il corso stesso, dove infatti le ore di lezione frontale sono intervallate da esercitazioni pratiche.
+
+Ma partiamo dall'inizio: 
+
+- Introduzione: Cos'è `RMarkdown`, perché lo usiamo, `R` project. [HTML](slides/00 - Introduzione/00-Introduzione.html) [PDF](slides/00 - Introduzione/00-Introduzione.pdf)
+- Baby steps: Prendiamo confidenza con `RMarkdown` [HTML](slides/01 - Baby Steps/01-Baby-Steps.html) [PDF](slides/00 - Baby Steps/00-Introduzione.pdf)
+- Chunk di codice: L'essenza di `RMarkdown` va conosciuta nel dettaglio [HTML](slides/02 - Chunk di codice/02-Chunk-di-Codice.html) [PDF](slides/02 - Chunk di codice/02-Chunk-di-Codice.pdf)
+- `knitr` e Latex: Un rapporto che va conosciuto [PDF](slides/03 - LaTeX/03-LaTeX.pdf)
+- Presentazioni in `RMarkdown` [HTML](slides/04 - Presentazioni/04-Presentazioni.html) [PDF](slides/04 - Presentazioni/04-Presentazioni.pdf)
+
+
+## Materiale utile
+
+- [Dillinger](https://dillinger.io/)
+
+- [Shiny widgtes](https://shiny.rstudio.com/gallery/widget-gallery.html)
+
+- [Chunk options](https://yihui.org/knitr/options/)
+
+- [Compilatore automatico di tabelle `RMarkdwon`](https://www.tablesgenerator.com/markdown_tables)
+
+- [Stile presentazioni di LaTeX](https://deic.uab.cat/~iblanes/beamer_gallery/)
+
+- [Generatore di tabelle in LaTeX](https://www.tablesgenerator.com/)
