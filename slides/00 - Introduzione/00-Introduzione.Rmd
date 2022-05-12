@@ -104,7 +104,7 @@ ggplot(iris,
 
 Ma vi viene chiesto di cambiare colore alla retta di regressione <font size="2"> (Le cose importanti) </font>!
 
-## Cosa dovreste fare {.built .columns-2}
+## Cosa dovreste fare {.build .columns-2}
 
 <div>
 In Word: 
@@ -165,6 +165,8 @@ Permette la riproducibilità dei dati e delle analisi svolte sugli stessi tenend
 - Creazione di un documento PDF con bibliografia 
 
 - Creazione di una presentazione in HTML 
+
+- LaTeX e `RMarkdown` insieme
 
 - Piccola esercitazione finale
 
@@ -256,20 +258,20 @@ Ad ognuno viene assegnato un dataset e dovrà lavorare su quello per tutto il co
 Assegnazione dataset in corso
 </div>
 
-# Your turn!
+(Se avete dei dataset vostri su cui volete lavorare, be my guest, a patto che siate abbastanza autonomi sul codice)
+
+## Your turn!
 
 
-## 
-
-- Creare un progetto sul vostro desktop (è il progetto su cui lavorerete per questo corso, scegliete un bel nome `r emoji("winking face")`)
-- Aprire un file di `R`  
-- "Giocate" con il dataset (`head()`, `str()`)
+- Create un progetto sul vostro desktop (è il progetto su cui lavorerete per questo corso, scegliete un bel nome `r emoji("winking face")`)
+- Aprite un file di `R`  
+- "Giocate" con il dataset che vi è stato assegnato (`head()`, `str()`)
 
 <div align="center">
 ADVANCED
 </div>
 
-- Salvare il dataset in un oggetto chiamato `data` (tip: `<-`)
+- Salvate il dataset in un oggetto chiamato `data` (tip: `<-`)
 
 
 
