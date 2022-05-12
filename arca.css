@@ -1,5 +1,24 @@
-/* GENERAL SLIDES */
+/* specify logo size at title page */
+.gdbar img {
+  width: 160px !important;
+  height: 122px !important;
+  margin: 8px 8px;
+}
 
+.gdbar {
+  height: 140px !important;
+}
+
+/* specify logo size on footer */
+slides > slide:not(.nobackground):before {
+  width: 92px;
+  height: 70px;
+  background-size: 85px 70px;
+}
+
+
+
+/* GENERAL SLIDES */
 
 
 h2 {
@@ -35,7 +54,11 @@ a, a > code {
   padding-right: 4em;
   font-size: 90%;
 }
+/* chpater pages */
 
+slides > slide.dark {
+  background-color: #9B0A14 !important;
+}
 
 /* SECTION SLIDE */
 
@@ -54,35 +77,18 @@ a, a > code {
   display: none;
 }
 
-/* logo size */
 
-/* specify logo size at title page */
-.gdbar img {
-  width: 160px !important;
-  height: 122px !important;
-  margin: 8px 8px;
-}
 
-.gdbar {
-  height: 140px !important;
-}
 
-/* chpater pages */
-
-slides > slide.dark {
-  background-color: #9B0A14 !important;
-}
-
-/* specify logo size on footer */
-slides > slide:not(.nobackground):before {
-  width: 92px;
-  height: 70px;
-  background-size: 85px 70px;
 
 /* code size*/
 
 code.r {
   font-size: 22pt;
+}
+
+code.css {
+  font-size: 18pt;
 }
 
 /* TITLE SLIDE */
