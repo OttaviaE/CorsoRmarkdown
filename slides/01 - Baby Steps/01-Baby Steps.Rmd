@@ -18,7 +18,6 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, 
                       fig.align = "center")
-library("icons")
 library("emoji")
 ```
 
@@ -618,9 +617,9 @@ ADVANCED
 
 - Sbizzarritevi con le citazioni 
 
-# La matematica  
+# La matematica  <font size="3"> (non sarà mai il mio mestiere) </font>
 
-## Equazioni
+## Equazion
 
 Le equazioni vengono risconosciute dal simbolo `$`. 
 
@@ -645,5 +644,83 @@ Se si vogliono le lettere greche maiuscolo, si mette in maiuscolo la prima lette
 `$\sqrt{numero}$` è la radice quadrata (`$\sqrt{4}$` $\rightarrow$ $\sqrt{4}$)
 
 A [questa pagina](https://artofproblemsolving.com/wiki/index.php/LaTeX:Symbols) trovate una lista esaustiva dei simboli matematici
+
+# Tutto molto bello, ma....?
+
+## Ma come si metteno le cross-referencing? {.build}
+
+Con `RMarkdown` base (quello che stiamo usando noi), non si può
+
+`bookdown` invece ci permette di fare cross-references alle equazioni, alle figure (generate da codice) e alle tabelle: 
+
+```{r eval = FALSE, echo=TRUE}
+install.packages("bookdown")
+```
+
+E modifichiamo l'output nello YAML in: 
+
+```{r eval = FALSE, echo=TRUE}
+ output: 
+  bookdown::pdf_document2:
+    keep_tex: yes
+    number_sections: yes
+    toc: yes
+    toc_depth: 
+    [...]
+```
+
+
+
+## 
+
+Il comando nel testo: 
+
+```{r, out.width="50%", fig.align='center'}
+knitr::include_graphics("img/cross.png")
+```
+
+Nella breve lezione su [LaTeX](https://ottaviae.github.io/CorsoRmarkdown/slides/03%20-%20LaTeX/03-LaTeX.pdf) vedremo come usare al meglio e soprattutto in modo flessibile le cross-references 
+
+## Cross-reference: La tabella
+
+La tabella deve essere generata dal codice di `R`
+
+Unfortunately, `stargazer` e `bookdown` non si parlano. A [questa pagina](https://github.com/rstudio/bookdown/issues/175) discutono di come integrare i due pacchetti ma non funziona
+
+Usiamo `kable`:
+
+````
+```{r cars-table}`r ''`
+knitr::kable(mtcars[1:5, ], caption = "Questo è un dataset")
+```
+````
+
+Per richiamare nel testo `\@ref(tab:cars-table)`.
+
+## Cross-referencing: I plot
+
+Funziona solo con la funzione base `plot`:
+
+````
+```{r speed-dist, fig.cap="Grafico mpg-cilindrata"}`r ''`
+par(mar = c(4, 4, .2, .1))
+plot(mtcars$mpg ~ mtcars$cyl)  # a boxplot
+```
+````
+
+Per richiamrla nel testo `\ref@(fig:speed-dist)`
+
+## Cross-referencing: Le equazioni
+
+Molto semplicemente: 
+
+```{r, echo = TRUE, eval = FALSE}
+\begin{equation}
+\bar{X} = \frac{\sum_{i=1}^n X_i}{n} (\#eq:media)
+\end{equation}
+```
+
+Per richiamarla nel testo `\@ref(eq:mean)`
+
 
 
