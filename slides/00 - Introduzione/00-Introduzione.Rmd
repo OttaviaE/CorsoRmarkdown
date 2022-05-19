@@ -17,13 +17,13 @@ knitr::opts_chunk$set(echo = FALSE,
                       fig.path = "C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/", 
                       message = FALSE, 
                       warning = FALSE)
-library("icons")
 library("emoji")
 ```
 
 <style>
 .forceBreak { -webkit-column-break-after: always; break-after: column; }
 </style>
+
 
 # `RMarkdown`
 
@@ -169,6 +169,16 @@ Permette la riproducibilità dei dati e delle analisi svolte sugli stessi tenend
 - LaTeX e `RMarkdown` insieme
 
 - Piccola esercitazione finale
+
+## Piccola esercitazione finale
+
+Due file: 
+
+- Un PDF con almeno: 
+   - Un elenco, parole con diversa formattazione, una tabella, un grafico, un chunk di codice, un'equazione e risultati di `R` nel testo
+
+- Una presentazione in HTML con almeno 3 slide e: 
+   - Colonne, tabella, testo progressivo, un chunck di codice, una tabella con i risultati del modello e un plot
 
 
 ## Cosa non faremo in questo corso
