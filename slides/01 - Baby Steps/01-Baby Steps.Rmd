@@ -4,8 +4,8 @@ author: "Ottavia M. Epifania"
 date: ''
 output: 
   ioslides_presentation: 
-    css: "C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/arca.css"
-    logo: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/arca_logo.svg
+    css: "arca.css"
+    logo: arca_logo.svg
     widescreen: yes
     highlight: haddock
     biblio: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/biblio/biblio.bib

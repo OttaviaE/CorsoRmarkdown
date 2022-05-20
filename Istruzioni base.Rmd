@@ -52,7 +52,7 @@ e premere `Invio`.
 
 ## Check
 
-Per controllare se si è svolta tutta la procedura correttamente, scaricare il file con estensione `.Rmd` da https://drive.google.com/drive/folders/1OW61q2oRXi_HgPj0woayPJusoAYUXmsE, aprirlo in `RStudio` e cliccare su `knit`. Se la procedura di installazione è andata a buon fine, dovreste riuscire ad ottenere un PDF del file. Nel caso non riusciste a compilare il file, mettetevi in contatto con me al più presto (ottavia.epifania@unipd.it)
+Per controllare se si è svolta tutta la procedura correttamente, scaricare il file con estensione `.Rmd` dahttps://drive.google.com/file/d/1holNW8FnqH-qqqOTcxxJCo4WpoJtl1jO/view?usp=sharing, aprirlo in `RStudio` (selezionando "Apri con RStudio") e cliccare su `knit`. Se la procedura di installazione è andata a buon fine, dovreste riuscire ad ottenere un PDF del file (potrebbe volerci un po' di tempo). Nel caso non riusciste a compilare il file, mettetevi in contatto con me al più presto (ottavia.epifania@unipd.it)
 
 # Piccolo questionario
 

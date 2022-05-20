@@ -1,10 +1,10 @@
 \documentclass{article}
-\usepackage{listings}
 
 \begin{document}
 \SweaveOpts{concordance=TRUE}
 
 
+<<<<<<< HEAD
 \author{Ottavia}
 \title{esempio}
 
@@ -57,6 +57,9 @@ stargazer(mtcars, type="latex",summary=TRUE, header=FALSE, title="SUmmary",
           label = "tab:tabella")
 @
 
+=======
+Hello world
+>>>>>>> a6f15b3880c29f61c584cdd958fa7db2db12ae72
 
 \end{verbatim}
 
