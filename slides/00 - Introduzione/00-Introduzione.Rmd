@@ -4,8 +4,8 @@ author: "Ottavia M. Epifania"
 date: ''
 output:
   ioslides_presentation:
-    css: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/arca.css
-    logo: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/arca_logo.svg
+    css: arca.css
+    logo: arca_logo.svg
     widescreen: yes
 editor_options:
   chunk_output_type: console
@@ -14,7 +14,6 @@ editor_options:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, 
                       fig.align = "center", 
-                      fig.path = "C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/", 
                       message = FALSE, 
                       warning = FALSE)
 library("emoji")
@@ -43,7 +42,7 @@ Sono disponibili diversi software per redigere documenti in `.md`:
 
 
 ```{r fig.align='center', out.width="60%", fig.cap="https://dillinger.io/"}
-knitr::include_graphics("C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/dillinger.png")
+knitr::include_graphics("img/dillinger.png")
 ```
 
 
@@ -53,7 +52,7 @@ knitr::include_graphics("C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdow
 HTML è un classico esempio di markup language: 
 
 ```{r}
-knitr::include_graphics("C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/html-example.png")
+knitr::include_graphics("img/html-example.png")
 ```
 
 <p class="forceBreak"></p>
@@ -61,7 +60,7 @@ knitr::include_graphics("C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdow
 Anche LaTeX è un markup language <font size="2"> the best</font>
 
 ```{r}
-knitr::include_graphics("C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/latex.png")
+knitr::include_graphics("img/latex.png")
 ```
 
 ## WYSIWYG system
@@ -71,14 +70,14 @@ Word <font size ="2">(o Google docs o Libre Office o Pages)</font> è un sistema
 Il testo viene direttamente modificato attraverso dei comandi built-in, con combinazioni di tasti o attraverso il menu di formattazione.
 
 ```{r fig.align="center", out.width="50%"}
-knitr::include_graphics("C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/word.png")
+knitr::include_graphics("img/word.png")
 ```
 
 ## Ma allora perché...? {.build}
 
 
 ```{r fig.align='center',out.width="35%"}
-knitr::include_graphics("C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/memeWord.png")
+knitr::include_graphics("img/memeWord.png")
 ```
 
 ## Non solo
@@ -184,13 +183,13 @@ Due file:
 ## Cosa non faremo in questo corso
 
 
-[<img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/pagedown.png">](https://pagedown.rbind.io/): Rende  più facile il rendering in PDF
+[<img width="10%" height="10%" src="img/pagedown.png">](https://pagedown.rbind.io/): Rende  più facile il rendering in PDF
 
-[<img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/bookdown.png">](https://bookdown.org/): Come sopra
+[<img width="10%" height="10%" src="img/bookdown.png">](https://bookdown.org/): Come sopra
 
 [xaringam](https://slides.yihui.org/xaringan/#1): Per produrre presentazioni più belle 
 
-Integrazione con <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/latex_logo.png"> <font size="2"> ne vedremo solo qualche pezzettino </font>
+Integrazione con <img width="10%" height="10%" src="img/latex_logo.png"> <font size="2"> ne vedremo solo qualche pezzettino </font>
 
 
 <!-- # Installare `RMarkdown` -->
@@ -233,7 +232,7 @@ Mantiene tutto in ordine e facilmente controllabile
 File $\rightarrow$ New project: 
 
 <div align="center">
-<img width="40%" height="40%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/project1.png">
+<img width="40%" height="40%" src="img/project1.png">
 </div>
 
 ## 
@@ -241,13 +240,13 @@ File $\rightarrow$ New project:
 Dire cosa si vuole fare
 
 <div align="center">
-<img width="30%" height="30%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/project2.png">
+<img width="30%" height="30%" src="img/project2.png">
 </div>
 
 Dove lo si vuole fare e come lo si vuole chiamare
 
 <div align="center">
-<img width="30%" height="30%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/project3.png">
+<img width="30%" height="30%" src="img/project3.png">
 </div>
 
 # Con cosa lavoriamo?

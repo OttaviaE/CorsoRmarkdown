@@ -5,8 +5,7 @@ date: ''
 runtime: shiny
 output: 
   ioslides_presentation: 
-    css: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/arca.css
-    logo: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/arca_logo.png
+    logo: arca_logo.png
     widescreen: yes
     highlight: kate
     biblio: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/biblio/biblio.bib

@@ -9,13 +9,13 @@
   height: 140px !important;
 }
 
-/* specify logo size on footer */
+/* specify logo size on footer
 slides > slide:not(.nobackground):before {
-  width: 12px;
-  height: 20px;
+  width: 92px;
+  height: 70px;
   background-size: 85px 70px;
 }
-
+ */
 
 
 /* GENERAL SLIDES */
