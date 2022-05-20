@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2021.1.6)  28 APR 2022 13:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2021.1.6)  19 MAY 2022 11:23
 entering extended mode
 **./texProva.tex
 (texProva.tex
@@ -49,11 +49,14 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
- (C:/PROGRA~1/R/R-41~1.2/share/texmf/tex/latex\Sweave.sty
+ (C:/PROGRA~1/R/R-42~1.0/share/texmf/tex/latex\Sweave.sty
 Package: Sweave 
 
 (C:\Users\huawei\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(C:\Users\huawei\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
 )
 (C:\Users\huawei\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
@@ -90,19 +93,7 @@ Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 )
 (C:\Users\huawei\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
-)
-(C:\Users\huawei\AppData\Local\Programs\MiKTeX\tex/latex/ae\ae.sty
-Package: ae 2001/02/12 1.3 Almost European Computer Modern
-
-(C:\Users\huawei\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
-Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
-)))
-LaTeX Font Info:    Trying to load font information for T1+aer on input line 5.
-
-
-(C:\Users\huawei\AppData\Local\Programs\MiKTeX\tex/latex/ae\t1aer.fd
-File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
-)
+))
 (C:\Users\huawei\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pd
 ftex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
@@ -171,10 +162,6 @@ Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 s.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
-
-(C:\Users\huawei\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
-Package: iftex 2020/03/06 v1.0d TeX engine tests
-)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
@@ -185,55 +172,60 @@ Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 504.
-)
-(texProva-concordance.tex)
+) (texProva-concordance.tex)
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 12.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 12.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 12.
-LaTeX Font Info:    Trying to load font information for T1+aett on input line 1
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
 7.
 
-(C:\Users\huawei\AppData\Local\Programs\MiKTeX\tex/latex/ae\t1aett.fd
-File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+(C:\Users\huawei\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 26.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 26.
-<texProva-002.pdf, id=2, 433.62pt x 433.62pt>
+<texProva-002.pdf, id=2, 144.54pt x 144.54pt>
 File: texProva-002.pdf Graphic file (type pdf)
 <use texProva-002.pdf>
-Package pdftex.def Info: texProva-002.pdf  used on input line 38.
-(pdftex.def)             Requested size: 276.00105pt x 276.0139pt.
- [1
+Package pdftex.def Info: texProva-002.pdf  used on input line 35.
+(pdftex.def)             Requested size: 276.00105pt x 276.01607pt.
+
+[1
 
 {C:/Users/huawei/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2 <./texProva
--002.pdf>] (texProva.aux) ) 
+-002.pdf>] [3] (texProva.aux) ) 
 Here is how much of TeX's memory you used:
- 3805 strings out of 480236
- 57350 string characters out of 2880084
- 323713 words of memory out of 3000000
- 20303 multiletter control sequences out of 15000+200000
- 551879 words of font info for 63 fonts, out of 3000000 for 9000
+ 3740 strings out of 480236
+ 56431 string characters out of 2880084
+ 331855 words of memory out of 3000000
+ 20262 multiletter control sequences out of 15000+200000
+ 542976 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,6n,77p,215b,275s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/huawei/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmb10.pfb><C:/Users/huawei/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/huawei/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/huawei/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/huaw
-ei/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/U
-sers/huawei/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.
-pfb><C:/Users/huawei/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmr17.pfb><C:/Users/huawei/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmsltt10.pfb><C:/Users/huawei/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmtt10.pfb>
-Output written on texProva.pdf (2 pages, 88426 bytes).
+ 72i,9n,77p,215b,265s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\huawei\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\huawei\AppData\Local\MiKTeX\fo
+nts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\huawei\AppData\Local\Mi
+KTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\huawei\AppData\L
+ocal\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecst1000.pk> <C:\Users\huawei\Ap
+pData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\hu
+awei\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\U
+sers\huawei\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk
+><C:/Users/huawei/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmex10.pfb><C:/Users/huawei/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmmi10.pfb><C:/Users/huawei/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmmi7.pfb><C:/Users/huawei/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/huawei/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/huawei/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/huawei/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on texProva.pdf (3 pages, 113260 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
+ 210 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  10 words of extra memory for PDF output out of 10000 (max. 10000000)
 

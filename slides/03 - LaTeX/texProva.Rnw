@@ -23,13 +23,41 @@ x=mean(cars$speed)
 $\sum x_i / n = \Sexpr{x}$
 
 
+A nice plot \ref{fig:plot} obtained with ggplot and no effort AT ALL:
+
 \begin{figure}
-<<fig=TRUE>>=
-(plot(cars$speed, cars$dist))
+\caption{Un grafico}
+\label{fig:plot}
+\centering
+<<echo=FALSE, fig=TRUE, width=2, height=2>>=
+library(ggplot2)
+ggplot(cars, aes(x=speed, y=dist, size =dist, color =speed)) + geom_point() +
+  theme_bw() + theme(legend.position = "none")
 @
+
 \end{figure}
 
+E invece qui abbiamo una bella tabella \ref{tab:table}
 
 
+<<model, echo=FALSE, results=tex, size="tiny">>=
+library(stargazer)
+model = lm(dist ~ speed, data = cars)
+stargazer(model, type="latex", header=FALSE, title="Modello", 
+          label="tab:table")
+@
+
+E invece qui abbiamo una bella tabella \ref{tab:tabella}
+
+
+<<model, echo=FALSE, results=tex, size="tiny">>=
+library(stargazer)
+
+stargazer(mtcars, type="latex",summary=TRUE, header=FALSE, title="SUmmary", 
+          label = "tab:tabella")
+@
+
+
+\end{verbatim}
 
 \end{document}

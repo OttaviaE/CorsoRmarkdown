@@ -1,4 +1,4 @@
-\documentclass{beamer} %
+\documentclass[aspectratio=149]{beamer} %
 \mode<presentation>
 {
   \usetheme{CambridgeUS}       % or try default, Darmstadt, Warsaw, ...
@@ -102,9 +102,9 @@
 
 \begin{frame}{Attenzione!}
  
- Se si utilizza \texttt{Sweave} non è possibile integrare i chunk di codice (e  quindi le analisi).
+ Se si utilizza \texttt{Sweave} l'integrazione con i chunk di codice è un po' difficoltosa.
 
-Per  poter integrare \LaTeX e R: 
+Per  poter integrare \LaTeX e R, andate su Tools $\rightarrow$ Global options: 
 
 \centering
 \includegraphics[width=.60\linewidth]{img/knitr.png}
@@ -115,7 +115,7 @@ Per  poter integrare \LaTeX e R:
 \subsection*{Articolo o report}
 
 	\begin{slide}
-		\begin{footnotesize}
+		\begin{scriptsize}
 			\begin{verbatim}
 			\documentclass[12pt, a4paper, titlepage]{article}
 			\usepackage{amsmath} %equazioni e simboli matematici
@@ -126,6 +126,7 @@ Per  poter integrare \LaTeX e R:
 			\usepackage{tabularx} %larghezza delle colonne
 			\usepackage{apacite} %gestisce le citazioni
 			\bibliographystyle{apacite} % formattazione delle citazioni
+			
 			\title{Titolo di esempio}
 			\author{Jane Doe}
 \usepackage{Sweave}
@@ -140,13 +141,13 @@ Per  poter integrare \LaTeX e R:
 				\bibliography{bibFile.bib} %bibliografia
 			\end{document}
 			\end{verbatim}
-		\end{footnotesize}
+		\end{scriptsize}
 	\end{slide}
 
 \subsection*{Presentazione}
 \begin{slide}
 	
-	\begin{small}
+	\begin{scriptsize}
 			\begin{verbatim}
 			\documentclass{beamer} %classe del documento
 			\usetheme{default} % template del documento
@@ -166,10 +167,14 @@ Per  poter integrare \LaTeX e R:
 				\begin{frame}{Titolo della diapositiva}
 					
 				\end{frame}
-				
 			\end{document}
 		\end{verbatim}
-	\end{small}
+	\end{scriptsize}
+
+\begin{small}
+A questa pagina \url{https://deic.uab.cat/~iblanes/beamer_gallery/} si trovano tutte le posibili combinazioni di stili per le slides. Enjoy
+\end{small}
+
 \end{slide}
 
 \section{Formattazione}
@@ -212,9 +217,66 @@ Per  poter integrare \LaTeX e R:
 	\textbf{\textcolor{red}{Parola}}
 	\end{columns}
 	
-	A questa pagina \url{https://deic.uab.cat/~iblanes/beamer_gallery/} si trovano tutte le posibili combinazioni di stili per le slides. Enjoy
 \end{frame}
 
+\begin{frame}[fragile]
+
+\begin{columns}[T]
+\column{.50\linewidth}
+\begin{small}
+\begin{verbatim}
+\Huge{Huge}
+
+\huge{huge}
+
+\LARGE{LARGE}
+
+\Large{Large}
+
+\large{large}
+
+\normalsize{normalsize}
+
+\footnotesize{footnotesize}
+
+\scriptsize{scriptsize}
+
+\tiny{tiny}
+\end{verbatim}
+\end{small}
+
+
+\column{.50\linewidth}
+
+\Huge{Huge}
+\vspace{3mm}
+
+\huge{huge}
+\vspace{3mm}
+
+\LARGE{LARGE}
+\vspace{3mm}
+
+\Large{Large}
+\vspace{3mm}
+
+\large{large}
+\vspace{3mm}
+
+\normalsize{normalsize}
+\vspace{3mm}
+
+\footnotesize{footnotesize}
+\vspace{3mm}
+
+\scriptsize{scriptsize}
+\vspace{3mm}
+
+\tiny{tiny}
+
+\end{columns}
+
+\end{frame}
 
 \begin{frame}[fragile]{Elenchi}
 	
@@ -266,6 +328,28 @@ Per  poter integrare \LaTeX e R:
 	%	\end{verbatim}
 	\end{columns}
 	
+\end{frame}
+
+\begin{frame}[fragile]
+Le colonne nelle presentazioni (2 colonne): 
+
+\begin{verbatim}
+\begin{columns} %l'ambiente per le colonne
+\column{.50\linewidth} %prima colonna larga la metà della slide
+Testo nella prima colonna
+\column{.50\linewidth} %seconda colonna larga la metà della slide
+Testo nella seconda colonna
+\end{columns}
+\end{verbatim}
+
+\pause
+
+\begin{columns} %l'ambiente per le colonne
+\column{.50\linewidth} %prima colonna larga la metà della slide
+Testo nella prima colonna
+\column{.50\linewidth} %seconda colonna larga la metà della slide
+Testo nella seconda colonna
+\end{columns}
 \end{frame}
 
 \section{Bibliografia e citazioni}
@@ -324,7 +408,7 @@ In figura \ref{fig:happyCat} si può vedere l'entusiasmo per il corso di RMarkdo
 	\caption{Me, right now.}
 	\label{fig:happyCat}
 	\centering
-	\includegraphics[width=.50\linewidth]{C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/slides/03 - LaTeX/img/cat.jpg}
+	\includegraphics[width=.30\linewidth]{C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/slides/03 - LaTeX/img/cat.jpg}
 \end{figure}
 \end{frame}
 
@@ -348,7 +432,7 @@ Per fare il grafico:
 		\begin{figure}
 		\caption{Un plot}
 		\label{fig:plot}
-       <<echo=FALSE, fig=TRUE, width=3, height=3>>=
+       <<echo=FALSE, fig=TRUE, width=3, height=2>>=
        library(ggplot2)
        ggplot(cars, aes(x=speed, y=dist, size =dist, color =speed)) + geom_point() +
        theme_bw() + theme(legend.position = "none")
@@ -445,8 +529,8 @@ xtable(head(cars), caption = "Tabella")
 		@
 	\end{verbatim}
 	
-% latex table generated in R 4.1.2 by xtable 1.8-4 package
-% Thu Apr 28 13:58:38 2022
+% latex table generated in R 4.2.0 by xtable 1.8-4 package
+% Thu May 19 13:41:35 2022
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrr}
@@ -475,8 +559,8 @@ xtable(head(cars), caption = "Tabella")
 		<<model, echo=FALSE, results=tex>>=
     library(stargazer)
     model = lm(dist ~ speed, data = cars)
-    stargazer(model, type="latex", header=FALSE, title="Modello")
-
+    stargazer(model, type="latex", header=FALSE, title="Modello", 
+              label = "tab:modello")
 	\end{verbatim}
 
 \end{footnotesize}
@@ -485,7 +569,7 @@ xtable(head(cars), caption = "Tabella")
 
 \begin{table}[!htbp] \centering 
   \caption{Modello} 
-  \label{} 
+  \label{tab:modello} 
 \begin{tabular}{@{\extracolsep{5pt}}lc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
@@ -512,6 +596,70 @@ F Statistic & 89.567$^{***}$ (df = 1; 48) \\
 \end{table} 
 \end{frame}
 
+
+\subsection*{Cross-reference delle tabelle}
+
+
+\begin{frame}[fragile]
+
+\texttt{xtable}:
+
+\begin{footnotesize}
+\begin{verbatim}
+  <<tabella, echo=FALSE, results=tex, message=FALSE>>=
+	library(xtable)
+  print(xtable(head(cars), caption = "Tabella delle macchine",
+             label = "tab:macchine"))
+  @
+\end{verbatim}
+
+
+% latex table generated in R 4.2.0 by xtable 1.8-4 package
+% Thu May 19 13:41:35 2022
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrr}
+  \hline
+ & speed & dist \\ 
+  \hline
+1 & 4.00 & 2.00 \\ 
+  2 & 4.00 & 10.00 \\ 
+  3 & 7.00 & 4.00 \\ 
+  4 & 7.00 & 22.00 \\ 
+  5 & 8.00 & 16.00 \\ 
+  6 & 9.00 & 10.00 \\ 
+   \hline
+\end{tabular}
+\caption{Tabella delle macchine} 
+\label{tab:macchine}
+\end{table}
+
+\begin{verbatim}
+In Tabella \ref{tab:macchine} c'è il dataset \texttt{cars}
+\end{verbatim}
+
+In Tabella \ref{tab:macchine} c'è il dataset \texttt{cars}
+
+\end{footnotesize}
+
+
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\texttt{stargazer}:
+
+\begin{verbatim}
+In Tabella \ref{tab:modello} ci sono i risultati di un modello di [..]
+\end{verbatim}
+
+In Tabella \ref{tab:modello} ci sono i risultati di un modello di regressione
+
+\end{frame}
+
+
+
 \section{Chunk di codice}
 
 \begin{frame}[fragile]
@@ -519,9 +667,9 @@ F Statistic & 89.567$^{***}$ (df = 1; 48) \\
 I chunk di codice si ottengono con la classica combo \texttt{ctrl + alt + i}
 
 \begin{verbatim}
-    <<nome, echo= TRUE, eval = TRUE, fig = TRUE>>=
+ <<nome, echo= TRUE, eval = TRUE, fig = TRUE>>=
 
-    @
+ @
 \end{verbatim}
 
 Funzionano esattamente come i chunk in \texttt{RMarkdown} con qualche piccola accortezza (tipo per mettere le immagini e regolarne la grandezza)
@@ -546,7 +694,7 @@ Calcoliamo la media della velocità e la assegnamo all'oggetto \texttt{x}:
 Per riportare la velocità media nel testo: 
 
 \begin{verbatim}
-La velocità media è di 15.4
+La velocità media è di \ Sexpr{x}
 \end{verbatim}
 
 La velocità media è di 15.4
@@ -564,16 +712,25 @@ La velocità media è di 15.4
 
 Si può usare anche l'ambiente \texttt{equation} per le equazioni isolate e volendo numerate
 
+
 \begin{columns}
 \column[T]{.50\linewidth}
 
 \centering
 \includegraphics[width=\linewidth]{img/eq.png}
 
+\begin{verbatim}
+In Equazione \ref{eq:equazione} si calcola la media
+\end{verbatim}
+
 \column[T]{.50\linewidth}
 \begin{equation}\label{eq:equazione}
 	\bar{x} = \frac{\sum_{i=1}^{n}x_i}{n}
 \end{equation}
+
+
+In Equazione \ref{eq:equazione} si calcola la media
+
 \end{columns}
 	
 \end{frame}
@@ -585,7 +742,7 @@ Se si vuole integrare un'equazione con i risultati di un chunk, è molto semplic
 
 \begin{small}
 \begin{verbatim}
-La velocità media è: $\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n} = 15.4$
+La velocità media è: $\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n} = \ Sexpr{x}$
 \end{verbatim}
 \end{small}
 
@@ -610,7 +767,7 @@ Se si sta facendo una presentazione (quindi si usa la classe \texttt{beamer}):
     \end{frame}
 \end{verbatim}
 
-Senza quel \texttt[fragile] non solo non si vede l'output di \texttt{R} ma proprio non si riesce a compilare il file perché risulta un errore
+Senza quel \texttt{[fragile]} non solo non si vede l'output di \texttt{R} ma proprio non si riesce a compilare il file perché risulta un errore
 
 \end{slide}
 
