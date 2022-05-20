@@ -4,7 +4,7 @@ author: "Ottavia M. Epifania"
 date: 'Università di Padova'
 output: 
   ioslides_presentation: 
-    css: "arca.css"
+    css: arca.css
     logo: arca_logo.svg
     widescreen: yes
     highlight: haddock
@@ -18,25 +18,49 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## R Markdown
+## Colonne predefinite {.columns-2}
 
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Testo di qua
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+<p classs="forceBreak></p>
 
-## Slide with Bullets
+Test di là
+
+## Colonne custoizzate
+
+Testo fuori
+
+<div style="float: left; width: 50%;">
+Testo di qua
+    
+</div> 
+
+<div style="float: right; width: 50%; text-align: right;">
+Testo di  là
+
+</div>
+
+## Contenuti incrementali {.build}
 
 - Bullet 1
+
 - Bullet 2
+
 - Bullet 3
 
-## Slide with R Output
+Testo che viene mostrato dopo
 
-```{r cars, echo = TRUE}
-summary(cars)
+## Immagini 
+
+```{r,out.width="50%", fig.align='center'}
+knitr::include_graphics(
+  "arca_logo.svg"
+)
 ```
 
-## Slide with Plot
+
+
+## Chunk di codice
 
 ```{r pressure}
 plot(pressure)
