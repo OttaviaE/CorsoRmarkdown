@@ -13,7 +13,7 @@ Benvenuti! In questa pagina sono presenti tutti i link a materiale necessario pe
 
 ## Il corso
 
-Il corso si svolgerà a Padova, dal 14 al 17 giugno:
+Il corso si svolgerà a Padova, nell'aula 2A del CLA (Centro Linguistico di Ateneo), dal 14 al 17 giugno:
 
 - 14 giugno: 13:00-18:00
 - 15 giugno: 09:00-14:00
@@ -26,7 +26,7 @@ Alla fine del corso chiederò a ogni studente di produrre una piccola presentazi
 Ma partiamo dall'inizio: 
 
 - Introduzione: Cos'è `RMarkdown`, perché lo usiamo, `R` project. [HTML](slides/00 - Introduzione/00-Introduzione.html) [PDF](slides/00 - Introduzione/00-Introduzione.pdf)
-- Baby steps: Prendiamo confidenza con `RMarkdown` [HTML](slides/01 - Baby Steps/01-Baby-Steps.html) [PDF](slides/00 - Baby Steps/00-Introduzione.pdf)
+- Baby steps: Prendiamo confidenza con `RMarkdown` [HTML](slides/01 - Baby Steps/01-Baby-Steps.html) [PDF](slides/01 - Baby Steps/01-Baby-Steps.pdf)
 - Chunk di codice: L'essenza di `RMarkdown` va conosciuta nel dettaglio [HTML](slides/02 - Chunk di codice/02-Chunk-di-Codice.html) [PDF](slides/02 - Chunk di codice/02-Chunk-di-Codice.pdf)
 - `knitr` e Latex: Un rapporto che va conosciuto [PDF](slides/03 - LaTeX/03-LaTeX.pdf)
 - Presentazioni in `RMarkdown` [HTML](slides/04 - Presentazioni/04-Presentazioni.html) [PDF](slides/04 - Presentazioni/04-Presentazioni.pdf)
