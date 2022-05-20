@@ -436,7 +436,7 @@ output:
 # Nuova sezione
 ```
 
-```{r out.width="20%", echo=FALSE, eval=TRUE}
+```{r out.width="25%", echo=FALSE, eval=TRUE}
 knitr::include_graphics("img/sezione.png")
 ```
 
@@ -444,7 +444,7 @@ knitr::include_graphics("img/sezione.png")
 ## Slide con titolo
 ```
 
-```{r out.width="20%",  echo=FALSE, eval=TRUE}
+```{r out.width="25%",  echo=FALSE, eval=TRUE}
 knitr::include_graphics("img/slideTitolo.png")
 ```
 
