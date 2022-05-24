@@ -179,6 +179,7 @@ Due file:
 - Una presentazione in HTML con almeno 3 slide e: 
    - Colonne, tabella, testo progressivo, un chunck di codice, una tabella con i risultati del modello e un plot
 
+[Qui](https://forms.gle/dYuteuwdL74QQpQ36) trovate il questionario da compilare a fine corso per dire se il corso vi è piaciuto
 
 ## Cosa non faremo in questo corso
 
