@@ -5,7 +5,7 @@ date: ''
 runtime: shiny
 output: 
   ioslides_presentation: 
-    logo: arca_logo.png
+    logo: arca_logo.svg
     widescreen: yes
     highlight: kate
     biblio: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/biblio/biblio.bib
@@ -43,12 +43,12 @@ pre[class] {
   height: 140px !important;
 }
 
-/* specify logo size on footer */
-slides > slide:not(.nobackground):before {
-  width: 92px;
-  height: 70px;
-  background-size: 85px 70px;
-}
+<!-- /* specify logo size on footer */ -->
+<!-- slides > slide:not(.nobackground):before { -->
+<!--   width: 92px; -->
+<!--   height: 70px; -->
+<!--   background-size: 85px 70px; -->
+<!-- } -->
 
 
 
@@ -216,166 +216,166 @@ library("emoji")
 - La comodità (insomma, dipende)
 - Ma soprattutto...
 
-##
+<!-- ## -->
 
-```{r, echo=FALSE, eval=TRUE}
-shiny::shinyApp(
-  ui <- fluidPage(
+<!-- ```{r, echo=FALSE, eval=TRUE} -->
+<!-- shiny::shinyApp( -->
+<!--   ui <- fluidPage( -->
 
-tags$style(HTML(".js-irs-0 .irs-single, .js-irs-0 .irs-bar-edge, .js-irs-0 .irs-bar {background: royalblue}")),
-  tags$style(HTML(".js-irs-1 .irs-single, .js-irs-1 .irs-bar-edge, .js-irs-1 .irs-bar {background: magenta}")),
-  tags$style(HTML(".js-irs-2 .irs-single, .js-irs-2 .irs-bar-edge, .js-irs-2 .irs-bar {background: seagreen}")),
-tags$style(HTML(".js-irs-3 .irs-single, .js-irs-3 .irs-bar-edge, .js-irs-3 .irs-bar {background: royalblue}")),
-  tags$style(HTML(".js-irs-4 .irs-single, .js-irs-3 .irs-bar-edge, .js-irs-4 .irs-bar {background: magenta}")),
-  tags$style(HTML(".js-irs-5 .irs-single, .js-irs-5 .irs-bar-edge, .js-irs-5 .irs-bar {background: seagreen}")),
-
-
-  # Sidebar layout with input and output definitions ----
-  verticalLayout(
-      # App title ----
-
-    # Sidebar to demonstrate various slider options ----
-    wellPanel(
+<!-- tags$style(HTML(".js-irs-0 .irs-single, .js-irs-0 .irs-bar-edge, .js-irs-0 .irs-bar {background: royalblue}")), -->
+<!--   tags$style(HTML(".js-irs-1 .irs-single, .js-irs-1 .irs-bar-edge, .js-irs-1 .irs-bar {background: magenta}")), -->
+<!--   tags$style(HTML(".js-irs-2 .irs-single, .js-irs-2 .irs-bar-edge, .js-irs-2 .irs-bar {background: seagreen}")), -->
+<!-- tags$style(HTML(".js-irs-3 .irs-single, .js-irs-3 .irs-bar-edge, .js-irs-3 .irs-bar {background: royalblue}")), -->
+<!--   tags$style(HTML(".js-irs-4 .irs-single, .js-irs-3 .irs-bar-edge, .js-irs-4 .irs-bar {background: magenta}")), -->
+<!--   tags$style(HTML(".js-irs-5 .irs-single, .js-irs-5 .irs-bar-edge, .js-irs-5 .irs-bar {background: seagreen}")), -->
 
 
-      # Input: Decimal interval with step value ----
-      fluidRow(
-        column(4, div(style="height: 20px;",
-                      sliderInput("b1", "b1",
-                  min = -3, max = 3,
-                  value = 0, step = 0.1))),
-              column(4,   sliderInput("b2", "b2",
-                  min = -3, max = 3,
-                  value = 0, step = 0.1)),
-        column(4,   sliderInput("b3", "b3",
-                  min = -3, max = 3,
-                  value = 0, step = 0.1))),
-      fluidRow(
-        column(4,    sliderInput("a1", "a1",
-                  min = 0.20, max = 3,
-                  value = 1, step = 0.1)),
-                column(4,  sliderInput("a2", "a2",
-                  min = 0, max = 3,
-                  value = 0.70, step = 0.1)),
-        column(4,    sliderInput("a3", "a3",
-                  min = 0, max = 3,
-                  value = 1.90, step = 0.1)))
+<!--   # Sidebar layout with input and output definitions ---- -->
+<!--   verticalLayout( -->
+<!--       # App title ---- -->
+
+<!--     # Sidebar to demonstrate various slider options ---- -->
+<!--     wellPanel( -->
+
+
+<!--       # Input: Decimal interval with step value ---- -->
+<!--       fluidRow( -->
+<!--         column(4, div(style="height: 20px;", -->
+<!--                       sliderInput("b1", "b1", -->
+<!--                   min = -3, max = 3, -->
+<!--                   value = 0, step = 0.1))), -->
+<!--               column(4,   sliderInput("b2", "b2", -->
+<!--                   min = -3, max = 3, -->
+<!--                   value = 0, step = 0.1)), -->
+<!--         column(4,   sliderInput("b3", "b3", -->
+<!--                   min = -3, max = 3, -->
+<!--                   value = 0, step = 0.1))), -->
+<!--       fluidRow( -->
+<!--         column(4,    sliderInput("a1", "a1", -->
+<!--                   min = 0.20, max = 3, -->
+<!--                   value = 1, step = 0.1)), -->
+<!--                 column(4,  sliderInput("a2", "a2", -->
+<!--                   min = 0, max = 3, -->
+<!--                   value = 0.70, step = 0.1)), -->
+<!--         column(4,    sliderInput("a3", "a3", -->
+<!--                   min = 0, max = 3, -->
+<!--                   value = 1.90, step = 0.1))) -->
 
 
 
-    ),
+<!--     ), -->
 
-fluidRow(
-  column(6,
-         div(style = "height=20px",
-             plotOutput("plot", height = "250px"))),
-  column(6,
-         div(style = "height=20px",
-             plotOutput("tif", height = "250px")))
-)
-  )
-),
-
-
-server <- function(input, output) {
-IRT <- function(theta, a = 1, b = 0, c = 0,e = 1) {
-  y <- c + (e - c) * exp(a * (theta - b)) / (1 + exp(a * (theta - b)))
-  y[is.na(y)] = 1
-  return(y)
-}
+<!-- fluidRow( -->
+<!--   column(6, -->
+<!--          div(style = "height=20px", -->
+<!--              plotOutput("plot", height = "250px"))), -->
+<!--   column(6, -->
+<!--          div(style = "height=20px", -->
+<!--              plotOutput("tif", height = "250px"))) -->
+<!-- ) -->
+<!--   ) -->
+<!-- ), -->
 
 
-i_info <- function(b, a=1,c=0, theta = seq(-5,5,length.out=1000)){
+<!-- server <- function(input, output) { -->
+<!-- IRT <- function(theta, a = 1, b = 0, c = 0,e = 1) { -->
+<!--   y <- c + (e - c) * exp(a * (theta - b)) / (1 + exp(a * (theta - b))) -->
+<!--   y[is.na(y)] = 1 -->
+<!--   return(y) -->
+<!-- } -->
 
 
-P <- NULL
-Q <- NULL
-Ii <- NULL
-
-for(i in 1:1000){
-  P[i] <- 1/(1+ exp (-a*(theta[i] - b)))
-  Q[i]= 1-P[i]
-  Ii[i] =(a*Q[i]*(P[i]-c)^2)/(P[i]*((1-c)^2)) # (3PL)
-   }
-return(Ii)
-}
+<!-- i_info <- function(b, a=1,c=0, theta = seq(-5,5,length.out=1000)){ -->
 
 
-# Function to get all item information
-item_info <- function(b,a=1){
-item <- NULL
-  for(i in 1:length(b)){
-  item[[i]] <- i_info(b[i],a[i])
-  }
-return(item)
-}
+<!-- P <- NULL -->
+<!-- Q <- NULL -->
+<!-- Ii <- NULL -->
 
- output$plot <- renderPlot({
-   theta <- theta <- seq(-7, 7, .001)
-  par(mar = c(5,7,4,2) + 0.1)
-  b = c(input$b1, input$b2, input$b3)
-  a = c(input$a1, input$a2, input$a3)
-
-c <- item_info(b,a)
+<!-- for(i in 1:1000){ -->
+<!--   P[i] <- 1/(1+ exp (-a*(theta[i] - b))) -->
+<!--   Q[i]= 1-P[i] -->
+<!--   Ii[i] =(a*Q[i]*(P[i]-c)^2)/(P[i]*((1-c)^2)) # (3PL) -->
+<!--    } -->
+<!-- return(Ii) -->
+<!-- } -->
 
 
-Theta <- matrix(seq(-4,4, length.out=1000))
-check <- data.frame(Theta,
-                    item_info = c[[1]],
-                    item_info2 = c[[2]],
-                    item_info3 = c[[3]])
+<!-- # Function to get all item information -->
+<!-- item_info <- function(b,a=1){ -->
+<!-- item <- NULL -->
+<!--   for(i in 1:length(b)){ -->
+<!--   item[[i]] <- i_info(b[i],a[i]) -->
+<!--   } -->
+<!-- return(item) -->
+<!-- } -->
+
+<!--  output$plot <- renderPlot({ -->
+<!--    theta <- theta <- seq(-7, 7, .001) -->
+<!--   par(mar = c(5,7,4,2) + 0.1) -->
+<!--   b = c(input$b1, input$b2, input$b3) -->
+<!--   a = c(input$a1, input$a2, input$a3) -->
+
+<!-- c <- item_info(b,a) -->
 
 
-d1 <- do.call('cbind',c)
-sum_info2 <- rowSums(d1)
-plot(check$Theta, check$item_info, cex.lab= 2, main = "IIF",
-      cex.axis =1.5,
-        xlab = expression(theta), ylab = expression(paste("I(", theta, ")")),
- type = "l", lwd =2,
-      col = "royalblue", ylim = c(0,1))
- lines(check$Theta, check$item_info2, lwd =2,
-       col = "magenta", lty = 4)
- lines(check$Theta, check$item_info3, lwd =2,
-       col = "seagreen", lty = 2)
-
-  })
-
- output$tif <- renderPlot({
-   theta <- theta <- seq(-7, 7, .001)
-  par(mar = c(5,7,4,2) + 0.1)
-  b = c(input$b1, input$b2, input$b3)
-  a = c(input$a1, input$a2, input$a3)
-
-c <- item_info(b,a)
+<!-- Theta <- matrix(seq(-4,4, length.out=1000)) -->
+<!-- check <- data.frame(Theta, -->
+<!--                     item_info = c[[1]], -->
+<!--                     item_info2 = c[[2]], -->
+<!--                     item_info3 = c[[3]]) -->
 
 
-Theta <- matrix(seq(-4,4, length.out=1000))
-check <- data.frame(Theta,
-                    item_info = c[[1]],
-                    item_info2 = c[[2]],
-                    item_info3 = c[[3]])
+<!-- d1 <- do.call('cbind',c) -->
+<!-- sum_info2 <- rowSums(d1) -->
+<!-- plot(check$Theta, check$item_info, cex.lab= 2, main = "IIF", -->
+<!--       cex.axis =1.5, -->
+<!--         xlab = expression(theta), ylab = expression(paste("I(", theta, ")")), -->
+<!--  type = "l", lwd =2, -->
+<!--       col = "royalblue", ylim = c(0,1)) -->
+<!--  lines(check$Theta, check$item_info2, lwd =2, -->
+<!--        col = "magenta", lty = 4) -->
+<!--  lines(check$Theta, check$item_info3, lwd =2, -->
+<!--        col = "seagreen", lty = 2) -->
 
-d <- do.call('cbind',c)
-sum_info1 <- rowSums(d)
-d1 <- do.call('cbind',c)
-sum_info2 <- rowSums(d1)
+<!--   }) -->
 
-   Theta <- matrix(seq(-4,4, length.out=1000))
-check <- data.frame(Theta, sum_info1, sum_info2)
+<!--  output$tif <- renderPlot({ -->
+<!--    theta <- theta <- seq(-7, 7, .001) -->
+<!--   par(mar = c(5,7,4,2) + 0.1) -->
+<!--   b = c(input$b1, input$b2, input$b3) -->
+<!--   a = c(input$a1, input$a2, input$a3) -->
 
-plot(check$Theta, check$sum_info2,
-       type = "l", lwd =2,
-     col = "red",
-       xlab = expression(theta),
-     ylab = expression(paste("I(", theta, ")")), cex.lab= 2,
-     cex.axis=1.5, main = "TIF")
- })
+<!-- c <- item_info(b,a) -->
 
-},
-options = list(height = 400)
 
-)
-```
+<!-- Theta <- matrix(seq(-4,4, length.out=1000)) -->
+<!-- check <- data.frame(Theta, -->
+<!--                     item_info = c[[1]], -->
+<!--                     item_info2 = c[[2]], -->
+<!--                     item_info3 = c[[3]]) -->
+
+<!-- d <- do.call('cbind',c) -->
+<!-- sum_info1 <- rowSums(d) -->
+<!-- d1 <- do.call('cbind',c) -->
+<!-- sum_info2 <- rowSums(d1) -->
+
+<!--    Theta <- matrix(seq(-4,4, length.out=1000)) -->
+<!-- check <- data.frame(Theta, sum_info1, sum_info2) -->
+
+<!-- plot(check$Theta, check$sum_info2, -->
+<!--        type = "l", lwd =2, -->
+<!--      col = "red", -->
+<!--        xlab = expression(theta), -->
+<!--      ylab = expression(paste("I(", theta, ")")), cex.lab= 2, -->
+<!--      cex.axis=1.5, main = "TIF") -->
+<!--  }) -->
+
+<!-- }, -->
+<!-- options = list(height = 400) -->
+
+<!-- ) -->
+<!-- ``` -->
 
 
 ## Diverse opzioni 
