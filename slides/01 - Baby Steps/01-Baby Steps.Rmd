@@ -64,6 +64,21 @@ Per compilare il file si può premere sul tasto **knit** oppure si può usare la
 
 Siccome nel nostro header abbiamo `output: html_document` (il default), il file compilato sarà un file `html` 
 
+## Visual vs. source {.columns-2}
+
+<h3> Visual </h3>
+```{r fig.align='center', out.width="80%"}
+knitr::include_graphics("img/visual.png")
+```
+
+<p class="forceBreak"></p>
+
+<h3> Source </h3>
+```{r fig.align='center', out.width="80%"}
+knitr::include_graphics("img/source.png")
+```
+
+
 ## Your turn!
 
 - Create un nuovo file 
@@ -407,6 +422,24 @@ Basta mettere tre spazi sull'elenco che si vuole annidare:
 
 </div>
 
+## Note
+
+
+Nulla di più semplice: 
+
+    Con i piedi[^1]
+    
+    [^1]: ciao ciao
+
+    Un sacco di testo nel mio file 
+    
+che risulta in: 
+
+```{r fig.align='center', out.width="50%"}
+knitr::include_graphics("img/note.png")
+```
+
+
 ## Your turn
 
 - Creare una unordered list
@@ -419,6 +452,7 @@ Basta mettere tre spazi sull'elenco che si vuole annidare:
 
 - Inserire una list a scelta (ordered o unordered) in un block quote
 - Inserire una lista a scelta (ordered o unordered) dentro un'altra lista a scelta dentro un block quote (Inception style `r emoji("smiling face with sunglasses")`)
+- Mettere due note a piè di pagina
 
 # Inserire immagini 
 
