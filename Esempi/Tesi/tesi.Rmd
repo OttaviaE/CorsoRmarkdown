@@ -1,0 +1,130 @@
+---
+output: 
+   pdf_document:
+      includes:
+        before_body: titolo.sty
+      keep_tex: yes
+      number_sections: yes
+      toc_depth: 2
+bibliography: biblio.bib
+geometry: margin=1in
+header-includes:
+  - \usepackage{setspace} 
+  - \usepackage{multicol}
+  - \usepackage{caption}
+  - \usepackage[italian]{babel}
+  - \captionsetup{format=plain, font=small, labelfont=bf}
+  - \usepackage{graphicx} 
+  - \usepackage{subcaption}
+---
+
+
+\doublespacing
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, 
+                      eval = TRUE, 
+                      fig.align = "center", 
+                      out.width="50%", 
+                      prompt = TRUE,
+                      message = FALSE, 
+                      warning = FALSE)
+# codice per tagliare il codice
+hook_output <- knitr::knit_hooks$get("output")
+knitr::knit_hooks$set(output = function(x, options) {
+if (!is.null(n <- options$out.lines)) {
+x <- xfun::split_lines(x)
+if (length(x) > n) {
+# truncate the output
+x <- c(head(x, n), "....\n")
+} 
+x <- paste(x, collapse = "\n")
+} 
+hook_output(x, options)
+})
+```
+
+# Capitolo 1: Introduzione
+
+## Rassegna della letteratura
+
+Come dice @epifania2021implicit.....
+
+Se vogliamo evitare di usare `bookdown` per le cross-reference (consigliato), possiamo scrivere: 
+
+\begin{figure}
+\centering
+\caption{Il logo unipd.}
+\label{fig:logo}
+```{r out.width="50%"}
+knitr::include_graphics("unipd.png")
+```
+\end{figure}
+
+e dire che in Figura \ref{fig:logo} c'è il logo unipd
+
+## Scopo dello studio
+
+# Capitolo 2: Metodo
+
+# Capitolo 3: Risultati
+
+I risultati sono riportati in Tabella \ref{tab:tabella}.
+
+```{r results='asis'}
+print(xtable::xtable(summary(cars), 
+                     caption = "Tabella dei risultati", 
+                     label = "tab:tabella"), 
+      comment = FALSE, 
+      caption.placement = "top", 
+      scalebox=1)
+```
+
+
+
+In Tabella \ref{tab:modelli} sono riportati i risultati della model comparison
+
+```{r results='asis'}
+m0 = lm(dist ~ 1, data = cars)
+m1 = lm(dist ~ speed, data = cars)
+
+stargazer::stargazer(m0, m1, type = "latex", 
+                     title = "Model comparison", 
+                     digits = 2, 
+                     intercept.top = TRUE,
+                     intercept.bottom = FALSE, header = FALSE, 
+                     label = "tab:modelli", 
+                     dep.var.labels = "Distanza", 
+                     dep.var.caption = "", 
+                     covariate.labels = c("Intercetta", "Velocità"))
+```
+
+
+## Le figure doppie
+
+In figura \ref{fig:doppia} si trova un esempio di sottoofigure. In Figura \ref{sub:unipd1} c'è il logo unipd, in Figura \ref{sub:grafico} c'è un grafico.
+
+\begin{figure}
+\centering
+\begin{subfigure}{0.3\textwidth}
+```{r}
+knitr::include_graphics("unipd.png")
+```
+\caption{Di nuovo unipd.}
+\label{sub:unipd1}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
+```{r out.width="80%"}
+plot(cars)
+``` 
+\caption{Un grafico.}
+\label{sub:grafico}
+\end{subfigure}
+\caption{Una figura doppia}
+\label{fig:doppia}
+\end{figure}
+
+\newpage
+
+# Bibliografia
+

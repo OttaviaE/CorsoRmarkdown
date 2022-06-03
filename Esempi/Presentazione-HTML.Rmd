@@ -1,0 +1,68 @@
+---
+title: "Esempio di Presentazione"
+author: "Ottavia M. Epifania"
+date: 'Università di Padova'
+output: 
+  ioslides_presentation: 
+    css: arca.css
+    logo: arca_logo.svg
+    widescreen: yes
+    highlight: haddock
+---
+
+<style>
+.forceBreak { -webkit-column-break-after: always; break-after: column; }
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Colonne predefinite {.columns-2}
+
+Testo di qua
+
+<p classs="forceBreak></p>
+
+Test di là
+
+## Colonne custoizzate
+
+Testo fuori
+
+<div style="float: left; width: 50%;">
+Testo di qua
+    
+</div> 
+
+<div style="float: right; width: 50%; text-align: right;">
+Testo di  là
+
+</div>
+
+## Contenuti incrementali {.build}
+
+- Bullet 1
+
+- Bullet 2
+
+- Bullet 3
+
+Testo che viene mostrato dopo
+
+## Immagini 
+
+```{r,out.width="50%", fig.align='center'}
+knitr::include_graphics(
+  "arca_logo.svg"
+)
+```
+
+
+
+## Chunk di codice
+
+```{r pressure}
+plot(pressure)
+```
+

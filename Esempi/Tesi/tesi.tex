@@ -1,0 +1,304 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\usepackage{setspace}
+\usepackage{multicol}
+\usepackage{caption}
+\usepackage[italian]{babel}
+\captionsetup{format=plain, font=small, labelfont=bf}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+%\begin{titlepage}
+	\begin{center}
+		\includegraphics[width=0.25\linewidth]{unipd.png}
+	\end{center}
+	
+	\begin{center}
+		\begin{Large}
+			\textbf{University of Padova}
+			
+			Department of Philosophy, Sociology, Education, and Applied Psychology (FISPPA)
+		\end{Large}
+		
+	\end{center}
+	
+	\vspace{3mm}
+	\begin{center}
+		\begin{large}
+			Ph.D. Course in Psychological Sciences (XXXIII Cycle)
+		\end{large}
+		
+		\begin{huge}
+			\bfseries
+			Inglorious Measures: \\ A Linear Mixed-Effects Model approach for a Rasch analysis of implicit measure accuracy and time responses
+		\end{huge}
+		
+		
+	\end{center}
+	
+	\vspace{2cm}
+	\begin{multicols}{2}
+		\begin{flushleft}
+%			\begin{large}
+				\textbf{Advisor:} Prof. Egidio Robusto
+				
+				\textbf{Co-Advisor:} Prof. Gianmarco Altoè
+	%		\end{large}
+			
+		\end{flushleft}
+		\columnbreak
+		\begin{flushright}
+			\vspace{1.5cm}
+			
+				\textbf{Ph.D. Candidate:} Ottavia M. Epifania 
+			
+		\end{flushright}
+		
+	\end{multicols}
+
+\vspace{2cm}
+	
+	\begin{center}
+		Academic Year: 2019/2020
+	\end{center}
+	
+	
+
+\hypersetup{linkcolor = black}
+\newpage
+\renewcommand{\contentsname}{Indice}
+\pagenumbering{roman}
+\tableofcontents
+\addcontentsline{toc}{section}{\contentsname}
+
+\newpage
+
+% list of figures have to be added manually to table of contents
+\listoffigures % Per toogliere la lista delle figura, aggiungere % all'inizio della riga
+
+\newpage
+\listoftables % Per toogliere la lista delle tabelle, aggiungere % all'inizio della riga
+
+\doublespacing
+
+\newpage
+\pagenumbering{arabic}
+\hypersetup{linkcolor = blue}
+
+\doublespacing
+
+\hypertarget{capitolo-1-introduzione}{%
+\section{Capitolo 1: Introduzione}\label{capitolo-1-introduzione}}
+
+\hypertarget{rassegna-della-letteratura}{%
+\subsection{Rassegna della
+letteratura}\label{rassegna-della-letteratura}}
+
+Come dice Epifania, Anselmi, and Robusto (2021)\ldots..
+
+Se vogliamo evitare di usare \texttt{bookdown} per le cross-reference
+(consigliato), possiamo scrivere:
+
+\begin{figure}
+\centering
+\caption{Il logo unipd.}
+\label{fig:logo}
+
+\begin{center}\includegraphics[width=0.5\linewidth]{unipd} \end{center}
+\end{figure}
+
+e dire che in Figura \ref{fig:logo} c'è il logo unipd
+
+\hypertarget{scopo-dello-studio}{%
+\subsection{Scopo dello studio}\label{scopo-dello-studio}}
+
+\hypertarget{capitolo-2-metodo}{%
+\section{Capitolo 2: Metodo}\label{capitolo-2-metodo}}
+
+\hypertarget{capitolo-3-risultati}{%
+\section{Capitolo 3: Risultati}\label{capitolo-3-risultati}}
+
+I risultati sono riportati in Tabella \ref{tab:tabella}.
+
+\begin{table}[ht]
+\centering
+\caption{Tabella dei risultati} 
+\label{tab:tabella}
+\scalebox{1}{
+\begin{tabular}{rll}
+  \hline
+ &     speed &      dist \\ 
+  \hline
+X & Min.   : 4.0   & Min.   :  2.00   \\ 
+  X.1 & 1st Qu.:12.0   & 1st Qu.: 26.00   \\ 
+  X.2 & Median :15.0   & Median : 36.00   \\ 
+  X.3 & Mean   :15.4   & Mean   : 42.98   \\ 
+  X.4 & 3rd Qu.:19.0   & 3rd Qu.: 56.00   \\ 
+  X.5 & Max.   :25.0   & Max.   :120.00   \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+In Tabella \ref{tab:modelli} sono riportati i risultati della model
+comparison
+
+\begin{table}[!htbp] \centering 
+  \caption{Model comparison} 
+  \label{tab:modelli} 
+\begin{tabular}{@{\extracolsep{5pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+\\[-1.8ex] & \multicolumn{2}{c}{Distanza} \\ 
+\\[-1.8ex] & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+ Intercetta & 42.98$^{***}$ & $-$17.58$^{**}$ \\ 
+  & (3.64) & (6.76) \\ 
+  & & \\ 
+ Velocità &  & 3.93$^{***}$ \\ 
+  &  & (0.42) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & 50 & 50 \\ 
+R$^{2}$ & 0.00 & 0.65 \\ 
+Adjusted R$^{2}$ & 0.00 & 0.64 \\ 
+Residual Std. Error & 25.77 (df = 49) & 15.38 (df = 48) \\ 
+F Statistic &  & 89.57$^{***}$ (df = 1; 48) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table}
+
+\hypertarget{le-figure-doppie}{%
+\subsection{Le figure doppie}\label{le-figure-doppie}}
+
+In figura \ref{fig:doppia} si trova un esempio di sottoofigure. In
+Figura \ref{sub:unipd1} c'è il logo unipd, in Figura \ref{sub:grafico}
+c'è un grafico.
+
+\begin{figure}
+\centering
+\begin{subfigure}{0.3\textwidth}
+
+\begin{center}\includegraphics[width=0.5\linewidth]{unipd} \end{center}
+\caption{Di nuovo unipd.}
+\label{sub:unipd1}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
+
+\begin{center}\includegraphics[width=0.8\linewidth]{tesi_files/figure-latex/unnamed-chunk-5-1} \end{center}
+\caption{Un grafico.}
+\label{sub:grafico}
+\end{subfigure}
+\caption{Una figura doppia}
+\label{fig:doppia}
+\end{figure}
+
+\newpage
+
+\hypertarget{bibliografia}{%
+\section*{Bibliografia}\label{bibliografia}}
+\addcontentsline{toc}{section}{Bibliografia}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-epifania2021implicit}{}}%
+Epifania, Ottavia M, Pasquale Anselmi, and Egidio Robusto. 2021.
+{``Implicit Social Cognition Through the Years: The Implicit Association
+Test at Age 21.''} \emph{Psychology of Consciousness: Theory, Research,
+and Practice}.
+
+\end{CSLReferences}
+
+\end{document}
