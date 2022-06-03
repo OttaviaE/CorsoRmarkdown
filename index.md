@@ -45,3 +45,7 @@ Ma partiamo dall'inizio:
 - [Stile presentazioni di LaTeX](https://deic.uab.cat/~iblanes/beamer_gallery/)
 
 - [Generatore di tabelle in LaTeX](https://www.tablesgenerator.com/)
+
+## Questionario di fine corso
+
+Non dimenticate di compilare il [questionario di fine corso](https://forms.gle/dYuteuwdL74QQpQ36)!
