@@ -179,6 +179,8 @@ Due file:
 - Una presentazione in HTML con almeno 3 slide e: 
    - Colonne, tabella, testo progressivo, un chunck di codice, una tabella con i risultati del modello e un plot
 
+In [questa cartella](https://drive.google.com/drive/folders/19F1fhDwih04MeyKP_E4xLsPc0VAw-3co?usp=sharing) vi ho preparato degli esempi di file (tra cui quello per la tesi)
+
 [Qui](https://forms.gle/dYuteuwdL74QQpQ36) trovate il questionario da compilare a fine corso per dire se il corso vi è piaciuto
 
 ## Cosa non faremo in questo corso
@@ -190,33 +192,8 @@ Due file:
 
 [xaringam](https://slides.yihui.org/xaringan/#1): Per produrre presentazioni più belle 
 
-Integrazione con <img width="10%" height="10%" src="img/latex_logo.png"> <font size="2"> ne vedremo solo qualche pezzettino </font>
 
 
-<!-- # Installare `RMarkdown` -->
-
-<!-- ##  -->
-
-<!-- `RMarkdown` è un pacchetto di `R`.  -->
-
-<!-- In quanto tale, ha bisogno che sia `R` sia `RStudio` siano installati sul vostro computer:  -->
-
-<!-- [Download <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/R.png">](https://cran.r-project.org/bin/windows/base/)  -->
-
-<!-- [Download <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/Rstudio.png">](https://www.rstudio.com/products/rstudio/download/) -->
-<!-- - Seguite le istruzioni di installazione -->
-
-<!-- <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/Rstudio.png"> è solo un'interfaccia! è necessario scaricare prima <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/R.png">! -->
-
-<!-- ## Non è ancora finita -->
-
-<!-- <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/R.png"> e <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/Rstudio.png"> è la base, <img width="10%" height="10%" src="C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/Rstudio.png"> è l'interfaccia, ma c'è bisogno del motore per produrre PDF: `LaTeX` (scaricabile https://miktex.org/download). -->
-
-<!-- A questo punto si può finalmente installare `RMarkdown` aprendo `RStudio` e digtando nella consolle: -->
-
-<!--     install.packages("RMarkdown") -->
-
-<!-- e infine premendo invio. -->
 
 # Let's get started `r emoji("partying face")`
 
