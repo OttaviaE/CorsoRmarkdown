@@ -1,5 +1,5 @@
 ---
-title: "01 - Baby steps"
+title: "01-Baby steps"
 author: "Ottavia M. Epifania"
 date: ''
 output: 
@@ -322,6 +322,13 @@ output:
 </div>
 
 </br>
+
+
+## Ingrandire e rimpicciolire il testo 
+
+```{r out.width="40%"}
+knitr::include_graphics("img/fontsize.png")
+```
 
 
 
@@ -653,7 +660,7 @@ ADVANCED
 
 # La matematica  <font size="3"> (non sarà mai il mio mestiere) </font>
 
-## Equazion
+## Equazioni
 
 Le equazioni vengono risconosciute dal simbolo `$`. 
 
@@ -715,7 +722,7 @@ knitr::include_graphics("img/cross.png")
 
 Nella breve lezione su [LaTeX](https://ottaviae.github.io/CorsoRmarkdown/slides/03%20-%20LaTeX/03-LaTeX.pdf) vedremo come usare al meglio e soprattutto in modo flessibile le cross-references 
 
-## Cross-reference: La tabella
+## Cross-referencing: La tabella
 
 La tabella deve essere generata dal codice di `R`
 
@@ -742,7 +749,7 @@ plot(mtcars$mpg ~ mtcars$cyl)  # a boxplot
 ```
 ````
 
-Per richiamrla nel testo `\ref@(fig:speed-dist)`
+Per richiamrla nel testo `\@ref(fig:speed-dist)`
 
 ## Cross-referencing: Le equazioni
 
