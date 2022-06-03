@@ -54,6 +54,13 @@ e premere `Invio`.
 
 Per controllare se si è svolta tutta la procedura correttamente, scaricare il file con estensione `.Rmd` da https://drive.google.com/file/d/1holNW8FnqH-qqqOTcxxJCo4WpoJtl1jO/view?usp=sharing, aprirlo in `RStudio` (selezionando "Apri con RStudio") e cliccare su `knit`. Se la procedura di installazione è andata a buon fine, dovreste riuscire ad ottenere un PDF del file (potrebbe volerci un po' di tempo). Nel caso non riusciste a compilare il file, mettetevi in contatto con me al più presto (ottavia.epifania@unipd.it)
 
+## Codici e assegnazione
+
+A [questa pagina](https://ottaviae.github.io/CorsoRmarkdown/Datasets-Codici.html) trovate i codici per analizzare i data set durante il corso. Non ci concentreremo sull'analisi in sé né sul codice di `R` (se volete un ottimo corso su `R`, [check it out](https://filippogambarota.github.io/corsoR/)), ci serve solo per capire come lavorare con `RMarkdown`
+
+[Qui](https://docs.google.com/document/d/1xBr-zNRTvUrKABrU7CQDM_8rZVg2gmij_aaP-0laljM/edit) invece trovate dei data set che vi sono stati assegnati di ufficio. Se non vi va bene il data set o se volete lavroare sul vostro data set, scrivetemi. Nel caso vogliate lavorare sul vostro dataset, dovete essere autonomi nelle analisi.
+
+
 # Piccolo questionario
 
 Ho preparato un piccolo [questionario](https://forms.gle/DLsnVT5JSKfGZ8487) per conoscervi meglio. Vi chiedo per favore di compilarlo **entro il 13 giugno**. 
