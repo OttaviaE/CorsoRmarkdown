@@ -29,6 +29,7 @@ Ma partiamo dall'inizio:
 - Baby steps: Prendiamo confidenza con `RMarkdown` [HTML](slides/01 - Baby Steps/01-Baby-Steps.html) [PDF](slides/01 - Baby Steps/01-Baby-Steps.pdf)
 - Chunk di codice: L'essenza di `RMarkdown` va conosciuta nel dettaglio [HTML](slides/02 - Chunk di codice/02-Chunk-di-Codice.html) [PDF](slides/02 - Chunk di codice/02-Chunk-di-Codice.pdf)
 - `knitr` e Latex: Un rapporto che va conosciuto [PDF](slides/03 - LaTeX/03-LaTeX.pdf)
+- `knitr` e Latex (bis): Un rapporto che va conosciuto [PDF](slides/03bis - LaTeX Bis/03bis-LaTeX-bis.pdf)
 - Presentazioni in `RMarkdown` [HTML](slides/04 - Presentazioni/04-Presentazioni.html) [PDF](slides/04 - Presentazioni/04-Presentazioni.pdf)
 
 
