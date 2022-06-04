@@ -11,43 +11,57 @@ output:
     biblio: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/biblio/biblio.bib
 ---
 
+```{=html}
 <style>
 .forceBreak { -webkit-column-break-after: always; break-after: column; }
 </style>
-
+```
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, 
                       fig.align = "center")
 library("emoji")
 ```
 
+```{css, echo=FALSE}
+pre {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+pre[class] {
+  max-height: 300px;
+}
+
+.scroll-100 {
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: inherit;
+}
+```
+
+
 
 ## Creare un nuovo file `RMarkdown` {.build}
 
-<div align="center">
-Easy peasy `r emoji("lemon")` squeezy:  
-</div>
+::: {align="center"}
+Easy peasy `r emoji("lemon")` squeezy:
+:::
 
-<div style="float: left; width: 50%;">
-
+::: {style="float: left; width: 50%;"}
 ```{r, out.width="80%"}
 knitr::include_graphics(path = "img/new00.png")
 ```
+:::
 
-</div>
-
-<div style="float: right; width: 50%;">
-
+::: {style="float: right; width: 50%;"}
 ```{r, out.width="80%"}
 knitr::include_graphics(path = "img/new01.png")
 ```
-</div>
-
-
+:::
 
 ## Default file `RMarkdown`
 
-Come prima cosa, appare questo: 
+Come prima cosa, appare questo:
 
 ```{r echo = TRUE, eval=FALSE}
 ---
@@ -58,47 +72,58 @@ output: html_document
 ---
 ```
 
-Questo è l'header YAML ed è dove andiamo a definire il tipo di file che vogliamo, il titolo, l'autore, la data. 
+Questo è l'header YAML ed è dove andiamo a definire il tipo di file che vogliamo, il titolo, l'autore, la data.
 
 Per compilare il file si può premere sul tasto **knit** oppure si può usare la combo di tasti `shift + ctrl + k` (per chi ha il Mac `shift + cmd + k`)
 
-Siccome nel nostro header abbiamo `output: html_document` (il default), il file compilato sarà un file `html` 
+Siccome nel nostro header abbiamo `output: html_document` (il default), il file compilato sarà un file `html`
 
 ## Visual vs. source {.columns-2}
 
-<h3> Visual </h3>
-```{r fig.align='center', out.width="80%"}
+<h3>
+
+Visual
+
+</h3>
+
+```{r fig.align='center', out.width="90%"}
 knitr::include_graphics("img/visual.png")
 ```
 
-<p class="forceBreak"></p>
+<p class="forceBreak">
 
-<h3> Source </h3>
-```{r fig.align='center', out.width="80%"}
+</p>
+
+<h3>
+
+Source
+
+</h3>
+
+```{r fig.align='center', out.width="90%"}
 knitr::include_graphics("img/source.png")
 ```
 
-
 ## Your turn!
 
-- Create un nuovo file 
+-   Create un nuovo file
 
-- Date un titolo a scelta
+-   Date un titolo a scelta
 
-- Cliccate "knit"!
+-   Cliccate "knit"!
 
-<div align="center">
+::: {align="center"}
 ADAVANCED
-</div>
+:::
 
-- Mettere un sottotitolo
-- Togliere la data
+-   Mettere un sottotitolo
+-   Togliere la data
 
-## Dettagli sulla compilazione 
+## Dettagli sulla compilazione
 
 Si può scegliere il tipo di file da compilare cambiando da `output: html_document` a `output: pdf_document` (Questa operazione si può svolgere anche cliccando sulla freccina accanto a **knit** e selezionando "Knit to PDF")
 
-Nel caso abbiate seguito la seconda strada, viene modificato lo YAML del file: 
+Nel caso abbiate seguito la seconda strada, viene modificato lo YAML del file:
 
 ```{r echo = TRUE, eval=FALSE}
 ---
@@ -111,16 +136,17 @@ output:
 ---
 ```
 
-Ma non preoccupatevi, è la stessa cosa! 
+Ma non preoccupatevi, è la stessa cosa!
 
-<font size="3"> Se non viene modificato troppo il default, si può saltellare da html e pdf più volte!</font>
+::: {style="float: right; width: 80%; text-align: left"}
+<font size="3"> Se non viene modificato troppo il default, si può saltellare tra html e pdf più volte!</font>
+:::
 
 ## Tutti per lo YAML, uno YAML per tutto
 
-Nello YAML andiamo ad indicare varie specifiche del nostro file (che vedremo in seguito). 
+Nello YAML andiamo ad indicare varie specifiche del nostro file (che vedremo in seguito).
 
-
-Per ora, aggiungiamo un sottotitolo: 
+Per ora, aggiungiamo un sottotitolo:
 
 ```{r,echo = TRUE, eval=FALSE}
 ---
@@ -134,14 +160,16 @@ output:
 ---
 ```
 
-
 ## Si possono pure togliere pezzi {.build}
 
 <div>
+
 La data non sta molto bene: Provate a toglierla!
+
 </div>
 
 <div>
+
 ```{r,echo = TRUE, eval=FALSE}
 ---
 title: "Esempio di File di testo"
@@ -153,25 +181,26 @@ output:
   html_document: default
 ---
 ```
+
 </div>
 
 # Gli headers
 
 ## Cosa sono
 
-Sono i titoli delle sezioni, sottosezioni e dei pargrafi
+Sono i titoli delle sezioni, sottosezioni e dei paragrafi
 
-<div style="float: left; width: 50%;">
+::: {style="float: left; width: 50%;"}
     # Header 1
-    
-    ## Header 2
-    
-    ### Header 3
-    
-    #### Header 4
-</div>
 
-<div style="float:right; width: 50%;">
+    ## Header 2
+
+    ### Header 3
+
+    #### Header 4
+:::
+
+::: {style="float:right; width: 50%;"}
 Titolo di una sezione
 
 Titolo di una sottosezione
@@ -179,21 +208,20 @@ Titolo di una sottosezione
 Titolo della sotto-sottosezione <font size="2">(seriously)</font>
 
 Titolo del paragrafo
-
-</div>
+:::
 
 ## Come si usano {.build}
 
 <div>
+
     # Header 1
-    
+
     Brividi brividi brividiiiiiii
-
-
 
 ```{r, out.width="50%"}
 knitr::include_graphics(path = "img/header1.png")
 ```
+
 </div>
 
 <div>
@@ -201,9 +229,8 @@ knitr::include_graphics(path = "img/header1.png")
 <font size="3">Anche tutti gli altri header funzionano così, ad eccezione di `#### Header 4` </font>
 
     #### Titolo di un paragrafo
-    
+
     Testo del paragrafo molto importante
-    
 
 ```{r, out.width="50%"}
 knitr::include_graphics(path = "img/header4.png")
@@ -213,10 +240,9 @@ knitr::include_graphics(path = "img/header4.png")
 
 ## I numeri di sezione
 
-Per aggiungere i numeri delle sezioni, basta aggiungere allo YAML
+Per aggiungere i numeri delle sezioni, basta aggiungere allo YAML: `number_sections: true`:
 
-<div style="float: left; width: 50%;">
-
+::: {style="float: left; width: 50%;"}
 ```{r echo =TRUE, eval = FALSE}
 ---
 title: "Esempio di File"
@@ -229,17 +255,14 @@ author: Ottavia M. Epifania
 ---
 ```
 
-</div>
+<font size="4"> (fate attenzione all'indentazione)</font>
+:::
 
-
-<div style="float: right; width: 50%;">
-
+::: {style="float: right; width: 50%;"}
 ```{r out.width="90%"}
 knitr::include_graphics(path = "img/numeHeader.png")
 ```
-
-</div>
-
+:::
 
 ## Table of contents
 
@@ -254,30 +277,29 @@ output:
 ---  
 ```
 
+con l'argomento `toc_depth` si può specificare il livello di profondità dell'indice.
 
-con l'argomento `toc_depth` si può specificare il livello di profondità dell'indice. 
-
-Con `toc_depth: 1` vengono riportati solo i  titoli delle sezioni (Header 1), con `toc_depth: 2` i titoli delle sezioni e sottosezioni (Header 1 e 2, default) e via discorrendo.
+Con `toc_depth: 1` vengono riportati solo i titoli delle sezioni (Header 1), con `toc_depth: 2` i titoli delle sezioni e sottosezioni (Header 1 e 2, default) e via discorrendo.
 
 ## Your turn
 
-- Creare un documento 
-- Usare il nome del vostro dataset come titolo
-- Sottotitolo a scelta
-- Al posto della data $\rightarrow$ Università di Padova
+-   Creare un documento
+-   Usare il nome del vostro dataset come titolo
+-   Sottotitolo a scelta
+-   Al posto della data $\rightarrow$ Università di Padova
 
-<div align="center">
+::: {align="center"}
 ADAVANCED
-</div>
+:::
 
-- Aggiungere almeno 3 headings (e.g., "Titolo 1", "Titolo 2", "Titolo 3")
-- Table of contents
+-   Aggiungere almeno 3 headings (e.g., "Titolo 1", "Titolo 2", "Titolo 3")
+-   Table of contents (hint: `toc: true`)
 
 # Formattazione del testo
 
 ## Interlinea & Margini
 
-YAML: 
+YAML:
 
 ```{r echo= TRUE, eval = FALSE}
 ---
@@ -291,79 +313,71 @@ output:
 ---  
 ```
 
-
-     
-
 ## Corsivo, grassetto, corsetto, colori
 
-<div style="float: left; width: 50%;">
+::: {style="float: left; width: 50%;"}
     *Corsivo*
-    
-    **Grassetto**
-    
-    ***Corsetto***
-    
-    \textcolor{red}{Parola colorata (PDF)}
-    
-    <span style="color:red">Parola colorata (HTML)</span>
-    
-</div> 
 
-<div style="float: right; width: 50%; text-align: right;">
+    **Grassetto**
+
+    ***Corsetto***
+
+    \textcolor{red}{Parola colorata (PDF)}
+
+    <span style="color:red">Parola colorata (HTML)</span>
+:::
+
+::: {style="float: right; width: 50%; text-align: right;"}
 *Corsivo*
-    
+
 **Grassetto**
-    
+
 ***Corsetto***
 
-<span style="color:red">Parola colorata (PDF)</span>
+[Parola colorata (PDF)]{style="color:red"}
 
-<span style="color:red">Parola colorata (HTML)</span>
-</div>
+[Parola colorata (HTML)]{style="color:red"}
+:::
 
 </br>
 
-
-## Ingrandire e rimpicciolire il testo 
+## Ingrandire e rimpicciolire il testo
 
 ```{r out.width="40%"}
 knitr::include_graphics("img/fontsize.png")
 ```
 
-
-
 ## Your turn!
 
-- Modificare i margini del documento a 0.5in
-- Impostare l'interlinea di un punto e mezzo
-- Mettere delle parole in corsivo, grassetto e corsetto
-- Aggiungere delle parole colorate
+-   Modificare i margini del documento a 0.5in
+-   Impostare l'interlinea di un punto e mezzo
+-   Mettere delle parole in *corsivo*, **grassetto** e ***corsetto***
+-   Aggiungere delle parole colorate
 
-<div align="center">
-<span style="color:#FF0000">ADAVANCED</span>
-</div>
+::: {align="center"}
+[ADAVANCED]{style="color:#FF0000"}
+:::
 
-- Aggiungere una **<span style="color:#FF0000">parola colorata</span>** in **grassetto**
-- Aggiungere una *<span style="color:green">parola colorata</span>* in *corsivo*
-- Aggiungere una ***<span style="color:blue">parola colorata</span>*** in ***corsetto***
+-   Aggiungere una [**parola colorata**]{style="color:#FF0000"} in **grassetto**
+-   Aggiungere una [*parola colorata*]{style="color:green"} in *corsivo*
+-   Aggiungere una [***parola colorata***]{style="color:blue"} in ***corsetto***
 
 ## Block quote {.build}
 
 <div>
-Molto semplicemente, si fa precedere il testo da `>`: 
+
+Molto semplicemente, si fa precedere il testo da `>`:
 
     Una canzone de "La rappresentante di lista", presentata a Sanremo 2022
-    > Come stai bambina?
-     Dove vai stasera?
-     Che paura intorno
-     È la fine del mondo
-     Sopra la rovina sono una regina
-     Ma-ma-ma
-     Ma non so cosa salvare
+    > Come stai bambina? Dove vai stasera?  Che paura intorno È la fine del mondo. 
+    Sopra la rovina sono una regina Ma-ma-ma 
+    Ma non so cosa salvare
+
 </div>
 
 <div>
-```{r, out.width="70%"}
+
+```{r, out.width="80%"}
 knitr::include_graphics(path = "img/block.png")
 ```
 
@@ -371,205 +385,228 @@ knitr::include_graphics(path = "img/block.png")
 
 ## Elenchi {.build}
 
-<div style="float: left; width: 50%;">
+::: {style="float: left; width: 50%;"}
+<h3>
 
-<h3> Unordered list </h3>
+Unordered list
+
+</h3>
 
     - Chimica
     - Ciao Ciao
     - Brividi
     - Domenica
 
-- Chimica
-- Ciao Ciao
-- Brividi
-- Domenica
-   
-</div>
+-   Chimica
+-   Ciao Ciao
+-   Brividi
+-   Domenica
+:::
 
+::: {style="float: right; width: 50%;"}
+<h3>
 
-<div style="float: right; width: 50%;">
+Ordered list
 
-<h3> Ordered list </h3>
+</h3>
 
     1. Brividi
     2. La canzone di Elisa
     3. Gianni Morandi
     4. Non mi ricordo
 
-1. Brividi
-2. La canzone di Elisa
-3. Gianni Morandi
-4. Non mi ricordo
-
-</div>
-
-
+1.  Brividi
+2.  La canzone di Elisa
+3.  Gianni Morandi
+4.  Non mi ricordo
+:::
 
 ## Elenchi annidati {.build}
 
-Basta mettere tre spazi sull'elenco che si vuole annidare: 
+Basta mettere tre spazi sull'elenco che si vuole annidare:
 
-<div style="float: left; width: 50%;">
-
+::: {style="float: left; width: 50%;"}
     - Un elenco
         - Voce del secondo elenco
         - altra voce del secondo elenco
     - Seconda voce del primo elenco
+:::
 
-</div>
-
-
-<div  style="float: right; width: 50%;">
-
-- Un elenco
-    - Voce del secondo elenco
-    - altra voce del secondo elenco
-- Seconda voce del primo elenco
-
-</div>
+::: {style="float: right; width: 50%;"}
+-   Un elenco
+    -   Voce del secondo elenco
+    -   altra voce del secondo elenco
+-   Seconda voce del primo elenco
+:::
 
 ## Note
 
-
-Nulla di più semplice: 
+Nulla di più semplice:
 
     Con i piedi[^1]
-    
+
     [^1]: ciao ciao
 
     Un sacco di testo nel mio file 
-    
-che risulta in: 
 
-```{r fig.align='center', out.width="50%"}
+
+```{r fig.align='center', out.width="80%"}
 knitr::include_graphics("img/note.png")
 ```
+
+## Link 
+
+    [Parola](url-della-pagina)
+    
+    [Chimica](https://www.youtube.com/watch?v=2rsteQ4OdLE)
+    
+[Chimica](https://www.youtube.com/watch?v=2rsteQ4OdLE)
+    
 
 
 ## Your turn
 
-- Creare una unordered list
-- Creare una ordered list
-- Annidare una unordered list in una ordered list
+-   Creare una unordered list
+-   Creare una ordered list
+-   Annidare una unordered list in una ordered list
 
-<div align="center">
-<span style="color:#FF0000">ADAVANCED</span>
-</div>
+::: {align="center"}
+[ADAVANCED]{style="color:#FF0000"}
+:::
 
-- Inserire una list a scelta (ordered o unordered) in un block quote
-- Inserire una lista a scelta (ordered o unordered) dentro un'altra lista a scelta dentro un block quote (Inception style `r emoji("smiling face with sunglasses")`)
-- Mettere due note a piè di pagina
+-   Inserire una list a scelta (ordered o unordered) in un block quote
+-   Inserire una lista a scelta (ordered o unordered) dentro un'altra lista a scelta dentro un block quote (Inception style `r emoji("smiling face with sunglasses")`)
+-   Mettere due note a piè di pagina
+- In una delle due note metter un link a una pagina wikipedia connessa al vostro dataset
 
-# Inserire immagini 
+# Inserire immagini
 
 ## `Markdown` style vs. `RMarkdown` PT. I {.columns-2 .smaller .build}
 
+<h4>
 
-<h4> `Markdown` </h4>
+`Markdown`
+
+</h4>
 
 <div>
+
 </br>
 
 `![Caption](percorso-alla-figura)`
 
-![Prima del corso `RMarkdown`](C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/slides/01 - Baby Steps/img/oldManHappy.jpg)
+![Prima del corso `RMarkdown`](C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/slides/01%20-%20Baby%20Steps/img/oldManHappy.jpg)
+
 </div>
 
-<p class="forceBreak"></p>
+<p class="forceBreak">
 
-<h4> `RMarkdown` </h4>
+</p>
+
+<h4>
+
+`RMarkdown`
+
+</h4>
 
 </br>
 
 <div>
+
 
 ````
 ```{r, fig.cap = "Caption", fig.align="center", out.width="50%"}`r ''`
 knitr::include_graphics(path = "percorso-alla-figura")
 ```
 ````
-```{r, fig.cap="Dopo il corso `RMarkdown`"}
+
+```{r, fig.cap="Dopo il corso `RMarkdown`", fig.align="center", out.width="50%"}
 knitr::include_graphics("img/oldManSad.jpg")
 ```
 
-<font size="3">`fig.align` (cambia l'allineamento della figura), `out.width` (cambia la dimensione dell'immagine modificandone la larghezza, l'altezza si adatta automaticamente)</font> 
+<font size="3">`fig.align` (cambia l'allineamento della figura), `out.width` (cambia la dimensione dell'immagine modificandone la larghezza, l'altezza si adatta automaticamente)</font>
+
 </div>
 
 ## `Markdown` style vs. `RMarkdown` PT. II {.build}
 
-<div align="center">
-<h4> `Markdown` </h4>
+::: {align="center"}
+<h4>
+
+`Markdown`
+
+</h4>
+
 </br>
-</div>
+:::
 
 `r emoji("smile")` Più immmediato
 
-`r emoji("smile")` Si "autoaggiusta" al file <font size="2">(non sempre  in modo ottimale)</font>
+`r emoji("smile")` Si "autoaggiusta" al file <font size="2">(non sempre in modo ottimale)</font>
 
 `r emoji("sad")` Per cambiare qualcosa bisogna ricorrere a HTML
 
+::: {align="center"}
+<h4>
 
-<div align="center">
-<h4> `RMarkdown` </h4>
+`RMarkdown`
+
+</h4>
+
 </br>
-</div>
+:::
 
 `r emoji("smile")` Permette di cambiare comodamente posizionamento e dimensioni dell'immagine
 
 `r emoji("sad")` Richiede un po' di scrittura in più
 
-
-# Le sottocartelle 
+# Le sottocartelle
 
 ## Perché
 
 </br>
 
-In Word o simili siamo abituati a mettere "a mano" le  figure, magari anche la bibliografia $\rightarrow$ si mette tutto nel file di testo 
+In Word o simili siamo abituati a mettere "a mano" le figure, magari anche la bibliografia $\rightarrow$ si mette tutto nel file di testo
 
 In `RMarkdown`, le immagini, la bibliografia, gli eventuali dati e i risultati delle analisi devono essere importati all'interno del file
 
-L'importazione è basata sui "percorsi" (le directory) dei file. 
+L'importazione è basata sui "percorsi" (le directory) dei file.
 
-## Come 
+## Come
 
-Fondalmentalmente in due modi: 
+Fondamentalmente in due modi:
 
-1. Il file che ci interessa è nella stessa cartella del file su cui stiamo lavorando:
-   - Questa opzione va bene se abbiamo pochi file da importare
-   - Ad ogni modo questa non è una soluzione ottimale $\rightarrow$ troppo disordine
+1.  Il file che ci interessa è nella stessa cartella del file su cui stiamo lavorando:
+    -   Questa opzione va bene se abbiamo pochi file da importare
+    -   Ad ogni modo questa non è una soluzione ottimale $\rightarrow$ troppo disordine
+2.  Si creano delle sottocartelle divise per tema (e.g., immagini, bibliografia, dati) $\rightarrow$ è la soluzione ottimale che permette di avere tutti i file a disposizione e organizzati in modo lineare
 
-2. Si creano delle sottocartelle divise per tema (e.g., immagini, bibliografia, dati) $\rightarrow$ è la soluzione ottimale che permette di avere tutti i fiile  a disposizione e organizzati in modo lineare
-
-## Un esempio 
+## Un esempio
 
 ```{r out.width="25%"}
 knitr::include_graphics(path = "img/sottocartelle.png")
 ```
 
-Se volessi importare un'immagine nel mio documento chiamata "immagine.png" contenuta nella  cartella "vignettes"  dovrei scrivere: 
+Se volessi importare un'immagine nel mio documento chiamata "immagine.png" contenuta nella cartella "vignettes" dovrei scrivere:
 
-````
-```{r, fig.cap = "Caption", fig.align="center", out.width="50%"}`r ''`
-knitr::include_graphics(path = "vignettes/immagine.png")
-```
-````
-<font size="3"> (Funziona anche usando il codice  `![Caption](vignettes/immagine.png)`)</font>
+    ```{r, fig.cap = "Caption", fig.align="center", out.width="50%"}`r ''`
+    knitr::include_graphics(path = "vignettes/immagine.png")
+    ```
+
+<font size="3"> (Funziona anche usando il codice `![Caption](vignettes/immagine.png)`)</font>
 
 ## Your turn!
 
-- Nel vostro progetto, create la  cartella `img` e la cartella `bibliografia`
-- Scegliete due immagini da Google immagini <font size="2">(magari inerenti il vostro dataset `r emoji("chicken")`, `r emoji("flower")`, `r emoji("car")`)</font> e salvatele nelle cartella `img`
-- Importare le immagini, una con il codice `Markdown`, una con il codice `RMarkdown`
+-   Nel vostro progetto, create la cartella `img` e la cartella `bibliografia`
+-   Scegliete due immagini da Google immagini <font size="2">(magari inerenti il vostro dataset `r emoji("chicken")`, `r emoji("flower")`, `r emoji("car")`)</font> e salvatele nelle cartella `img`
+-   Importare le immagini, una con il codice `Markdown`, una con il codice `RMarkdown`
 
-<div align="center">
+::: {align="center"}
 ADVANCED
-</div>
+:::
 
-- Importare di nuovo una delle due immagini e allinearla a destra
-- Importare di nuovo l'altra immagine e ridurre la dimensione al  10%
-
+-   Importare di nuovo una delle due immagini e allinearla a destra
+-   Importare di nuovo l'altra immagine e ridurre la dimensione al 10%
 
 # Bibliografia
 
@@ -587,34 +624,36 @@ ADVANCED
 
 Ecco fatto, messa la bibliografia!
 
-Ovviamente, il file `biblio.bib` va creato ex-novo.  
+Ovviamente, il file `biblio.bib` va creato ex-novo.
 
-Se si usa questo  codice, la bibliografia deve essere nella stessa cartella del file che stiamo creando. Se  invece è in una sottocarella `bibliography: biblio/biblio.bib`
+Se si usa questo codice, la bibliografia deve essere nella stessa cartella del file che stiamo creando. Se invece è in una sottocarella `bibliography: bibliografia/biblio.bib`
 
 ## Creare `.bib`
 
 `.bib` è l'estensione del file. Sia `R` sia `LaTeX` riconoscono i file `.bib` come file di bibliografia.
 
-Crearli è molto semplice: 
+0.  Si decide qual è la letteratura rilevante per quello che stiamo facendo
+1.  si va su Google scholar e si copia la citazione in formato `BibTex`:
 
-0. Si decide qual è la letteratura rilevante per quello che stiamo facendo
-1. si va su Google scholar e si copia la citazione in formato `BibTex`: 
-
-```{r}
+```{r out.width="35%"}
 knitr::include_graphics(path = "img/bibScholar.png")
 ```
 
-##
+## 
 
 <ol start="3">
-  <li> La citazione risulta essere:</li>
+
+<li>
+
+La citazione risulta essere:
+
+</li>
+
 </ol>
-
-
 
     ```
     @article{epifania2021implicit,
-    title={Implicit social cognition through the years: The Implicit Association Test at age     21.},
+    title={Implicit social cognition through the years: The Implicit Association Test at age 21.},
     author={Epifania, Ottavia M and Anselmi, Pasquale and Robusto, Egidio},
     journal={Psychology of Consciousness: Theory, Research, and Practice},
     year={2021},
@@ -622,63 +661,76 @@ knitr::include_graphics(path = "img/bibScholar.png")
     publisher={Educational Publishing Foundation}
     }
     ```
-   
+
 <ol start="4">
-  <li> La copiaincolliamo in un documento vuoto </li>
-  <li> Salviamo il documento con un nome a scelta (e.g., `biblio`) **ma soprattutto** ricordando l'estensione `.bib` </li> 
+
+<li>
+
+La copiaincolliamo in un documento vuoto (il blocco note va benissimo)
+
+</li>
+
+<li>
+
+Salviamo il documento con un nome a scelta (e.g., `biblio`) **ma soprattutto** ricordando l'estensione `.bib`
+
+</li>
+
 </ol>
 
-`r emoji("red exclamation mark")` `epifania2021implicit` è la "chiave" che ci permette di citare l'articolo nel testo 
+`r emoji("red exclamation mark")` `epifania2021implicit` è la "chiave" che ci permette di citare l'articolo nel testo
 
 <font size="3">In fondo al file `# Bibiografia`</font>
 
 ## Come citare nel testo
 
-
 ```{r out.width="80%"}
 knitr::include_graphics("img/bibExample.png")
 ```
 
-
 ## Your turn
 
-- Creare un file `.bib` che contenga questi due articoli su Google Scholar:
+-   Creare un file `.bib` che contenga questi due articoli su Google Scholar:
+    - <font size ="4">*DscoreApp: a shiny web application for the computation of the implicit association test d-score*</font>
+     - <font size ="4">*Implicit measures with reproducible results: The implicitMeasures package*</font>
 
-    > DscoreApp: a shiny web application for the computation of the implicit association test d-score
-    >
-    > Implicit measures with reproducible results: The implicitMeasures package
+-   Salvare il file nella cartella `bibliografia` creata in precedenza
+-   Usare entrambe le citazioni con Autori e anno tra parentesi
 
-- Salvare il file nella cartella `bibliografia` creata in precedenza
-
-- Usare entrambe le citazioni con Autori e anno tra parentesi
-
-<div align="center">
+::: {align="center"}
 ADVANCED
-</div>
+:::
+-   Sbizzarritevi con le citazioni
 
-- Sbizzarritevi con le citazioni 
-
-# La matematica  <font size="3"> (non sarà mai il mio mestiere) </font>
+# La matematica <font size="3"> (non sarà mai il mio mestiere) </font>
 
 ## Equazioni
 
-Le equazioni vengono risconosciute dal simbolo `$`. 
+Le equazioni vengono risconosciute dal simbolo `$`.
 
-<h3> Inline equation</h3>
+<h3>
 
-`$3 +2 =5$` risulta in  $3+2=5$, sulla stessa riga del testo che si sta scrivendo
+Inline equation
 
-<h3> Equation </h3>
+</h3>
 
-Per scrivere le equazioni come  blocchi di testo a parte,  si usa il doppio dollaro. `$$3 +2 =5$$` diventa $$3+2=5$$  (anche se lo scrivo sulla stessa riga!) 
+`$3 +2 =5$` risulta in $3+2=5$, sulla stessa riga del testo che si sta scrivendo
+
+<h3>
+
+Equation
+
+</h3>
+
+Per scrivere le equazioni come blocchi di testo a parte, si usa il doppio dollaro. `$$3 +2 =5$$` diventa $$3+2=5$$ (anche se lo scrivo sulla stessa riga!)
 
 ## Lettere greche, frazioni e simili
 
-Per inserire le lettere greche, basta scrivere la lettera greca che si desidera in caratteri latini all'interno dei dollari, preceduta da `\`. 
+Per inserire le lettere greche, basta scrivere la lettera greca che si desidera in caratteri latini all'interno dei dollari, preceduta da `\`.
 
 Più semplicente, se vogliamo $\delta$, non dobbiamo far altro che scrivere `$\delta$`
 
-Se si vogliono le lettere greche maiuscolo, si mette in maiuscolo la prima lettera latina, per cui `$\Delta$` risulta in $\Delta$  
+Se si vogliono le lettere greche maiuscolo, si mette in maiuscolo la prima lettera latina, per cui `$\Delta$` risulta in $\Delta$
 
 `$\frac{num}{den}$` permette di scrivere le frazioni (`$\frac{2}{3}$` $\rightarrow$ $\frac{2}{3}$)
 
@@ -690,15 +742,15 @@ A [questa pagina](https://artofproblemsolving.com/wiki/index.php/LaTeX:Symbols) 
 
 ## Ma come si metteno le cross-referencing? {.build}
 
-Con `RMarkdown` base (quello che stiamo usando noi), non si può
+Con `RMarkdown` base (quello che stiamo usando noi), si può usando LaTeX
 
-`bookdown` invece ci permette di fare cross-references alle equazioni, alle figure (generate da codice) e alle tabelle: 
+`bookdown` ci permette di fare cross-references alle equazioni, alle figure (generate da codice) e alle tabelle:
 
 ```{r eval = FALSE, echo=TRUE}
 install.packages("bookdown")
 ```
 
-E modifichiamo l'output nello YAML in: 
+E modifichiamo l'output nello YAML in:
 
 ```{r eval = FALSE, echo=TRUE}
  output: 
@@ -710,17 +762,15 @@ E modifichiamo l'output nello YAML in:
     [...]
 ```
 
-
-
 ## 
 
-Il comando nel testo: 
+Il comando nel testo:
 
 ```{r, out.width="50%", fig.align='center'}
 knitr::include_graphics("img/cross.png")
 ```
 
-Nella breve lezione su [LaTeX](https://ottaviae.github.io/CorsoRmarkdown/slides/03%20-%20LaTeX/03-LaTeX.pdf) vedremo come usare al meglio e soprattutto in modo flessibile le cross-references 
+Nella breve lezione su [LaTeX](https://ottaviae.github.io/CorsoRmarkdown/slides/03bis%20-%20LaTeX%20Bis/03bis-LaTeX-bis.pdf) vedremo come usare al meglio e soprattutto in modo flessibile le cross-references
 
 ## Cross-referencing: La tabella
 
@@ -730,11 +780,9 @@ Unfortunately, `stargazer` e `bookdown` non si parlano. A [questa pagina](https:
 
 Usiamo `kable`:
 
-````
-```{r cars-table}`r ''`
-knitr::kable(mtcars[1:5, ], caption = "Questo è un dataset")
-```
-````
+    ```{r cars-table}`r ''`
+    knitr::kable(mtcars[1:5, ], caption = "Questo è un dataset")
+    ```
 
 Per richiamare nel testo `\@ref(tab:cars-table)`.
 
@@ -742,18 +790,16 @@ Per richiamare nel testo `\@ref(tab:cars-table)`.
 
 Funziona solo con la funzione base `plot`:
 
-````
-```{r speed-dist, fig.cap="Grafico mpg-cilindrata"}`r ''`
-par(mar = c(4, 4, .2, .1))
-plot(mtcars$mpg ~ mtcars$cyl)  # a boxplot
-```
-````
+    ```{r speed-dist, fig.cap="Grafico mpg-cilindrata"}`r ''`
+    par(mar = c(4, 4, .2, .1))
+    plot(mtcars$mpg ~ mtcars$cyl)  # a boxplot
+    ```
 
 Per richiamrla nel testo `\@ref(fig:speed-dist)`
 
 ## Cross-referencing: Le equazioni
 
-Molto semplicemente: 
+Molto semplicemente:
 
 ```{r, echo = TRUE, eval = FALSE}
 \begin{equation}
@@ -762,6 +808,3 @@ Molto semplicemente:
 ```
 
 Per richiamarla nel testo `\@ref(eq:mean)`
-
-
-
