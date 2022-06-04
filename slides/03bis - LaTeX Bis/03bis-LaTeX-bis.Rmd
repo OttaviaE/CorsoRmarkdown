@@ -1,0 +1,489 @@
+---
+title: "03-bis - \LaTeX bis"
+author: | 
+  | Ottavia M. Epifania
+  | University of Padova
+date: 'Corso `RMarkdown`'
+institute: "ottavia.epifania@unipd.it"
+output: 
+  beamer_presentation: 
+    theme: CambridgeUS
+    colortheme: beaver
+    fonttheme: serif
+    highlight: haddock
+header-includes:
+    - \AtBeginDocument{\title[\LaTeX bis]{03-bis - \LaTeX bis}}
+    - \usepackage{graphicx} 
+    - \usepackage{setspace}
+    - \usepackage{tabularx}
+    - \usepackage[italian]{babel}
+    - \usepackage{tikzsymbols}
+    - \usepackage{subcaption}
+    - \usepackage{tikz}
+    - \usepackage{spot}
+    - \usepackage{tabularx}
+    - \usepackage[absolute,overlay]{textpos}
+    - \usepackage{booktabs}
+    - \newcommand\Factor{1.2}
+    - \setbeamerfont{subtitle}{size=\large, series=\bfseries}
+    - \definecolor{template}{RGB}{54, 114, 89}
+    - \setbeamercolor{frametitle}{bg=white}
+    - \setbeamertemplate{frametitle}[default][center]
+    - \AtBeginSection{\frame{\sectionpage}}
+    - \setbeamercolor{section name}{fg=white}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      eval = TRUE, 
+                      message = FALSE, 
+                      prompt = TRUE, 
+                      comment="", 
+                      tidy=TRUE, 
+                      warning = FALSE, 
+                      fig.align = "center", 
+                      out.width = "50%")
+
+hook_output <- knitr::knit_hooks$get("output")
+knitr::knit_hooks$set(output = function(x, options) {
+if (!is.null(n <- options$out.lines)) {
+x <- xfun::split_lines(x)
+if (length(x) > n) {
+# truncate the output
+x <- c(head(x, n), "....\n")
+} 
+x <- paste(x, collapse = "\n")
+} 
+hook_output(x, options)
+})
+library(knitr)
+library(xtable)
+```
+
+## Il perché di questa lezione
+
+Quando ho preparato le slide per \LaTeX usando Sweave, tutto sembrava andare per il meglio
+
+Poi, gli aggiornamenti
+
+Lascio le slide su \LaTeX perché non escludo che un giorno possa tornare a funzionare
+
+Ma nel frattempo, vediamo più nel dettaglio un'integrazione più snella ed efficiente!
+
+## 
+
+I file si aprono esattamente come prima. L'unica cosa che modifichiamo è lo YAML
+
+```{=tex}
+\begin{exampleblock}{Vantaggi}
+```
+-   Permette di usare \LaTeX senza realmente saper usare \LaTeX
+
+-   Ha tutta la flessibilità (e bellezza) dei file \LaTeX
+
+-   Con un minimo sforzo si ottengono dei risultati di tutto rispetto
+
+```{=tex}
+\end{exampleblock}
+```
+\pause
+
+\vspace{5mm}
+
+```{=tex}
+\begin{alertblock}{Svantaggi}
+```
+-   Se vogliamo ottenere un \texttt{HTML} non è la soluzione che fa per noi
+
+-   Essendo un ibrido tra \texttt{RMarkdown} e \LaTeX bisogna fare attenzione a come comunicano
+
+-   Le soluzioni che vanno bene in \LaTeX non sempre vanno bene in \texttt{RMarkdown}
+
+```{=tex}
+\end{alertblock}
+```
+# Documenti di testo
+
+## Lo YAML
+
+```{r eval = TRUE, echo = FALSE, out.width="100%"}
+knitr::include_graphics("img/yaml.png")
+```
+
+## 
+
+Uno YAML come quello di cui sopra vi restituisce un risultato simile a quello che abbiamo visto ad adesso.
+
+Le aggiunte che abbiamo messo ci permettono di utilizzare il file in maniera più "elastica", ossia usando la sintassi e le potenzalità di \LaTeX ma rimandendo con la logica di `RMarkdown`
+
+## Le figure
+
+Ormai sappiamo a memoria come mettere le figure:
+
+    ```{r, out.width="50%"}`r ''`
+    knitr::include_graphics(path = "percorso-alla-figura")
+    ```
+
+Però abbiamo visto il disagio che è mettere le cross-references con `bookdown`
+
+Con \LaTeX invece è molto più semplice, anche se dobbiamo scrivere molto di più
+
+Bisogna assicurarsi di aggiungere allo YAML:
+
+```{tex eval = FALSE}
+- \usepackage{graphicx} 
+```
+
+## Codice
+
+```{r echo = FALSE, out.width="100%"}
+knitr::include_graphics("img/figure1.png")
+```
+
+## Risultato
+
+In Figura \ref{fig:logo} c'è il logo unipd:
+
+````{=tex}
+\begin{figure}
+\centering
+\caption{Il logo unipd.}
+\label{fig:logo}
+```{r out.width="50%", eval = TRUE, echo=FALSE}
+knitr::include_graphics("img/unipd.png")
+```
+\end{figure}
+````
+
+## Le sottofigure
+
+Bisogna aggiunger allo YAML `-\usepackage{subcaption}`
+
+```{r, echo = FALSE, out.width="90%"}
+knitr::include_graphics("img/subfigure.png")
+```
+
+## 
+
+In figura \ref{fig:doppia} si trova un esempio di sottoofigure. In Figura \ref{sub:unipd1} c'è il logo unipd, in Figura \ref{sub:grafico} c'è un grafico.
+
+````{=tex}
+\begin{figure}
+\centering
+\begin{subfigure}{0.3\textwidth}
+```{r echo = FALSE}
+knitr::include_graphics("img/unipd.png")
+```
+\caption{Di nuovo unipd.}
+\label{sub:unipd1}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
+```{r out.width="80%", echo = FALSE}
+plot(cars)
+``` 
+\caption{Un grafico.}
+\label{sub:grafico}
+\end{subfigure}
+\caption{Una figura doppia}
+\label{fig:doppia}
+\end{figure}
+````
+
+## Equazioni
+
+Funziona il codice che abbiamo visto fino ad adesso (`$$`)
+
+Per avere le cross-reference:
+
+```{tex}
+
+In Equazione \ref{eq:mean} è riportata la formula per calcolare la media della variabile $X$:
+
+\begin{equation}\label{eq:mean}
+	\bar{X} = \frac{\sum_{i=1}^{n} x_i}{n}
+\end{equation}
+```
+
+\pause
+
+In Equazione \ref{eq:mean} è riportata la formula per calcolare la media della variabile $X$:
+
+```{=tex}
+\begin{equation}\label{eq:mean}
+    \bar{X} = \frac{\sum_{i=1}^{n} x_i}{n}
+\end{equation}
+```
+## Tabelle
+
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/tabella.png")
+```
+
+## 
+
+I risultati sono riportati in Tabella \ref{tab:tabella}.
+
+```{r results='asis', echo = FALSE}
+print(xtable::xtable(summary(cars), 
+                     caption = "Tabella dei risultati", 
+                     label = "tab:tabella"), 
+      comment = FALSE, 
+      caption.placement = "top", 
+      scalebox=1)
+```
+
+## Frontespizio
+
+Sembra più difficile di quanto non sia:
+
+\footnotesize
+
+```{tex eval = FALSE}
+output: 
+   pdf_document:
+      includes:
+        before_body: titolo.sty
+      keep_tex: yes
+      number_sections: yes
+      toc_depth: 2
+bibliography: biblio.bib
+geometry: margin=1in
+header-includes:
+  - \usepackage{setspace} 
+  - \usepackage{multicol}
+  - \usepackage{caption}
+  - \usepackage[italian]{babel}
+  - \captionsetup{format=plain, font=small, labelfont=bf}
+  - \usepackage{graphicx} 
+  - \usepackage{subcaption}
+```
+
+## 
+
+In questo modo si forza `RMarkdown` a prendere un frontespizio esterno, creato a parte
+
+Per creare il frontespizio è necessario avere un po' di conoscenze in \LaTeX
+
+Molto importante: se nel frontespizio usate dei pacchetti (e.g., se volete aggiungere una figura dovete avere il pacchetto `graphicx`) dovete caricarli nello YAML del documento principale
+
+Ho creato [\textcolor{blue}{titolo.sty}](https://drive.google.com/file/d/1O4YgvAZnPJbNMOz0tugz5xf75TTxVvlY/view?usp=sharing) per voi, dovete solo modificarlo!
+
+# Your turn!
+
+## 
+
+- Inserire una figura con cross-reference nel testo
+
+- Inserire il plot del vostro data set con cross-reference nel testo (il codice è [\textcolor{blue}{qui}](https://ottaviae.github.io/CorsoRmarkdown/Datasets-Codici.html))
+
+- Inserire una tabella con cross-reference nel testo
+
+\begin{center}
+ADAVANCED
+\end{center}
+
+- Inserire una figura con tre sottofigure (due foto e il grafico del vostro dataset) con rispettive cross-reference 
+
+- Cambiare la pagina del titolo modificando il file [\textcolor{blue}{titolo.sty}](https://drive.google.com/file/d/1O4YgvAZnPJbNMOz0tugz5xf75TTxVvlY/view?usp=sharing)
+
+
+# Presentazioni
+
+## Lo YAML
+
+```{r echo = FALSE, out.width="80%"}
+knitr::include_graphics("img/yaml1.png")
+```
+
+## 
+
+
+Si può scegliere combinazione di `theme`, `colortheme`, `fonttheme` e `highlight`. 
+
+A [questa pagina](https://deic.uab.cat/~iblanes/beamer_gallery/) sono disponibili tutti i possibili temi per la vostra presentazione
+
+`highlight` è la formattazione del vostro codice, a cui potete accedere cliccando sulla rotellina accanto a `knit` $\rightarrow$ Output Options
+
+## Colonne
+
+Mi raccomando: `- \usepackage{multicol}` deve essere nello YAML:
+
+\small
+
+```{tex eval = FALSE}
+
+\begin{columns} % L'ambiente colonna
+\begin{column}{0.50\textwidth}
+Testo nella prima colonna
+\end{column}
+
+\begin{column}{0.50\textwidth}
+Testo nella seconda colonna
+\end{column}
+
+\end{columns}
+```
+
+\pause
+
+\normalsize
+
+```{=tex}
+\begin{columns} % L'ambiente colonna
+\begin{column}{0.50\textwidth}
+Testo nella prima colonna
+\end{column}
+
+\begin{column}{0.50\textwidth}
+Testo nella seconda colonna
+
+PS: si possono mettere anche più di due colonne
+\end{column}
+
+\end{columns}
+```
+
+## Testo incrementale
+
+Avete visto che in alcune mie slide il testo appare in modo incrementale. Questo effetto si può ottenere in due modi, entrambi basati su \LaTeX:
+
+`\pause`
+
+Questo è il comando più semplice, si mette davanti al contenuto che si vuole "bloccare"
+
+
+
+\pause
+
+\vspace{3mm}
+
+\begin{columns}
+\begin{column}{.50\linewidth}
+
+```{r out.width="80%", echo = FALSE}
+knitr::include_graphics("img/pause.png")
+```
+
+
+
+\end{column}
+
+\pause 
+
+\vspace{3mm}
+
+\begin{column}{.50\linewidth}
+
+Testo che appare subito
+
+\pause % pausa
+
+Testo che appare dopo la pausa
+
+
+\end{column}
+\end{columns}
+
+
+
+
+## 
+
+`\onslide<i-n>`
+
+Dove $i$ è la prima slide su cui il contentuo deve apparire, $n$ è l'ultima slide su cui il contenuto appare ($n$) può essere omesso. 
+
+\begin{columns}
+\begin{column}{.50\linewidth}
+```{r out.width="100%", echo = FALSE}
+knitr::include_graphics("img/onslide.png")
+```
+
+\end{column}
+
+\begin{column}{.50\linewidth}
+
+\onslide<2-> Testo che appare sulla seconda slide e rimane fino alla fine
+
+\onslide<3-3> Testo che appare alla terza slide e sparisce alla terza slide
+
+\onslide<4-> Testo che appare sull'ultima slide
+
+\end{column}
+
+
+\end{columns}
+
+## Blocchi di testo 
+
+\begin{block}{Il testo}
+
+Viene racchiuso in blocchi che lo mettono in risalto
+
+\end{block}
+
+\pause
+
+\vspace{3mm}
+
+\begin{exampleblock}{Blocchi di esempio}
+
+Dove il titolo è in verde e a seconda del tema scelto anche la sfumatura esterna del blocco stesso
+
+\end{exampleblock}
+
+\pause
+
+\vspace{3mm}
+
+\begin{alertblock}{Blocchi di Warning}
+
+Dove il titolo è in rosso e a seconda del tema scelto anche la sfumatura esterna del blocco stesso
+
+\end{alertblock}
+
+
+## 
+
+\footnotesize
+
+```{tex, eval = FALSE}
+\begin{block}{Il testo}
+
+Viene racchiuso in blocchi che lo mettono in risalto
+
+\end{block}
+
+\pause
+
+\begin{exampleblock}{Blocchi di esempio}
+
+Dove il titolo è in verde e a seconda del tema scelto anche la sfumatura esterna del blocco stesso
+
+\end{exampleblock}
+
+\pause
+
+\begin{alertblock}{Blocchi di Warning}
+
+Dove il titolo è in rosso e a seconda del tema scelto anche la sfumatura esterna del blocco stesso
+
+\end{alertblock}
+```
+
+
+# Your turn!
+
+##
+
+- Creare una slide con due colonne, nella prima colonna testo, nella seconda colonna testo e una figura 
+
+- Far apparire la seconda colonna, il suo testo e la sua figura uno alla volta
+
+- Creare una slide con 3 blocchi 
+
+\begin{center}
+ADVANCED
+\end{center}
+
+- Far apparire il terzo blocco sulla prima slide e rimane fino alla fine, il secondo blocco compare e scompare alla seconda slide e il primo blocco appare e rimane sull'ultima slide
