@@ -1,8 +1,13 @@
-# Corso `RMarkdown`
+---
+title: Corso `RMarkdown`
+---
 
 <img align="right" width="150" height="150" src="man/arca_logo.svg">
 
-Benvenuti! In questa pagina sono presenti tutti i link a materiale necessario per il crso e a qualche risorsa in più per saziare tutti gli appetiti di conoscenza. 
+
+Benvenuti e benvenute! 
+
+In questa pagina sono presenti tutti i link a materiale necessario per il crso e a qualche risorsa in più per saziare tutti gli appetiti di conoscenza. 
 
 
 - [Getting started](Istruzioni-base.html): il punto da cui partire. Una piccola guida che vi spiega passo passo come installare `RMarkdown`
@@ -50,3 +55,9 @@ Ma partiamo dall'inizio:
 ## Questionario di fine corso
 
 Non dimenticate di compilare il [questionario di fine corso](https://forms.gle/dYuteuwdL74QQpQ36)!
+
+## File di esempio
+
+In [questa cartella](https://drive.google.com/drive/folders/19F1fhDwih04MeyKP_E4xLsPc0VAw-3co?usp=sharing) trovate vari file di esempio ([presentazione HTML](https://drive.google.com/drive/folders/1mEJaFAN1n2Ysv5gbRmvuypL18PIIacUj?usp=sharing), [presentazione PDF](https://drive.google.com/drive/folders/1-7ZluWSD8bhZZDz8byrghWvQD0pmpA4N?usp=sharing), [tesi](https://drive.google.com/drive/folders/1ajjE0XTD7BA4EU0zRUz-dCPJsVUPuSZ1?usp=sharing)) per prendere confidenza con `RMarkdown`. 
+
+
