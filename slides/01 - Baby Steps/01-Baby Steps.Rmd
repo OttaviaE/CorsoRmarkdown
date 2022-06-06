@@ -9,6 +9,7 @@ output:
     widescreen: yes
     highlight: haddock
     biblio: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/biblio/biblio.bib
+knit: pagedown::chrome_print
 ---
 
 ```{=html}
