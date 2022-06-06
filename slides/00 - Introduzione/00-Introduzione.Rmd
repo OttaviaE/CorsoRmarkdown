@@ -9,6 +9,7 @@ output:
     widescreen: yes
 editor_options:
   chunk_output_type: console
+knit: pagedown::chrome_print
 ---
 
 ```{r setup, include=FALSE}
