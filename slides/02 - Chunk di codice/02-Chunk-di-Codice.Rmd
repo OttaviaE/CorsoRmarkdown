@@ -8,12 +8,13 @@ output:
     logo: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/arca_logo.svg
     widescreen: yes
     highlight: haddock
+knit: pagedown::chrome_print
 ---
 
 <style>
 .forceBreak { -webkit-column-break-after: always; break-after: column; }
 
-.myClass {font-size: 14px;}
+.myClass {font-size: 16px;}
 
 </style>
 
@@ -24,7 +25,7 @@ pre {
 }
 
 pre[class] {
-  max-height: 300px;
+  max-height: 400px;
 }
 
 .scroll-100 {
@@ -37,7 +38,7 @@ pre[class] {
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, 
                       fig.align = "center", 
-                      out.width = "50%", 
+                      out.width = "60%", 
                       message =FALSE, 
                       warning = FALSE, tidy = TRUE,  
                       prompt = TRUE)
@@ -107,7 +108,7 @@ Qui vanno specificate tutte le opzioni di default che vogliamo applicare al nost
 </div>
 
 <div>
-Ad esempio, il setup chunk di queste slide è:
+Un esempio di setup chunk è:
 
 ```{r out.width="70%"}
 include_graphics("img/setup.png")
@@ -141,57 +142,69 @@ ADVANCED
 ## Codice eseguito e risultati mostrati
 
 ````
-```{r, eco=TRUE, eval=TRUE}`r ''`
-ggplot(mtcars, 
-       aes(x=cyl,y=mpg, group=cyl)) + geom_boxplot()
+```{r, echo=TRUE, eval=TRUE}`r ''`
+ggplot(rock, 
+       aes(y=peri,x=shape, color =shape, size = peri)) + geom_point() + 
+  theme_bw() + theme(legend.position = "none") 
+
 ```
 ````
 
 ```{r, echo = TRUE, eval = TRUE}
-ggplot(mtcars, 
-       aes(x=cyl,y=mpg, group=cyl)) + geom_boxplot()
+ggplot(rock, 
+       aes(y=peri,x=shape, color =shape, size = peri)) + geom_point() + 
+  theme_bw() + theme(legend.position = "none") 
 
 ```
 
 ## Risultati senza codice
 
 ````
-```{r, eco=FALSE, eval=TRUE}`r ''`
-ggplot(mtcars, 
-       aes(x=cyl,y=mpg, group=cyl)) + geom_boxplot()
+```{r, echo=FALSE, eval=TRUE}`r ''`
+ggplot(rock, 
+       aes(y=peri,x=shape, color =shape, size = peri)) + geom_point() + 
+  theme_bw() + theme(legend.position = "none") 
+
 ```
 ````
 
 ```{r}
-ggplot(mtcars, 
-       aes(x=cyl,y=mpg, group=cyl)) + geom_boxplot()
-
+ggplot(rock, 
+       aes(y=peri,x=shape, color =shape, size = peri)) + geom_point() + 
+  theme_bw() + theme(legend.position = "none") 
 ```
 
 
 ## Codice senza risultati (non eseguito) 
 
 ````
-```{r, eco=TRUE, eval=FALSE}`r ''`
-ggplot(mtcars, 
-       aes(x=cyl,y=mpg, group=cyl)) + geom_boxplot()
+```{r, echo=TRUE, eval=FALSE}`r ''`
+ggplot(rock, 
+       aes(y=peri,x=shape, color =shape, size = peri)) + geom_point() + 
+  theme_bw() + theme(legend.position = "none") 
 ```
 ````
 
 ```{r, echo = TRUE, eval =FALSE}
-ggplot(mtcars, 
-       aes(x=cyl,y=mpg, group=cyl)) + geom_boxplot()
-
+ggplot(rock, 
+       aes(y=peri,x=shape, color =shape, size = peri)) + geom_point() + 
+  theme_bw() + theme(legend.position = "none") 
 ```
 
 ## Codice eseguito, nessun risultato, nessun codice
+
+<br>
+
+<br>
 
 ````
 ```{r, include=FALSE}`r ''`
 library(ggplot2)
 ```
 ````
-Non appare niente, non sono prodotti risultati, ma è quello che serve come base del file per funzionare.
+Non appare niente, non sono prodotti risultati visibili
+
+L'opzione `include=FALSE` solitamente viene usata nel set chunk e in tutti quei chunk di cui non interessa vedere un risultato ma che contengono un codice importante
 
 ## Messaggi di errore, warning, messaggi
 
@@ -209,28 +222,6 @@ ggplot(mtcars, aes(x=cyl,y=mpg, group=cyl)) + geom_boxplot()
 ````
 
 <font size ="4">`r emoji("warning")` i messaggi di errore/warning sono spariti, gli errori che li causano esistono ancora!!!</font>
-
-## Risultati un po' più carini
-
-Di default, i risultati vengono mostrati così:
-
-```{r}
-cars[1:3, ]
-```
-
-Gli asterischi si possono togliere con l'argomento `comment`, settato uguale a quello che più vi piace:
-
-````
-```{r, comment=" "}`r ''`
-cars[1:3, ]
-```
-````
-
-
-```{r, comment=" "}
-cars[1:3,]
-```
-
 
 ## `eval=FALSE` vs. `results='hide'` {.columns-2}
 
@@ -252,6 +243,66 @@ cars[1:3,]
 - Se ci sono degli errori il codice non va
 - Particolarmente utile quando si vuole spiegare un codice più semplice 
 
+## Risultati un po' più carini
+
+Di default, i risultati vengono mostrati così:
+
+```{r}
+rock[1:3, ]
+```
+
+Gli asterischi si possono togliere con l'argomento `comment`, settato uguale a quello che più vi piace:
+
+````
+```{r, comment=" "}`r ''`
+rock
+```
+````
+
+
+```{r, comment=" "}
+rock
+```
+
+## Risultati un po' più carini PT. II
+
+Il codice si può troncare in modo che non venga quell'orrore che avete visto: 
+
+Setup chunk: 
+
+```{r echo = TRUE, eval=FALSE}
+hook_output <- knitr::knit_hooks$get("output")
+
+knitr::knit_hooks$set(output = function(x, options) {
+  if (!is.null(n <- options$out.lines)) {
+    x <- xfun::split_lines(x)
+    if (length(x) > n) {
+      # truncate the output
+      x <- c(head(x, n), "....\n")
+    }
+    x <- paste(x, collapse = "\n")
+  }
+  hook_output(x, options)
+})
+```
+
+
+## 
+
+Nel chunk che volete tagliare: 
+
+````
+```{r, comment=" ", out.lines=4}`r ''`
+rock
+```
+````
+
+
+```{r comment = " ", out.lines=4}
+rock
+```
+
+Ricodadate che una delle righe che volete mostrate è "mangiata" dai nomi delle colonne
 
 ## Your turn!
 
@@ -260,6 +311,7 @@ cars[1:3,]
  - Nuovo chunk dove eseguite il codice del vostro dataset che trovate [qui](https://ottaviae.github.io/CorsoRmarkdown/Datasets-Codici.html) (non fate la regressione e il grafico) **ma non mostrate né il codice né i risultati**
 - Nuovo chunk dove eseguite il codice del grafico (`plot(data$y ~ data$x)`) **senza** codice
 - Nuovo chunk dove mostrate il codice del grafico (`plot(data$y ~ data$x)`) **senza** risultati
+- Tagliate l'output del vostro dataset in modo che vengano mostrate le prime 10 osservazioni
 
 # Le tabelle
 
@@ -302,22 +354,22 @@ In pratica, noi facciamo le nostre analisi e il pacchetto scelto le sistema in t
 
 Semplicemente l'output di `R`:
 
-```{r, echo = TRUE}
-(summary_cars = mtcars %>% 
-  group_by(cyl) %>% 
-  summarise(mean = mean(mpg), 
-            sd = sd(mpg),
-            min = min(mpg), 
-            max = max(mpg)) )
+```{r, echo = TRUE, out.lines= 6}
+(summary_cars = rock %>% 
+  group_by(perm) %>% 
+  summarise(mean = mean(peri), 
+            sd = sd(peri),
+            min = min(peri), 
+            max = max(peri)) )
 ```
 </div>
 
 <div>
 
-`r emoji("smile")` rapido, efficace, colpo d'occhio
-
+`r emoji("smile")` rapido, efficace, colpo d'occhio 
+</div>
+<div>
 `r emoji("sad")` Nella tesi non sta molto bene
-
 </div>
 
 ## `stargazer` `r emoji("heart")`
@@ -349,7 +401,7 @@ FONDAMENTALE:
 ````
 ```{r, results='asis'}`r ''`
 library(stargazer)
-stargazer(mtcars, type="latex", summary = TRUE, 
+stargazer(rock, type="latex", summary = TRUE, 
            title= "Tabella di summary", digits = 2, header=FALSE)
 ```
 ````
@@ -357,14 +409,14 @@ stargazer(mtcars, type="latex", summary = TRUE,
 
 ```{r class.output="scroll-100"}
 library(stargazer)
-stargazer(mtcars, type="latex", summary = TRUE, 
+stargazer(rock, type="latex", summary = TRUE, 
            title= "Tabella di summary", digits = 2, header=FALSE)
 ```
 
 ## `stargazer` model 
 
 ```{r, results='asis', echo = TRUE, tidy=TRUE, class.source='myClass', class.output="scroll-100"}
-m1 = lm(mpg ~ cyl, data = mtcars)
+m1 = lm(peri ~ perm, data = rock)
 stargazer(m1, type="html", summary = TRUE, 
            title= "Risultati del modello", digits = 2, header=FALSE)
 ```
@@ -372,8 +424,8 @@ stargazer(m1, type="html", summary = TRUE,
 ## `stargazer` model comparison
 
 ```{r, echo = TRUE, results='asis', echo = TRUE, tidy=TRUE, class.source='myClass', class.output="scroll-100"}
-m0 = lm(mpg ~ 1, data = mtcars)
-m1 = lm(mpg ~ cyl, data = mtcars)
+m0 = lm(peri ~ 1, data = rock)
+m1 = lm(peri ~ perm, data = rock)
 stargazer(m0, m1, 
           type = "html",
           title="Model comparison", digits=2, intercept.top = TRUE, intercept.bottom = FALSE, header = FALSE)
@@ -398,19 +450,30 @@ Avete visto che nelle mie slide appaiono degli elementi scritti con la formattaz
 
 Ottenerli è molto semplice:  `` `R` `` mi restituisce `R`
 
-Ma molto di più: `` `r "\u0060r mean(mtcars$mpg)\u0060"` `` mi restituisce `r mean(mtcars$mpg)` (Provateci!)
+Ma molto di più: `` `r "\u0060r mean(rock$peri)\u0060"` `` mi restituisce `r mean(rock$peri)` (Provateci!)
 
-Se in un chunk precedente avessimo assegnato `x = mean(mtcars$mpg)`, avrremmo potuto semmplicemente scrivere `` `r "\u0060r x\u0060"` ``
+Se in un chunk precedente avessimo assegnato `x = mean(mtcars$mpg)`, avrremmo potuto semplicemente scrivere `` `r "\u0060r x\u0060"` ``
 
 ## Codice, equazioni e codice nelle equazioni
 
 $$\bar{X} = \frac{\displaystyle\sum_{i=1}^{n}x_i}{n}$$
 
-Per `mpg`: 
+Per `peri`: 
 
-$$\bar{X} = \frac{\displaystyle\sum_{i=1}^{n}x_i}{n} = \frac{`r round(sum(mtcars$mpg),2)`}{`r nrow(mtcars)`} = `r round(round(sum(mtcars$mpg),2)/nrow(mtcars), 2)`$$
+```{r echo = FALSE, eval=TRUE}
+x = round(sum(rock$peri), 2)
+```
 
-`` `r "$\\frac{\u0060r round(sum(mtcars$mpg),2)\u0060}{\u0060r nrow(mtcars)\u0060} = \u0060r round(round(sum(mtcars$mpg),2)/nrow(mtcars), 2)\u0060$"` ``
 
+$$\bar{X} = \frac{\displaystyle\sum_{i=1}^{n}x_i}{n} = \frac{`r x`}{`r nrow(rock)`} = `r round(round(sum(rock$peri),2)/nrow(rock), 2)`$$
 
+`` `r "$\\frac{\u0060r round(sum(rock$peri),2)\u0060}{\u0060r nrow(rock)\u0060} = \u0060r round(round(sum(rock$peri),2)/nrow(rock), 2)\u0060$"` ``
+
+## Your turn!
+
+- Provate a scrivere la formula per standardizzare la variabile $y$ sup: 
+
+$$z =   \frac{x_i - \bar{X}}{sd}$$
+
+- Starndizzate il primo valore della $y$ del vostro dataset e riportate il risultato nell'equazione
 
