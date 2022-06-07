@@ -1,0 +1,30 @@
+/* Cambia colore dei titoli */
+  
+  h2 {
+    color: red;
+  }
+
+h3 {
+  color: blue;
+}
+
+/* Imposta la dimensione del carattere della presentazione e l'interlinea */
+
+.remark-slide-content {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+/* Slide della sezione */
+
+slides > slide.dark {
+  background-color: #0000FF; !important;
+}
+
+/* SECTION SLIDE */
+
+.section {
+  background-color: #0000FF;
+  color: white;;
+  text-shadow: 0 0 0px #333;
+}
