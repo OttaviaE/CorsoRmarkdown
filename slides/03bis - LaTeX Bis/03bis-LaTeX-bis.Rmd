@@ -64,11 +64,26 @@ library(xtable)
 
 Quando ho preparato le slide per \LaTeX usando Sweave, tutto sembrava andare per il meglio
 
-Poi, gli aggiornamenti
+\pause
 
-Lascio le slide su \LaTeX perché non escludo che un giorno possa tornare a funzionare
+Poi, gli aggiornamenti e:
 
-Ma nel frattempo, vediamo più nel dettaglio un'integrazione più snella ed efficiente!
+```{r echo=FALSE}
+knitr::include_graphics("img/meme.jpg")
+```
+
+## 
+
+- `Sweave` vi obbliga a usare \LaTeX
+
+- Non è facile farlo funzionare, specie se volete aggiungere dei pezzi di codice e i risultati delle vostre analisi
+
+- Per usare `Sweave`, tanto vale usare direttamente \LaTeX
+
+- Vi lascio comunque le slide per conoscenza generale
+
+
+
 
 ## 
 
@@ -213,23 +228,35 @@ In Equazione \ref{eq:mean} è riportata la formula per calcolare la media della 
     \bar{X} = \frac{\sum_{i=1}^{n} x_i}{n}
 \end{equation}
 ```
+
 ## Tabelle
 
-```{r echo=FALSE, out.width="90%"}
-knitr::include_graphics("img/tabella.png")
+
+
+
+    I risultati sono riportati in Tabella \ref{tab:tabella}
+    
+
+````
+```{r, results='asis'}`r ''`
+print(xtable::xtable(rock[1:7, ], caption = "Tabella delle rocce", 
+                     label = "tab:tabella"), 
+      comment = FALSE, 
+      caption.placement = "top")
 ```
+````    
+
+
 
 ## 
 
 I risultati sono riportati in Tabella \ref{tab:tabella}.
 
 ```{r results='asis', echo = FALSE}
-print(xtable::xtable(summary(cars), 
-                     caption = "Tabella dei risultati", 
+print(xtable::xtable(rock[1:7, ], caption = "Tabella delle rocce", 
                      label = "tab:tabella"), 
       comment = FALSE, 
-      caption.placement = "top", 
-      scalebox=1)
+      caption.placement = "top")
 ```
 
 ## Frontespizio
@@ -272,19 +299,19 @@ Ho creato [\textcolor{blue}{titolo.sty}](https://drive.google.com/file/d/1O4YgvA
 
 ## 
 
-- Inserire una figura con cross-reference nel testo
+- Inserite una figura con cross-reference nel testo
 
-- Inserire il plot del vostro data set con cross-reference nel testo (il codice è [\textcolor{blue}{qui}](https://ottaviae.github.io/CorsoRmarkdown/Datasets-Codici.html))
+- Inserite il plot del vostro data set con cross-reference nel testo (il codice è [\textcolor{blue}{qui}](https://ottaviae.github.io/CorsoRmarkdown/Datasets-Codici.html))
 
-- Inserire una tabella con cross-reference nel testo
+- Inserite una tabella con cross-reference nel testo
 
 \begin{center}
 ADAVANCED
 \end{center}
 
-- Inserire una figura con tre sottofigure (due foto e il grafico del vostro dataset) con rispettive cross-reference 
+- Inserite una figura con tre sottofigure (due foto e il grafico del vostro dataset) con rispettive cross-reference 
 
-- Cambiare la pagina del titolo modificando il file [\textcolor{blue}{titolo.sty}](https://drive.google.com/file/d/1O4YgvAZnPJbNMOz0tugz5xf75TTxVvlY/view?usp=sharing)
+- Cambiate la pagina del titolo modificando il file [\textcolor{blue}{titolo.sty}](https://drive.google.com/file/d/1O4YgvAZnPJbNMOz0tugz5xf75TTxVvlY/view?usp=sharing)
 
 
 # Presentazioni
@@ -300,7 +327,7 @@ knitr::include_graphics("img/yaml1.png")
 
 Si può scegliere combinazione di `theme`, `colortheme`, `fonttheme` e `highlight`. 
 
-A [questa pagina](https://deic.uab.cat/~iblanes/beamer_gallery/) sono disponibili tutti i possibili temi per la vostra presentazione
+A [\textcolor{blue}{questa pagina}](https://deic.uab.cat/~iblanes/beamer_gallery/) sono disponibili tutti i possibili temi per la vostra presentazione
 
 `highlight` è la formattazione del vostro codice, a cui potete accedere cliccando sulla rotellina accanto a `knit` $\rightarrow$ Output Options
 
@@ -336,12 +363,14 @@ Testo nella prima colonna
 
 \begin{column}{0.50\textwidth}
 Testo nella seconda colonna
-
-PS: si possono mettere anche più di due colonne
 \end{column}
 
 \end{columns}
 ```
+
+
+PS: si possono mettere anche più di due colonne
+
 
 ## Testo incrementale
 
@@ -360,11 +389,13 @@ Questo è il comando più semplice, si mette davanti al contenuto che si vuole "
 \begin{columns}
 \begin{column}{.50\linewidth}
 
-```{r out.width="80%", echo = FALSE}
-knitr::include_graphics("img/pause.png")
-```
 
 
+Testo che appare subito
+
+\verb=\pause=
+
+Testo che appare dopo la pausa
 
 \end{column}
 
@@ -376,7 +407,7 @@ knitr::include_graphics("img/pause.png")
 
 Testo che appare subito
 
-\pause % pausa
+\pause 
 
 Testo che appare dopo la pausa
 
@@ -391,28 +422,20 @@ Testo che appare dopo la pausa
 
 `\onslide<i-n>`
 
-Dove $i$ è la prima slide su cui il contentuo deve apparire, $n$ è l'ultima slide su cui il contenuto appare ($n$) può essere omesso. 
+Dove $i$ è la prima slide su cui il contenuto deve apparire, $n$ è l'ultima slide su cui il contenuto appare ($n$) può essere omesso. 
 
-\begin{columns}
-\begin{column}{.50\linewidth}
-```{r out.width="100%", echo = FALSE}
-knitr::include_graphics("img/onslide.png")
-```
+\verb=\onslide<2-> Appare sulla seconda slide e rimane fino alla fine=
 
-\end{column}
+\verb=\onslide<3-3> Appare alla terza slide e sparisce alla terza=
 
-\begin{column}{.50\linewidth}
-
-\onslide<2-> Testo che appare sulla seconda slide e rimane fino alla fine
-
-\onslide<3-3> Testo che appare alla terza slide e sparisce alla terza slide
-
-\onslide<4-> Testo che appare sull'ultima slide
-
-\end{column}
+\verb=\onslide<4-> Appare sull'ultima slide=
 
 
-\end{columns}
+\onslide<2-> Appare sulla seconda slide e rimane fino alla fine
+
+\onslide<3-3> Appare alla terza slide e sparisce alla terza
+
+\onslide<4-> Appare sull'ultima slide
 
 ## Blocchi di testo 
 
@@ -476,14 +499,18 @@ Dove il titolo è in rosso e a seconda del tema scelto anche la sfumatura estern
 
 ##
 
-- Creare una slide con due colonne, nella prima colonna testo, nella seconda colonna testo e una figura 
+- Create una slide con due colonne, nella prima colonna testo, nella seconda colonna testo e una figura 
 
 - Far apparire la seconda colonna, il suo testo e la sua figura uno alla volta
 
-- Creare una slide con 3 blocchi 
+- Create una slide con 3 blocchi 
+
 
 \begin{center}
 ADVANCED
 \end{center}
 
-- Far apparire il terzo blocco sulla prima slide e rimane fino alla fine, il secondo blocco compare e scompare alla seconda slide e il primo blocco appare e rimane sull'ultima slide
+- Fate apparire i blocchi così: 
+   - il terzo blocco sulla prima slide e rimane fino alla fine 
+   - il secondo blocco compare e scompare alla seconda slide 
+   - il primo blocco appare e rimane sull'ultima slide
