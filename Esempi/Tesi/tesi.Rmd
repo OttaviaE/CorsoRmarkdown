@@ -102,7 +102,7 @@ stargazer::stargazer(m0, m1, type = "latex",
 
 ## Le figure doppie
 
-In figura \ref{fig:doppia} si trova un esempio di sottoofigure. In Figura \ref{sub:unipd1} c'è il logo unipd, in Figura \ref{sub:grafico} c'è un grafico.
+In figura \ref{fig:doppia} si trova un esempio di sottofigure. In Figura \ref{sub:unipd1} c'è il logo unipd, in Figura \ref{sub:grafico} c'è un grafico.
 
 \begin{figure}
 \centering
@@ -123,6 +123,12 @@ plot(cars)
 \caption{Una figura doppia}
 \label{fig:doppia}
 \end{figure}
+
+
+
+
+
+
 
 \newpage
 
