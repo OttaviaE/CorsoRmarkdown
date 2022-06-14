@@ -9,7 +9,7 @@ output:
     widescreen: yes
 editor_options:
   chunk_output_type: console
-knit: pagedown::chrome_print
+#knit: pagedown::chrome_print
 ---
 
 ```{r setup, include=FALSE}
@@ -160,7 +160,7 @@ Permette la riproducibilità dei dati e delle analisi svolte sugli stessi tenend
 
 - Baby steps: Comandi basici di `RMarkdown` 
 
-- Chunck di codice: Dalle immagini ai grafici passando per i codici
+- Chunk di codice: Dalle immagini ai grafici passando per i codici
 
 - Creazione di un documento PDF con bibliografia 
 
@@ -178,7 +178,7 @@ Due file:
    - Un elenco, parole con diversa formattazione, una tabella, un grafico, un chunk di codice, un'equazione e risultati di `R` nel testo
 
 - Una presentazione in HTML con almeno 3 slide e: 
-   - Colonne, tabella, testo progressivo, un chunck di codice, una tabella con i risultati del modello e un plot
+   - Colonne, tabella, testo progressivo, un chunk di codice, una tabella con i risultati del modello e un plot
 
 In [questa cartella](https://drive.google.com/drive/folders/19F1fhDwih04MeyKP_E4xLsPc0VAw-3co?usp=sharing) vi ho preparato degli esempi di file (tra cui quello per la tesi)
 
