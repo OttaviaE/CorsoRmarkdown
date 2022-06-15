@@ -8,7 +8,7 @@ output:
     logo: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/arca_logo.svg
     widescreen: yes
     highlight: haddock
-#knit: pagedown::chrome_print
+knit: pagedown::chrome_print
 ---
 
 <style>
@@ -302,7 +302,7 @@ rock
 rock
 ```
 
-Ricodadate che una delle righe che volete mostrate è "mangiata" dai nomi delle colonne
+Ricodate che una delle righe che volete mostrate è "mangiata" dai nomi delle colonne
 
 ## Your turn!
 
