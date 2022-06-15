@@ -8,7 +8,7 @@ output:
     logo: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/arca_logo.svg
     widescreen: yes
     highlight: haddock
-knit: pagedown::chrome_print
+#knit: pagedown::chrome_print
 ---
 
 <style>
@@ -210,7 +210,7 @@ L'opzione `include=FALSE` solitamente viene usata nel set chunk e in tutti quei 
 
 - Molti pacchetti di `R` mostrano dei messaggi quando vengono caricati o quando viene usata qualche funzione. Per toglierli: `message=FALSE`
 
-- Per togliere i warning (ad esempio quando usiamo `lme4` e fittiamo modelli molto complessi): `message=FALSE`
+- Per togliere i warning (ad esempio quando usiamo `lme4` e fittiamo modelli molto complessi): `warning=FALSE`
 
 - Per togliere i messaggi di errore (e.g., viene chiamato un oggetto che non esiste): `error=FALSE`
 
