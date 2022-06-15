@@ -8,7 +8,7 @@ output:
     logo: C:/Users/huawei/OneDrive/Documenti/GitHub/CorsoRmarkdown/man/arca_logo.svg
     widescreen: yes
     highlight: haddock
-knit: pagedown::chrome_print
+#knit: pagedown::chrome_print
 ---
 
 <style>
@@ -475,5 +475,5 @@ $$\bar{X} = \frac{\displaystyle\sum_{i=1}^{n}x_i}{n} = \frac{`r x`}{`r nrow(rock
 
 $$z =   \frac{x_i - \bar{X}}{sd}$$
 
-- Starndizzate il primo valore della $y$ del vostro dataset e riportate il risultato nell'equazione
+- Standardizzate il primo valore della $y$ del vostro dataset e riportate il risultato nell'equazione
 
