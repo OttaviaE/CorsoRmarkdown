@@ -3726,35 +3726,46 @@ output: ioslides_presentation
 
 </article></slide><slide class=""><hgroup><h2><code>css</code></h2></hgroup><article  id="css">
 
-<pre class = 'prettyprint lang-css myClass'>/* Cambia colore dei titoli */
+<pre class = 'prettyprint lang-css myClass'>/* GENERAL SLIDES */
+
 
 h2 {
-    color: red;
+    color: #9B0A14;
 }
 
 h3 {
-    color: blue;
+    color: #9B0A14;
 }
-
-/* Imposta la dimensione del carattere della presentazione e l&#39;interlinea */
 
 .remark-slide-content {
     font-size: 20px;
     line-height: 1.6;
 }
 
-/* Slide della sezione */
 
-slides &gt; slide.dark {
-  background-color: #0000FF; !important;
+
+/* bullet list */
+
+ul li { 
+    padding: 8px 0px;
+    list-style-type: disc;
 }
 
-/* SECTION SLIDE */
+a, a &gt; code {
+  color: rgb(249, 38, 114);
+  text-decoration: none;
+}
 
-.section {
-  background-color: #0000FF;
-  color: white;;
-  text-shadow: 0 0 0px #333;
+.footnote {
+  position: absolute;
+  bottom: 3em;
+  padding-right: 4em;
+  font-size: 90%;
+}
+/* chpater pages */
+
+slides &gt; slide.dark {
+  background-color: #9B0A14 !important;
 }
 </pre>
 
