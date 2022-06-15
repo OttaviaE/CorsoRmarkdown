@@ -4223,37 +4223,65 @@ ggplot(rock,
 
 <!-- ``` -->
 
-</article></slide><slide class=""><hgroup><h2>La App</h2></hgroup><article  id="la-app">
+<!-- ## La App -->
 
-<pre class = 'prettyprint lang-r myClass'>shiny::shinyApp(
- ui = fluidPage(
-  sidebarLayout(
-    sidebarPanel(
-      selectInput(inputId = &quot;dataset&quot;, # nome dell&#39;input per il server
-                  label = &quot;Choose a dataset:&quot;, # nome dell&#39;input per lo user
-                  choices = c(&quot;rock&quot;, &quot;pressure&quot;)) # opzioni
-    ),
+<!-- ```{r echo=TRUE, class.source="myClass", class.output="scroll-100"} -->
 
-    mainPanel(
-      plotOutput( #qui voglio un grafico 
-        &quot;graph&quot;   
-      )
-    ) 
-  )
-),
+<!-- shiny::shinyApp( -->
 
-server = function(input, output){
-  output$graph &lt;- renderPlot({
-    if(input$dataset == &quot;rock&quot;){ 
-      data &lt;- rock
-    } else {
-      data &lt;- pressure
-    } 
-    plot(data[, c(1:2)])
-  })
-}, 
-options = list(height = 300)
-)</pre>
+<!--  ui = fluidPage( -->
+
+<!--   sidebarLayout( -->
+
+<!--     sidebarPanel( -->
+
+<!--       selectInput(inputId = "dataset", # nome dell'input per il server -->
+
+<!--                   label = "Choose a dataset:", # nome dell'input per lo user -->
+
+<!--                   choices = c("rock", "pressure")) # opzioni -->
+
+<!--     ), -->
+
+<!--     mainPanel( -->
+
+<!--       plotOutput( #qui voglio un grafico  -->
+
+<!--         "graph"    -->
+
+<!--       ) -->
+
+<!--     )  -->
+
+<!--   ) -->
+
+<!-- ), -->
+
+<!-- server = function(input, output){ -->
+
+<!--   output$graph <- renderPlot({ -->
+
+<!--     if(input$dataset == "rock"){  -->
+
+<!--       data <- rock -->
+
+<!--     } else { -->
+
+<!--       data <- pressure -->
+
+<!--     }  -->
+
+<!--     plot(data[, c(1:2)]) -->
+
+<!--   }) -->
+
+<!-- },  -->
+
+<!-- options = list(height = 300) -->
+
+<!-- ) -->
+
+<!-- ``` -->
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Tutto molto bello ma…</h2></hgroup><article  id="tutto-molto-bello-ma">
 
