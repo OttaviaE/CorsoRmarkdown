@@ -468,37 +468,47 @@ knitr::include_graphics("img/css.png")
 ## `css`
 
 ```{css, class.source='myClass', out.lines = 11}
-/* Cambia colore dei titoli */
+/* GENERAL SLIDES */
+
 
 h2 {
-    color: red;
+    color: #9B0A14;
 }
 
 h3 {
-    color: blue;
+    color: #9B0A14;
 }
-
-/* Imposta la dimensione del carattere della presentazione e l'interlinea */
 
 .remark-slide-content {
     font-size: 20px;
     line-height: 1.6;
 }
 
-/* Slide della sezione */
+
+
+/* bullet list */
+
+ul li { 
+    padding: 8px 0px;
+    list-style-type: disc;
+}
+
+a, a > code {
+  color: rgb(249, 38, 114);
+  text-decoration: none;
+}
+
+.footnote {
+  position: absolute;
+  bottom: 3em;
+  padding-right: 4em;
+  font-size: 90%;
+}
+/* chpater pages */
 
 slides > slide.dark {
-  background-color: #0000FF; !important;
+  background-color: #9B0A14 !important;
 }
-
-/* SECTION SLIDE */
-
-.section {
-  background-color: #0000FF;
-  color: white;;
-  text-shadow: 0 0 0px #333;
-}
-
 ```
 
 ## `css` interno al file
@@ -955,7 +965,7 @@ Lo user non sa neanche che esiste
 
 ## Come inserirla in `RMarkdown`
 
-Aggiungete allo YAML: `runtime: shiny` <font size="3"> su una nuova riga </font> e vederete che `knit` viene sostituto da `Run Presentation`
+Aggiungete allo YAML: `runtime: shiny` <font size="3"> su una nuova riga </font> e vedrete che `knit` viene sostituto da `Run Presentation`
 
 
 ```{r echo = FALSE, eval=TRUE}

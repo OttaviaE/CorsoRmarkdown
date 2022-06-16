@@ -80,7 +80,7 @@ knitr::include_graphics("img/meme.jpg")
 
 - Per usare `Sweave`, tanto vale usare direttamente \LaTeX
 
-- Vi lascio comunque le slide per conoscenza generale
+- Vi lascio comunque le [\textcolor{blue}{slide}](https://ottaviae.github.io/CorsoRmarkdown/slides/03%20-%20LaTeX/03-LaTeX.pdf) per conoscenza generale
 
 
 
@@ -127,7 +127,7 @@ knitr::include_graphics("img/yaml.png")
 
 ## 
 
-Uno YAML come quello di cui sopra vi restituisce un risultato simile a quello che abbiamo visto ad adesso.
+Uno YAML come quello di cui sopra vi restituisce un risultato simile a quello che abbiamo visto fino ad adesso.
 
 Le aggiunte che abbiamo messo ci permettono di utilizzare il file in maniera più "elastica", ossia usando la sintassi e le potenzalità di \LaTeX ma rimandendo con la logica di `RMarkdown`
 
@@ -136,7 +136,7 @@ Le aggiunte che abbiamo messo ci permettono di utilizzare il file in maniera pi�
 Ormai sappiamo a memoria come mettere le figure:
 
     ```{r, out.width="50%"}`r ''`
-    knitr::include_graphics(path = "percorso-alla-figura")
+    knitr::include_graphics(path = "percorso-alla-figura/figura.png")
     ```
 
 Però abbiamo visto il disagio che è mettere le cross-references con `bookdown`
@@ -239,7 +239,8 @@ In Equazione \ref{eq:mean} è riportata la formula per calcolare la media della 
 
 ````
 ```{r, results='asis'}`r ''`
-print(xtable::xtable(rock[1:7, ], caption = "Tabella delle rocce", 
+print(xtable::xtable(rock[1:7, ], 
+                    caption = "Tabella delle rocce", 
                      label = "tab:tabella"), 
       comment = FALSE, 
       caption.placement = "top")
@@ -312,6 +313,8 @@ ADAVANCED
 - Inserite una figura con tre sottofigure (due foto e il grafico del vostro dataset) con rispettive cross-reference 
 
 - Cambiate la pagina del titolo modificando il file [\textcolor{blue}{titolo.sty}](https://drive.google.com/file/d/1O4YgvAZnPJbNMOz0tugz5xf75TTxVvlY/view?usp=sharing)
+
+- Importate la bibliografia
 
 
 # Presentazioni
