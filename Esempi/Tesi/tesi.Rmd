@@ -1,12 +1,11 @@
 ---
 output: 
    pdf_document:
+      citation_package: biblatex
       includes:
         before_body: titolo.sty
-      keep_tex: yes
-      number_sections: yes
-      toc_depth: 2
 bibliography: biblio.bib
+biblio-style: numeric
 geometry: margin=1in
 header-includes:
   - \usepackage{setspace} 
@@ -16,6 +15,7 @@ header-includes:
   - \captionsetup{format=plain, font=small, labelfont=bf}
   - \usepackage{graphicx} 
   - \usepackage{subcaption}
+  - \usepackage{csquotes}
 ---
 
 
@@ -125,12 +125,10 @@ plot(cars)
 \end{figure}
 
 
-
-
-
-
-
-\newpage
+\clearpage
 
 # Bibliografia
+
+
+
 

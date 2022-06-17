@@ -296,25 +296,102 @@ Molto importante: se nel frontespizio usate dei pacchetti (e.g., se volete aggiu
 
 Ho creato [\textcolor{blue}{titolo.sty}](https://drive.google.com/file/d/1O4YgvAZnPJbNMOz0tugz5xf75TTxVvlY/view?usp=sharing) per voi, dovete solo modificarlo!
 
-# Your turn!
+## Importare la bibliografia
 
-## 
+```{tex eval = FALSE}
+output: 
+   pdf_document:
+      includes:
+        before_body: titolo.sty
+bibliography: biblio.bib # fatto
+geometry: margin=1in
+header-includes:
+  - \usepackage{setspace} 
+  - \usepackage{multicol}
+[....]
+```
 
-- Inserite una figura con cross-reference nel testo
+Valgono i comandi che abbiamo già visto [\textcolor{blue}{qui}](https://ottaviae.github.io/CorsoRmarkdown/slides/01%20-%20Baby%20Steps/01-Baby-Steps.html#38)
 
-- Inserite il plot del vostro data set con cross-reference nel testo (il codice è [\textcolor{blue}{qui}](https://ottaviae.github.io/CorsoRmarkdown/Datasets-Codici.html))
+## Cambiare la bibliografia
 
-- Inserite una tabella con cross-reference nel testo
+\small
+
+```{tex eval = FALSE}
+output: 
+   pdf_document:
+      citation_package: biblatex
+      includes:
+        before_body: titolo.sty
+      keep_tex: yes
+      number_sections: yes
+      toc_depth: 2
+bibliography: biblio.bib
+biblio-style: numeric
+geometry: margin=1in
+header-includes:
+  - \usepackage{setspace} 
+  - \usepackage{multicol}
+[...]
+```
+
+A [\textcolor{blue}{questa pagina}](https://www.overleaf.com/learn/latex/Biblatex_citation_styles) trovate tutti i possibili stili di `biblatex`
+
+## Stampare la bibliografia
+
+Bibliografia "normale":
+
+In fondo alla presentazione:
+
+```{tex eval = FALSE}
+\clearpage # Stampa su una pagina nuova
+
+# Bibliografia
+
+```
+
+\pause
+
+Bibliografia `biblatex`:
+
+```{tex eval = FALSE}
+\clearpage # Stampa su una pagina nuova
+
+# Bibliografia
+
+```
+
+\pause
+
+Problema: Non appare la bibliografia nell'indice
+
+## Your turn!
+
+- Usando [\textcolor{blue}{titolo.sty}](https://drive.google.com/file/d/1O4YgvAZnPJbNMOz0tugz5xf75TTxVvlY/view?usp=sharing) mettete il logo del vostro dataset
+
+- Cambiate il titolo, autore, corso e quello che volete a seconda della vostra fantasia
+
+- Mettete tre Titoli (Header 1, e.g., "Introduzione", "Metodo", "Risultati") (se volete potete mettere del testo)
+
+- Inserite una figura con tre sottofigure (due foto e il grafico del vostro dataset) con rispettive cross-reference nel testo
+
+- Inserite un'equazione (potete usare quella della standardizzazione)
+
+- Inserite una tabella descrittiva del vostro dataset con cross-reference nel testo
+
+- Importate la bibliografia
+
 
 \begin{center}
 ADAVANCED
 \end{center}
 
-- Inserite una figura con tre sottofigure (due foto e il grafico del vostro dataset) con rispettive cross-reference 
+- Integrate l'equazione con i numeri reali del vostro dataset
 
-- Cambiate la pagina del titolo modificando il file [\textcolor{blue}{titolo.sty}](https://drive.google.com/file/d/1O4YgvAZnPJbNMOz0tugz5xf75TTxVvlY/view?usp=sharing)
+- Inserite una tabella con i risultati del modello del vostro dataset (ovviamente con cross-reference)
 
-- Importate la bibliografia
+- Inserite una tabella con model comparison (`m0 = lm(y ~ x, data = vostro_datase`)
+
 
 
 # Presentazioni
@@ -440,6 +517,18 @@ Dove $i$ è la prima slide su cui il contenuto deve apparire, $n$ è l'ultima sl
 
 \onslide<4-> Appare sull'ultima slide
 
+
+
+## Your turn!
+
+- Create una slide con due colonne
+
+- Fate apparire una colonna alla volta
+
+- Nella prima colonna: un'immagine 
+
+- Nella seconda colonna: testo
+
 ## Blocchi di testo 
 
 \begin{block}{Il testo}
@@ -498,9 +587,8 @@ Dove il titolo è in rosso e a seconda del tema scelto anche la sfumatura estern
 ```
 
 
-# Your turn!
+## Your turn!
 
-##
 
 - Create una slide con due colonne, nella prima colonna testo, nella seconda colonna testo e una figura 
 
