@@ -1,0 +1,59 @@
+---
+title: "03-bis - \LaTeX bis"
+author: | 
+  | Ottavia M. Epifania
+  | University of Padova
+date: 'Corso `RMarkdown`'
+institute: "ottavia.epifania@unipd.it"
+output: 
+  beamer_presentation: 
+    theme: CambridgeUS
+    colortheme: beaver
+    fonttheme: serif
+    highlight: haddock
+header-includes:
+    - \AtBeginDocument{\title[\LaTeX bis]{03-bis - \LaTeX bis}}
+    - \usepackage{graphicx} 
+    - \usepackage{setspace}
+    - \usepackage{tabularx}
+    - \usepackage[italian]{babel}
+    - \usepackage{tikzsymbols}
+    - \usepackage{subcaption}
+    - \usepackage{tikz}
+    - \usepackage{spot}
+    - \usepackage{tabularx}
+    - \usepackage[absolute,overlay]{textpos}
+    - \usepackage{booktabs}
+    - \newcommand\Factor{1.2}
+    - \setbeamerfont{subtitle}{size=\large, series=\bfseries}
+    - \definecolor{template}{RGB}{54, 114, 89}
+    - \setbeamercolor{frametitle}{bg=white}
+    - \setbeamertemplate{frametitle}[default][center]
+    - \AtBeginSection{\frame{\sectionpage}}
+    - \setbeamercolor{section name}{fg=white}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Slide con colonne
+
+\begin{columns}
+\begin{column}{.50\textwidth}
+testo
+\end{column}
+
+\begin{column}{.50\textwidth}
+\begin{figure}
+\centering
+```{r}
+knitr::include_graphics("img/figure1.png")
+```
+
+\end{figure}
+
+
+
+\end{column}
+\end{columns}

@@ -1,0 +1,151 @@
+/* specify logo size at title page */
+.gdbar img {
+  width: 160px !important;
+  height: 122px !important;
+  margin: 8px 8px;
+}
+
+.gdbar {
+  height: 140px !important;
+}
+
+/* specify logo size on footer 
+slides > slide:not(.nobackground):before {
+  width: 92px;
+  height: 70px;
+  background-size: 85px 70px;
+}
+*/
+
+
+/* GENERAL SLIDES */
+
+
+h2 {
+    color: #9B0A14;
+}
+
+h3 {
+    color: #9B0A14;
+}
+
+.remark-slide-content {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+
+
+/* bullet list */
+
+ul li { 
+    padding: 8px 0px;
+    list-style-type: disc;
+}
+
+a, a > code {
+  color: rgb(249, 38, 114);
+  text-decoration: none;
+}
+
+.footnote {
+  position: absolute;
+  bottom: 3em;
+  padding-right: 4em;
+  font-size: 90%;
+}
+/* chpater pages */
+
+slides > slide.dark {
+  background-color: #9B0A14 !important;
+}
+
+/* SECTION SLIDE */
+
+.section {
+  background-color: #9B0A14;
+  color: white;;
+  text-shadow: 0 0 0px #333;
+}
+
+.section h1, .inverse h2, .inverse h3 {
+  color: #F0F3F4;
+  font-size: 50px;
+}
+
+.section .remark-slide-number {
+  display: none;
+}
+
+
+
+
+
+/* code size*/
+
+code.r {
+  font-size: 22pt;
+}
+
+code.css {
+  font-size: 18pt;
+}
+
+/* TITLE SLIDE */
+
+.title-slide {
+    background:linear-gradient(180deg, #9B0A14 25%,white 25%)
+}
+
+.title {
+  font-size: 60px;
+  color: white;
+}
+
+.subtitle {
+  font-size: 30px;
+}
+
+.author {
+  color: #3B3B3B;
+  font-size: 20px;
+}
+
+.location {
+  color: #3B3B3B;
+  font-size: 20px;
+}
+
+.title-slide .remark-slide-number {
+  display: none;
+}
+
+/* TEXT COLORS */
+
+.imp {
+  color: #9B0A14;
+  font-weight: bold;
+}
+
+.blue {
+  color: #2980B9;
+  font-weight: bold;
+}
+
+.green {
+  color: #17A589;
+  font-weight: bold;
+}
+
+.yellow {
+  color: #F5B041;
+  font-weight: bold;
+}
+
+.hljs-github .hljs {
+    display: block;
+    overflow-x: auto;
+    padding: .5em;
+    color: #333;
+    background: #f8f8f8;
+}
